@@ -1,0 +1,19 @@
+<%= form_for ([@user, @location]) do |f| %>
+  <% if @location.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @location.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :address, placeholder: "Address" %>
+  </div>
+  <div class="field">
+    <%= f.integer_field :phone_number, placeholder: "Phone Number" %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
