@@ -4,6 +4,9 @@
 
 h1 {
   font-family: $helvetica;
+  margin-left: 50px;
+  margin-bottom: 50px;
+
 }
 
 h2 {
@@ -16,7 +19,8 @@ body {
   font-family: $lucida-grande;
 }
 .field {
-  margin-bottom: 5px;
+  margin-bottom: 12px;
+  margin-left: 50px;
   @include border-top-radius(5px);
   @include border-bottom-radius(5px);
   @include border-left-radius(5px);
@@ -38,17 +42,18 @@ body {
   @include button(simple);
   text-decoration: none;
   font-size: 14px;
+  margin-left: 75px;
+  margin-top: 20px;
     a {
     @include button(simple);
     text-decoration: none;
     font-size: 14px;
     }
-    
 }
 
 .message_container {
   position: fixed;
-  top: 35px;
+  top: 100px;
   left: 40%;
   float: left;
   margin: 0 auto;
@@ -60,3 +65,12 @@ body {
  .error_messages {
   font-size: 16px;
 }
+
+.userinfo {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.welcome {
+  margin-left: 50px;
+}
+

@@ -6,8 +6,8 @@
     <%= password_field_tag :password, value = nil, placeholder: "Password" %>
   </div>
   <div class="actions"><%= submit_tag "Log in" %></div>
-  <div> 
-		<%= label_tag "Keep me logged in" %> </br>
+  <div class="userinfo"> 
+		<%= label_tag "Keep me logged in" %>
 		<%= check_box_tag :remember %>
 	</div>
 <% end %>
