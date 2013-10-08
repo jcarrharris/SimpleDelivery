@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     @order = @location.orders.build(order_params)
 
     if @order.save
-      redirect_to user_business_orders_path(@user, @business), notice: 'Order added.'
+      redirect_to user_business_location_orders_path(@user, @business, @location), notice: 'Order added.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update_attributes(order_params)
-      redirect_to user_business_order_path(@user, @business, @order)
+      redirect_to user_business_location_order_path(@user, @business, @order)
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
-    redirect_to user_business_orders_path(@user, @business)
+    redirect_to user_business_location_orders_path(@user, @business, @location)
   end
 
   private
@@ -57,6 +57,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:order_name, :address, :phone_number)
+    params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status)
   end
 end

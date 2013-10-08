@@ -2,7 +2,9 @@ SimpleDelivery::Application.routes.draw do
 
   resources :users, :except => [:index] do
     resources :businesses do
-      resources :locations
+      resources :locations do
+        resources :orders
+      end
     end
   end
 

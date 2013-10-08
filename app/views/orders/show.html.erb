@@ -1,0 +1,21 @@
+<h2><%= @order.tracking_number %> </h2>
+
+<%= link_to "Home", :root %>
+<%= link_to "Edit", edit_user_business_location_order_path(@user, @business, @location, @order) %>
+<%= link_to "Delete", [@user, @business, @location, @order], :confirm => "Are you sure you want to delete this order?", method: :delete %>
+
+<p>
+  <li>Tracking Number: <%= @order.tracking_number %></li>
+  <li>Status: <%= @order.status %></li>
+  <li>Delivery Time: <%= @order.delivery_time %></li>
+  <li>Delivery Address: <%= @order.delivery_address %></li>
+  <li>Coordinates: <%= Geocoder.coordinates(@order.delivery_address) %></li>
+  <li>Package Dimensions (L x W x H): <%= @order.length + "cm x " @order.width + "cm x " + @order.height +"cm" %></li>
+  <li>Weight: <%= @order.weight + "kg" %></li>
+  <li>Quantity: <%= @order.quantity %></li>
+  <li>Declared Value (CAD): <%= @order.declared_value %></li>
+  <li>Packaging: <%= @order.packaging %></li>
+  <li>Pickup Time: <%= @order.pickup_time %></li>
+  <li>Pickup Address: <%= @location.address %></li>
+  <li>Phone Number: <%= @order.phone_number %></li>
+</p>

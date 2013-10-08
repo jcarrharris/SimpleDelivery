@@ -1,0 +1,12 @@
+<%= link_to "Back", user_business_location_path(@user, @business, @location) %>
+<%= link_to "Create new order", new_user_business_location_order_path(@user, @business, @location) %>
+
+<h3>Orders</h3>
+
+  <% @location.orders.each do |o| %>
+    <p>
+      <li>Tracking Number: <%= link_to l.tracking_number, user_business_location_order_path(@user, @business, @locaiton, o) %></li>
+      <li>Status: <%= o.status %></li>
+      <li>Delivery Time: <%= o.delivery_time %></li>
+    </p>
+  <% end %>

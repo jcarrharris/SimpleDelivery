@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
-	belongs_to :business
+	has_many :orders
+  belongs_to :business
 
 	validates_presence_of :address, :phone_number
 

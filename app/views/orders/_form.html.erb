@@ -1,0 +1,39 @@
+<%= form_for [@user, @business, @location, @order] do |f| %>
+  <% if @order.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @order.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :delivery_address, placeholder: "Delivery Address" %>
+  </div>
+  <div class="field">
+    <%= f.phone_field :phone_number, placeholder: "Phone Number" %>
+  </div>
+  <div class="field">
+    <%= f.number_field :height, placeholder: "Length (cm)" %>
+    <%= f.number_field :width, placeholder: "Width (cm)" %>
+    <%= f.number_field :height, placeholder: "Height (cm)" %>
+  </div>
+  <div class="field">
+    <%= f.number_field :quantity, placeholder: "Quantity" %>
+  </div>
+  <div class="field">
+    <%= f.number_field :declared_value, placeholder: "Declared Value (CAD)" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :packaging, placeholder: "Packaging" %>
+  </div>
+  <div class="field">
+    <%= f.datetime_field :pickup_time, placeholder: "Pickup Time" %>
+  </div>
+  <div class="field">
+    <%= f.datetime_field :delivery_time, placeholder: "Delivery Time" %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
