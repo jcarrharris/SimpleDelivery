@@ -1,12 +1,12 @@
 class LocationsController < ApplicationController
-  before_filter :get_business, :get_user
+  before_filter :get_user, :get_business
+  before_filter :get_location, :only => [:show, :edit, :update, :destroy]
 
   def index
     @location = @business.locations
   end
 
   def show
-    @location = Location.find(params[:id])
   end
 
   def new
@@ -24,11 +24,9 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    @location = Location.find(params[:id])
   end
 
   def update
-    @location = Location.find(params[:id])
     if @location.update_attributes(location_params)
       redirect_to user_business_location_path(@user, @business, @location)
     else
@@ -37,18 +35,21 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    @location = Location.find(params[:id])
     @location.destroy
-    redirect_to :root
+    redirect_to user_business_locations_path(@user, @business)
   end
 
   private
+  def get_user
+    @user = User.find(params[:user_id])
+  end
+
   def get_business
     @business = Business.find(params[:business_id])
   end
 
-  def get_user
-    @user = User.find(params[:user_id])
+  def get_location
+    @location = Location.find(params[:id])
   end
 
   def location_params

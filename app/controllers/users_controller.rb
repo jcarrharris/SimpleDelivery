@@ -12,7 +12,7 @@ before_filter :get_user, :only => [:show, :edit, :update, :destroy]
     @user = User.new(user_params)
     if @user.save
     	auto_login(@user)
-      redirect_to :root, notice: "Signed up!"
+      redirect_to user_path(@user), notice: "Signed up!"
     else
       render :new
     end

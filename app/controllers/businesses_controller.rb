@@ -1,12 +1,12 @@
 class BusinessesController < ApplicationController
   before_filter :get_user
+  before_filter :get_business, :only => [:show, :edit, :update, :destroy]
 
   def index
     @business = @user.businesses
   end
 
   def show
-    @business = Business.find(params[:id])
   end
 
   def new
@@ -24,11 +24,9 @@ class BusinessesController < ApplicationController
   end
 
   def edit
-    @business = Business.find(params[:id])
   end
 
   def update
-    @business = Business.find(params[:id])
     if @business.update_attributes(business_params)
       redirect_to user_business_path(@user, @business)
     else
@@ -37,14 +35,17 @@ class BusinessesController < ApplicationController
   end
 
   def destroy
-    @business = Business.find(params[:id])
     @business.destroy
-    redirect_to :root
+    redirect_to user_businesses_path(@user)
   end
 
   private
   def get_user
     @user = User.find(params[:user_id])
+  end
+
+  def get_business
+    @business = Business.find(params[:id])
   end
 
   def business_params
