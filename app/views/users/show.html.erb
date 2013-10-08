@@ -1,6 +1,6 @@
 <h2><%= @user.first_name + " " + @user.last_name%> </h2>
+<p class="navbar-text">Signed in as <%= @user.first_name %></p>
 
-<%= link_to "Home", :root %>
 <%= link_to "Edit", edit_user_path(@user) %>
 <%= link_to "Delete", @user, confirm: "Are you sure you want to delete your account?", method: :delete %>
 <%= link_to "View your businesses", user_businesses_path(@user) %>

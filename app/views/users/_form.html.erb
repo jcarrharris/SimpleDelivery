@@ -4,7 +4,7 @@
       <h2>Form is invalid</h2>
       <ul>
         <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
+          <%= message %>
         <% end %>
       </ul>
     </div>

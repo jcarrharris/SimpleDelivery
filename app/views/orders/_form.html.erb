@@ -16,6 +16,9 @@
     <%= f.phone_field :phone_number, placeholder: "Phone Number" %>
   </div>
   <div class="field">
+    <%= f.select :packaging, options_for_select(["Swish Small", "Swish Regular", "Swish Large", "Custom"]) %>
+  </div>
+  <div class="field">
     <%= f.number_field :height, placeholder: "Length (cm)" %>
     <%= f.number_field :width, placeholder: "Width (cm)" %>
     <%= f.number_field :height, placeholder: "Height (cm)" %>
@@ -25,9 +28,6 @@
   </div>
   <div class="field">
     <%= f.number_field :declared_value, placeholder: "Declared Value (CAD)" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :packaging, placeholder: "Packaging" %>
   </div>
   <div class="field">
     <%= f.datetime_field :pickup_time, placeholder: "Pickup Time" %>

@@ -1,15 +1,62 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-
 @import "bootstrap";
+@import "bourbon";
+@import "neat";
+
+h1 {
+  font-family: $helvetica;
+}
+
+h2 {
+  font-weight: regular;
+  font-family: $helvetica;
+}
+
+body {
+  font-size: 16px;
+  font-family: $lucida-grande;
+}
+.field {
+  margin-bottom: 5px;
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+
+  #{$all-text-inputs} {
+    border: 1px solid #2B3A42;
+
+  }
+  #{$all-text-inputs-hover} { // Target the :hover pseudo-class
+    background: #BDD4DE;
+  }
+
+  #{$all-text-inputs-focus} { // Target the :focus pseudo-class
+    background: #EFEFEF;
+  }
+}
+.actions input {
+  @include button(simple);
+  text-decoration: none;
+  font-size: 14px;
+    a {
+    @include button(simple);
+    text-decoration: none;
+    font-size: 14px;
+    }
+    
+}
+
+.message_container {
+  position: fixed;
+  top: 35px;
+  left: 40%;
+  float: left;
+  margin: 0 auto;
+  padding: 5px;
+  width: 250px;
+  list-style: none;
+  word-wrap: break-word;
+}
+ .error_messages {
+  font-size: 16px;
+}

@@ -1,6 +1,5 @@
 <h2><%= @location.location_name %> </h2>
 
-<%= link_to "Home", :root %>
 <%= link_to "Edit", edit_user_business_location_path(@user, @business, @location) %>
 <%= link_to "Delete", [@user, @business, @location], :confirm => "Are you sure you want to delete this location?", method: :delete %>
 <%= link_to "View your orders", user_business_location_orders_path(@user, @business, @location) %>
@@ -11,3 +10,7 @@
   <li>Coordinates: <%= Geocoder.coordinates(@location.address) %></li>
   <li>Phone Number: <%= @location.phone_number %></li>
 </p>
+
+<div class="location_map">
+ 
+</div>
