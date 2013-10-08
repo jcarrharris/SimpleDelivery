@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update_attributes(order_params)
-      redirect_to user_business_location_order_path(@user, @business, @order)
+      redirect_to user_business_location_order_path(@user, @business, @location, @order)
     else
       render :edit
     end

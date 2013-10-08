@@ -5,7 +5,7 @@
 
   <% @location.orders.each do |o| %>
     <p>
-      <li>Tracking Number: <%= link_to l.tracking_number, user_business_location_order_path(@user, @business, @locaiton, o) %></li>
+      <li>Tracking Number: <%= link_to o.id, user_business_location_order_path(@user, @business, @location, o) %></li>
       <li>Status: <%= o.status %></li>
       <li>Delivery Time: <%= o.delivery_time %></li>
     </p>

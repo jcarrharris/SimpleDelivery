@@ -5,13 +5,13 @@
 <%= link_to "Delete", [@user, @business, @location, @order], :confirm => "Are you sure you want to delete this order?", method: :delete %>
 
 <p>
-  <li>Tracking Number: <%= @order.tracking_number %></li>
+  <li>Tracking Number: <%= @order.id %></li>
   <li>Status: <%= @order.status %></li>
   <li>Delivery Time: <%= @order.delivery_time %></li>
   <li>Delivery Address: <%= @order.delivery_address %></li>
   <li>Coordinates: <%= Geocoder.coordinates(@order.delivery_address) %></li>
-  <li>Package Dimensions (L x W x H): <%= @order.length + "cm x " @order.width + "cm x " + @order.height +"cm" %></li>
-  <li>Weight: <%= @order.weight + "kg" %></li>
+  <li>Package Dimensions (L x W x H): <%= @order.length.to_s + "cm x " + @order.width.to_s + "cm x " + @order.height.to_s + "cm" %></li>
+  <li>Weight: <%= @order.weight.to_s + "kg" %></li>
   <li>Quantity: <%= @order.quantity %></li>
   <li>Declared Value (CAD): <%= @order.declared_value %></li>
   <li>Packaging: <%= @order.packaging %></li>
