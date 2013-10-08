@@ -1,0 +1,12 @@
+<%= link_to "Back", @user %>
+<%= link_to "Create new business", new_user_business_path(@user) %>
+
+<h3>Businesses</h3>
+
+  <% @user.businesses.each do |b| %>
+    <p>
+      <li>Business: <%= link_to b.business_name, user_business_path(@user, b) %></li>
+      <li>Website: <%= b.website_url %></li>
+      <li>Phone Number: <%= b.phone_number %></li>
+    </p>
+  <% end %>

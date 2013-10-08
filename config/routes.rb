@@ -1,7 +1,9 @@
 SimpleDelivery::Application.routes.draw do
 
   resources :users, :except => [:index] do
-    resources :locations
+    resources :businesses do
+      resources :locations
+    end
   end
 
   resources :sessions, :only => [:new, :create, :destroy]

@@ -1,5 +1,7 @@
 class Location < ActiveRecord::Base
-	belongs_to :user
+	belongs_to :business
+
+	validates_presence_of :address, :phone_number
 
 	geocoded_by :address   						# can also be an IP address
 	after_validation :geocode         # auto-fetch coordinates

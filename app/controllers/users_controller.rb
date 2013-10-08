@@ -12,7 +12,7 @@ before_filter :get_user, :only => [:show, :edit, :update, :destroy]
     @user = User.new(user_params)
     if @user.save
     	auto_login(@user)
-      redirect_to :root, :notice => "Signed up!"
+      redirect_to :root, notice: "Signed up!"
     else
       render :new
     end
@@ -31,7 +31,7 @@ before_filter :get_user, :only => [:show, :edit, :update, :destroy]
 
   def destroy
     @user.destroy
-    redirect_to :root, :notice => "Account deleted!"
+    redirect_to :root, notice: "Account deleted!"
   end
 
   private
