@@ -1,1 +1,13 @@
-index.html.erb
+<%= link_to "Back", user_business_path(@user, @business) %>
+<%= link_to "Create new location", new_user_business_location_path(@user, @business) %>
+
+<h3>Businesses</h3>
+
+  <% @business.locations.each do |l| %>
+    <p>
+      <li>Location: <%= link_to l.location_name, user_business_location_path(@user, @business, l) %></li>
+      <li>Address: <%= l.address %></li>
+      <li>Coordinates: <%= Geocoder.coordinates(l.address) %></li>
+      <li>Phone Number: <%= l.phone_number %></li>
+    </p>
+  <% end %>

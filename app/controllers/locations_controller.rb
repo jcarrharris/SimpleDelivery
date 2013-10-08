@@ -1,8 +1,8 @@
 class LocationsController < ApplicationController
-  before_filter :load_user
+  before_filter :get_business, :get_user
 
   def index
-    @location = @user.locations
+    @location = @business.locations
   end
 
   def show
@@ -10,16 +10,29 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @location = @user.locations.build
+    @location = @business.locations.build
   end
 
   def create
-    @location = @user.locations.build(location_params)
+    @location = @business.locations.build(location_params)
 
     if @location.save
-      redirect_to @location, notice: 'Location added.'
+      redirect_to user_business_locations_path(@user, @business), notice: 'Location added.'
     else
-      redirect_to :root, notice: 'There was an error.'
+      render :new
+    end
+  end
+
+  def edit
+    @location = Location.find(params[:id])
+  end
+
+  def update
+    @location = Location.find(params[:id])
+    if @location.update_attributes(location_params)
+      redirect_to user_business_location_path(@user, @business, @location)
+    else
+      render :edit
     end
   end
 
@@ -30,11 +43,15 @@ class LocationsController < ApplicationController
   end
 
   private
-  def load_user
+  def get_business
+    @business = Business.find(params[:business_id])
+  end
+
+  def get_user
     @user = User.find(params[:user_id])
   end
 
   def location_params
-    params.require(:location).permit(:address, :phone_number)
+    params.require(:location).permit(:location_name, :address, :phone_number)
   end
 end

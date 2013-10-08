@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131008022506) do
   end
 
   create_table "locations", force: true do |t|
+    t.string   "location_name"
     t.string   "address"
     t.integer  "phone_number"
     t.float    "latitude"
