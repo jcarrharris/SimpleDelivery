@@ -1,15 +1,17 @@
 <h1><%= @location.location_name %> </h1>
 
+<div class="userinfo">
 <%= link_to "Edit", edit_user_business_location_path(@user, @business, @location) %>
-<%= link_to "Delete", [@user, @business, @location], :confirm => "Are you sure you want to delete this location?", method: :delete %>
+<%= link_to "Delete", [@user, @business, @location], :confirm => "Are you sure you want to delete this location?", method: :delete %> </br>
 <%= link_to "View your orders", user_business_location_orders_path(@user, @business, @location) %>
+</div>
 
-<p>
-  <li>Location: <%= @location.location_name %></li>
-  <li>Address: <%= @location.address %></li>
-  <li>Coordinates: <%= Geocoder.coordinates(@location.address) %></li>
-  <li>Phone Number: <%= @location.phone_number %></li>
-</p>
+<div class="userinformation">
+  <p>Location: <%= @location.location_name %></p>
+  <p>Address: <%= @location.address %></p>
+  <p>Coordinates: <%= Geocoder.coordinates(@location.address) %></p>
+  <p>Phone Number: <%= @location.phone_number %></p>
+</div>
 
 <div class="location_map">
  
