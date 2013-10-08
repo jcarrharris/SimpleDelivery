@@ -4,7 +4,7 @@
       <h2>Form is invalid</h2>
       <ul>
         <% for message in @business.errors.full_messages %>
-          <li><%= message %></li>
+          <%= message %>
         <% end %>
       </ul>
     </div>
@@ -16,7 +16,7 @@
     <%= f.text_field :website_url, placeholder: "Website URL" %>
   </div>
   <div class="field">
-    <%= f.number_field :phone_number, placeholder: "Phone Number" %>
+    <%= f.telephone_field :phone_number, placeholder: "Phone Number" %>
   </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>

@@ -5,6 +5,14 @@ GIT
     bootstrap-sass (3.0.0.0)
       sass (~> 3.2)
 
+GIT
+  remote: https://github.com/thoughtbot/bourbon.git
+  revision: 7e6e3f22d14641a787f021e985781bff4edf9627
+  specs:
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +51,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    country_select (1.2.0)
     erubis (2.7.0)
     execjs (2.0.2)
     faraday (0.8.8)
@@ -67,6 +76,9 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.1)
     multipart-post (1.2.0)
+    neat (1.4.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -102,6 +114,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    simple_form (3.0.0)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     sorcery (0.8.2)
       bcrypt-ruby (~> 3.0.0)
       oauth (~> 0.4.4)
@@ -135,14 +150,18 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass!
+  bourbon!
   coffee-rails (~> 4.0.0)
+  country_select
   geocoder
   jbuilder (~> 1.2)
   jquery-rails
+  neat
   rails (= 4.0.0)
   sass
   sass-rails (~> 4.0.0)
   sdoc
+  simple_form
   sorcery
   sqlite3
   turbolinks

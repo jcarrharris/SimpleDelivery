@@ -6,10 +6,14 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'geocoder'
+gem 'simple_form'
+gem 'country_select'
+gem 'neat'
 
 # Use SCSS for stylesheets
 gem 'sass'
 gem 'sass-rails', '~> 4.0.0'
+gem 'bourbon', git: "https://github.com/thoughtbot/bourbon.git"
 
 # group :assets do
   # gem 'compass-rails'
