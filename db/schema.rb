@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20131008022506) do
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
+    t.string   "business_name"
+    t.string   "website_url"
+    t.integer  "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

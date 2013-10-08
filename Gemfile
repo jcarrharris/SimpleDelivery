@@ -8,12 +8,12 @@ gem 'sqlite3'
 gem 'geocoder'
 
 # Use SCSS for stylesheets
-gem 'sass', '3.2.10'
+gem 'sass'
 gem 'sass-rails', '~> 4.0.0'
 
 # group :assets do
   # gem 'compass-rails'
-  gem 'bootstrap-sass', '2.3.2.1'
+  gem 'bootstrap-sass', git: "https://github.com/thomas-mcdonald/bootstrap-sass.git"
 # end
 
 # Use Uglifier as compressor for JavaScript assets
