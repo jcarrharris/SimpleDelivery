@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to :root, notice: "Bye"
+		redirect_to :root, notice: "See you later!"
 	end
 
 end
