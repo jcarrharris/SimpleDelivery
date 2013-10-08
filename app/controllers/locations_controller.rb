@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_filter :load_user, :ensure_logged_in
+  before_filter :load_user
 
   def index
     @location = @user.locations
@@ -7,6 +7,10 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+  end
+
+  def new
+    @location = @user.locations.build
   end
 
   def create
