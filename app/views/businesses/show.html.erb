@@ -1,11 +1,14 @@
-<h2><%= @business.business_name %> </h2>
+<h1><%= @business.business_name %> </h1>
 
+<div class="userinfo">
 <%= link_to "Edit", edit_user_business_path(@user, @business) %>
 <%= link_to "Delete", [@user, @business], :confirm => "Are you sure you want to delete this business?", method: :delete %>
+</br>
 <%= link_to "View your locations", user_business_locations_path(@user, @business) %>
+</div>
 
-<p>
-	<li>Business: <%= @business.business_name %></li>
-	<li>Website: <%= @business.website_url %></li>
-	<li>Phone Number: <%= @business.phone_number %></li>
-</p>
+<div class="userinformation">
+	<div class="topic">Business:</div> <%= @business.business_name %>
+	<div class="topic">Website:</div> <%= @business.website_url %>
+	<div class="topic">Phone Number:</div> <%= @business.phone_number %>
+</div>

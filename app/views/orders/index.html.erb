@@ -1,12 +1,14 @@
-<%= link_to "Back", user_business_location_path(@user, @business, @location) %>
-<%= link_to "Create new order", new_user_business_location_order_path(@user, @business, @location) %>
 
-<h3>Orders</h3>
+<h1>Orders</h1>
+<div class="userinfo">
+<%= link_to "Create new order", new_user_business_location_order_path(@user, @business, @location) %>
+</div>
 
   <% @location.orders.each do |o| %>
-    <p>
-      <li>Tracking Number: <%= link_to o.id, user_business_location_order_path(@user, @business, @location, o) %></li>
-      <li>Status: <%= o.status %></li>
-      <li>Delivery Time: <%= o.delivery_time %></li>
-    </p>
+    <div class="userinformation">
+      <p>Tracking Number: <%= link_to o.id, user_business_location_order_path(@user, @business, @location, o) %></p>
+      <p>Status: <%= o.status %></p>
+      <p>Delivery Time: <%= o.delivery_time %></p>
+    </div>
+    
   <% end %>
