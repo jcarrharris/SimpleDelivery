@@ -25,11 +25,11 @@ class BusinessUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :scale => [600, 800]
+  #process :scale => [600, 800]
   #
-  # def scale(width, height)
-  #   # do something
-  # end
+  def scale(width, height)
+    process :resize_to_limit => [400, 400]
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do
@@ -40,7 +40,7 @@ class BusinessUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     %w(jpg jpeg gif png)
-   end
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

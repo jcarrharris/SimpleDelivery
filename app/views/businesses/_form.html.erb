@@ -18,8 +18,14 @@
   <div class="field">
     <%= f.telephone_field :phone_number, placeholder: "Phone Number" %>
   </div>
+  <div>
+    <div class="field">
+    <%= f.text_field :remote_image_url, placeholder: "Image URL" %>
+  </div>
   <div class="field">
+    <%= f.label :image,"or" %></br>
   <%= f.file_field :image %>
   </div>
+
   <div class="actions"><%= f.submit %></div>
 <% end %>
