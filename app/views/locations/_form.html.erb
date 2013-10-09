@@ -16,3 +16,8 @@
   </div>
   <div class="actions"><%= f.button :submit %></div>
 <% end %>
+<script>
+function showPosition() {console.log("ok")};
+  navigator.geolocation.getCurrentPosition(showPosition);
+
+</script>

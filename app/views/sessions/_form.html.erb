@@ -1,9 +1,9 @@
 <%= form_tag sessions_path, method: :post do %>
   <div class="field">
-    <%= text_field_tag :email, params[:email], placeholder: "Email" %>
+    <%= input :email, params[:email], placeholder: "Email" %>
   </div>
   <div class="field">
-    <%= password_field_tag :password, value = nil, placeholder: "Password" %>
+    <%= input :password, value = nil, placeholder: "Password" %>
   </div>
   <div class="actions"><%= submit_tag "Log in" %></div>
   <div class="userinfo"> 
