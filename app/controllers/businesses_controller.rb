@@ -16,7 +16,7 @@ class BusinessesController < ApplicationController
     @business = current_user.businesses.build(business_params)
 
     if @business.save
-      redirect_to businesses_path, notice: 'Business added.'
+      redirect_to business_path(@business), notice: 'Business added.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class BusinessesController < ApplicationController
 
   def destroy
     @business.destroy
-    redirect_to businesses_path
+    redirect_to businesses_path, notice: "Business deleted!"
   end
 
   private

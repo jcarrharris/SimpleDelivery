@@ -1,24 +1,23 @@
 class OrdersController < ApplicationController
-  before_filter :get_business, :get_location
+  before_filter :get_business, :get_location, except: [:index]
   before_filter :get_order, only: [:show, :edit, :update, :destroy]
 
   def index
-    @order = @location.orders
+    @order = current_user.orders
   end
 
   def show
   end
 
   def new
-    @order = new Order
+    @order = @location.orders.build
   end
 
   def create
-    @location = current_user.locations.where(id: params[:order][:location_id]).first!
     @order = @location.orders.build(order_params)
 
     if @order.save
-      redirect_to user_business_location_orders_path(@user, @business, @location), notice: 'Order added.'
+      redirect_to business_location_order_path(@business, @location, @order), notice: 'Order added.'
     else
       render :new
     end
@@ -29,7 +28,7 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update_attributes(order_params)
-      redirect_to user_business_location_order_path(@user, @business, @location, @order)
+      redirect_to business_location_order_path(@business, @location, @order)
     else
       render :edit
     end
@@ -37,7 +36,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
-    redirect_to user_business_location_orders_path(@user, @business, @location)
+    redirect_to orders_path, notice: "Order deleted!"
   end
 
   private

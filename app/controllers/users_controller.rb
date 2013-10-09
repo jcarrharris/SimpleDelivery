@@ -23,7 +23,7 @@ before_filter :get_user, only: [:show, :edit, :update, :destroy]
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to @user
+      redirect_to user_path(@user)
     else
       render :edit
     end
