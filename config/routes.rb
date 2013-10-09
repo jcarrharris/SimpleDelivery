@@ -1,5 +1,9 @@
 SimpleDelivery::Application.routes.draw do
 
+  get "oauths/oauth"
+  get "oauths/callback"
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
   # resources :users, :except => [:index] do
   #   resources :businesses
   # end

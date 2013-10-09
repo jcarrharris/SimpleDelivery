@@ -36,7 +36,7 @@ before_filter :get_user, only: [:show, :edit, :update, :destroy]
 
   private
   def user_params
-  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :image)
+  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :image, :authentications_attributes)
   end
 
   def get_user
