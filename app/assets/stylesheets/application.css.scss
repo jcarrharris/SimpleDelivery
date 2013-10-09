@@ -38,6 +38,7 @@ body {
     background: #EFEFEF;
   }
 }
+
 .actions input {
   @include button(simple);
   text-decoration: none;
@@ -101,4 +102,5 @@ body {
   background-repeat: no-repeat;
   background-position: 10px center;
 }
+
 

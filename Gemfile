@@ -6,8 +6,6 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'geocoder'
-gem 'simple_form'
-gem 'country_select'
 gem 'neat'
 
 # Use SCSS for stylesheets
@@ -32,6 +30,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'carrierwave'
+gem 'simple_form'
+gem 'country_select'
 #gem 'rmagick'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

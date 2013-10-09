@@ -1,4 +1,4 @@
-<%= form_for [@business, @location] do |f| %>
+<%= simple_form_for [@business, @location] do |f| %>
   <% if @location.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
@@ -10,13 +10,9 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.text_field :location_name, placeholder: "Location Name" %>
+    <%= f.input :location_name, placeholder: "Location Name" %></br>
+    <%= f.input :address, placeholder: "Address" %></br>
+    <%= f.input :phone_number, placeholder: "Phone Number" %>
   </div>
-  <div class="field">
-    <%= f.text_field :address, placeholder: "Address" %>
-  </div>
-  <div class="field">
-    <%= f.telephone_field :phone_number, placeholder: "Phone Number" %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
+  <div class="actions"><%= f.button :submit %></div>
 <% end %>

@@ -1,4 +1,4 @@
-<%= form_for @business, html: {multipart: true} do |f| %>
+<%= simple_form_for @business, html: {multipart: true} do |f| %>
   <% if @business.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
@@ -10,21 +10,11 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.text_field :business_name, placeholder: "Business Name" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :website_url, placeholder: "Website URL" %>
-  </div>
-  <div class="field">
-    <%= f.telephone_field :phone_number, placeholder: "Phone Number" %>
-  </div>
-  <div>
-    <div class="field">
-    <%= f.text_field :remote_image_url, placeholder: "Image URL" %>
-  </div>
-  <div class="field">
-    <%= f.label :image,"or" %></br>
-  <%= f.file_field :image %>
+    <%= f.input :business_name, placeholder: "Business Name" %>
+    <%= f.input :website_url, placeholder: "Website URL" %>
+    <%= f.input :phone_number, placeholder: "Phone Number" %>
+    <%= f.input :remote_image_url, placeholder: "Image URL" %>
+    <%= f.input :image %>
   </div>
 
   <div class="actions"><%= f.submit %></div>
