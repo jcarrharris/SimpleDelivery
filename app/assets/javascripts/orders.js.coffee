@@ -28,18 +28,7 @@ displayError = (error) ->
     3: "Request timeout"
 
   alert "Error: " + errors[error.code]
-getRandomInRange = (from, to, fixed) ->
-  (Math.random() * (to - from) + from).toFixed(fixed) * 1
-generateRandomData = ->
-  heatData = new Array(100000)
-  i = 0
-
-  while i < heatData.length
-    lat = getRandomInRange(43.645527, 43.660527, 4)
-    lon = getRandomInRange(-79.390961, -79.372961, 4)
-    heatData[i] = new google.maps.LatLng(lat, lon)
-    i++
-  heatData
+  
 if navigator.geolocation
   timeoutVal = 10 * 1000 * 1000
   navigator.geolocation.getCurrentPosition displayPosition, displayError,
