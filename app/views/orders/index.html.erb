@@ -5,9 +5,10 @@
     <h3> <%= link_to l.location_name, business_location_path(b, l) %> </h3>
     <% current_user.orders.each do |o| %>
       <div class="userinformation">
-        <p><%= link_to o.id, business_location_order_path(b, l, o) %></p>
+        <p><%= link_to o.tracking_number, business_location_order_path(b, l, o) %></p>
         <p>Status: Package is <%= Geocoder::Calculations.distance_between(l.address, o.delivery_address).round(2) %> miles away!</p>
         <p>Delivery Time: <%= o.delivery_time %></p>
+        <p>Delivery Address: <%= o.delivery_address %></p>
       </div>
       <% end %>
   <% end %>

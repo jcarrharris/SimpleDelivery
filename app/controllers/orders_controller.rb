@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = @location.orders.build(order_params)
+    @order.tracking_number = SecureRandom.hex(10)
 
     if @order.save
       redirect_to business_location_order_path(@business, @location, @order), notice: 'Order added.'

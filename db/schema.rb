@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009141718) do
+ActiveRecord::Schema.define(version: 20131009160645) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20131009141718) do
   end
 
   create_table "orders", force: true do |t|
-    t.integer  "tracking_number"
+    t.string   "tracking_number"
     t.string   "delivery_address"
     t.integer  "phone_number"
     t.float    "latitude"

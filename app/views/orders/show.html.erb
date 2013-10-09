@@ -8,18 +8,17 @@
 </div>
 
 <div class="userinformation">
-<p>Tracking Number: <%= @order.id %></p>
-  <p>Status: Package is <%= Geocoder::Calculations.distance_between(@location.address, @order.delivery_address).round(2) %> miles away!</p>
-  <p>Delivery Time: <%= @order.delivery_time %></p>
-  <p>Delivery Address: <%= @order.delivery_address %></p>
- <p>Coordinates: <%= Geocoder.coordinates(@order.delivery_address) %></p>
- <p>Package Dimensions (L x W x H): <%= @order.length.to_s + "cm x " + @order.width.to_s + "cm x " + @order.height.to_s + "cm" %></p>
- <p>Weight: <%= @order.weight.to_s + "kg" %></p>
- <p>Quantity: <%= @order.quantity %></p>
-  <p>Declared Value (CAD): <%= @order.declared_value %></p>
-  <p>Packaging: <%= @order.packaging %></p>
- <p>Pickup Time: <%= @order.pickup_time %></p>
- <p>Pickup Address: <%= @location.address %></p>
- <p>Phone Number: <%= @order.phone_number %></p>
-</p>
+<p>Tracking Number: <%= @order.tracking_number %></p>
+<p>Status: Package is <%= Geocoder::Calculations.distance_between(@location.address, @order.delivery_address).round(2) %> miles away!</p>
+<p>Delivery Time: <%= @order.delivery_time %></p>
+<p>Delivery Address: <%= @order.delivery_address %></p>
+<p>Coordinates: <%= Geocoder.coordinates(@order.delivery_address) %></p>
+<p>Package Dimensions (L x W x H): <%= @order.length.to_s + "cm x " + @order.width.to_s + "cm x " + @order.height.to_s + "cm" %></p>
+<p>Weight: <%= @order.weight.to_s + "kg" %></p>
+<p>Quantity: <%= @order.quantity %></p>
+<p>Declared Value (CAD): <%= @order.declared_value %></p>
+<p>Packaging: <%= @order.packaging %></p>
+<p>Pickup Time: <%= @order.pickup_time %></p>
+<p>Pickup Address: <%= @location.address %></p>
+<p>Phone Number: <%= @order.phone_number %></p>
 </div>
