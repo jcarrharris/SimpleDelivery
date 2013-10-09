@@ -7,6 +7,7 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'geocoder'
 gem 'neat'
+gem 'gon'
 
 # Use SCSS for stylesheets
 gem 'sass'

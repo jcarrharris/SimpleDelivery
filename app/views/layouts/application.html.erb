@@ -4,25 +4,24 @@
 <%= render 'layouts/nav' %>
 <head>
   <title>SimpleDelivery</title>
+  <%= include_gon %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9JBz-80iyKF7JGzeikG0zHHqWdF2CLPs&sensor=true"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<ul class="message_container">
-	<% if flash[:notice] %>
-    <p id="notice"><%= flash[:notice] %></p>
-  <% end %>
-  <% if flash[:alert] %>
-    <p id="alert"><%= flash[:alert] %></p>
-  <% end %>
-</ul>
+  <ul class="message_container">
+  	<% if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p id="alert"><%= flash[:alert] %></p>
+    <% end %>
+  </ul>
 
 	<%= yield %>
 
-<div class="userinfo">
+  <div class="userinfo">
     <% if current_user %>
       Signed in as <%=link_to current_user.first_name, current_user %>.</br></br><%= link_to "Log out", session_path("current"), :method => :delete %>
     <% else %>
@@ -31,5 +30,9 @@
         <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
        or <%= link_to "Sign up", new_user_path %>
     <% end %>
+  </div>
+
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9JBz-80iyKF7JGzeikG0zHHqWdF2CLPs&sensor=true"></script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>
