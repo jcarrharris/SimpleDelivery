@@ -3,11 +3,11 @@
 
 
 
-  <div class="userinformation">
-    <div> Name: <%= @user.first_name + " " + @user.last_name %> </div>
-    <div> Email: <%= @user.email%> </div>
-    </br>
-    <div> <%= link_to "Edit", edit_user_path(@user) %>
-    <%= link_to "Delete", @user, confirm: "Are you sure you want to delete your account?", method: :delete %>
-  </div>
-  </div>
+<div class="userinformation">
+  <div> Name: <%= @user.first_name + " " + @user.last_name %> </div>
+  <div> Email: <%= @user.email%> </div>
+  </br>
+  <div> <%= link_to "Edit", edit_user_path(@user) %>
+  <%= link_to "Delete", @user, confirm: "Are you sure you want to delete your account?", method: :delete %> </div>
+  <div> <%= link_to "Add a new business", new_business_path %> </div>
+</div>

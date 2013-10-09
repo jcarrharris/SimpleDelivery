@@ -1,7 +1,4 @@
 <h1>Businesses</h1>
-<div class="userinfo">
-  <%= link_to "Add a new business", new_business_path %>
-</div>
 <% @business.each do |b| %>
   <div class="userinformation">
     <p><%= link_to b.business_name, business_path(b) %></p>
