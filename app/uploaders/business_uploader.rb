@@ -3,7 +3,7 @@
 class BusinessUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  #include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -27,14 +27,14 @@ class BusinessUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   #process :scale => [600, 800]
   #
-  def scale(width, height)
-    process :resize_to_limit => [400, 400]
-  end
+  # def scale(width, height)
+  #   process :resize_to_limit => [400, 400]
+  # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :scale => [50, 50]
-  # end
+  version :thumb do
+    process :resize_to_limit => [150, 100]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
