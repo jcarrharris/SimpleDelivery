@@ -1,14 +1,12 @@
 <h1>Locations</h1>
-  <div class="userinfo">
-  <%= link_to "Create new location", new_user_business_location_path(@user, @business) %>
-  </div>
-  <% @business.locations.each do |l| %>
-  <div class="userinformation">
-    <p>
-      Location: <%= link_to l.location_name, user_business_location_path(@user, @business, l) %></p>
-      <p>Address: <%= l.address %></p>
-      <p>Coordinates: <%= Geocoder.coordinates(l.address) %></p>
-      <p>Phone Number: <%= l.phone_number %>
-    </p>
-  </div>
+  <% current_user.businesses.each do |b| %>
+    <div class="header"> <%= link_to b.business_name, business_path(b) %> </div>
+    <% b.locations.each do |l| %>
+      <div class="userinformation">
+        <p>Location: <%= link_to l.location_name, business_location_path(b, l) %></p>
+        <p>Address: <%= l.address %></p>
+        <p>Coordinates: <%= Geocoder.coordinates(l.address) %></p>
+        <p>Phone Number: <%= l.phone_number %></p>
+      </div>
+    <% end %>
   <% end %>

@@ -1,9 +1,9 @@
 class LocationsController < ApplicationController
-  before_filter :get_user, :get_business
-  before_filter :get_location, :only => [:show, :edit, :update, :destroy]
+  before_filter :get_business, except: [:index]
+  before_filter :get_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    @location = @business.locations
+    @location = current_user.locations
   end
 
   def show
@@ -17,7 +17,7 @@ class LocationsController < ApplicationController
     @location = @business.locations.build(location_params)
 
     if @location.save
-      redirect_to user_business_locations_path(@user, @business), notice: 'Location added.'
+      redirect_to business_location_path(@business, @location), notice: 'Location added.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class LocationsController < ApplicationController
 
   def update
     if @location.update_attributes(location_params)
-      redirect_to user_business_location_path(@user, @business, @location)
+      redirect_to business_location_path(@business, @location)
     else
       render :edit
     end
@@ -36,16 +36,13 @@ class LocationsController < ApplicationController
 
   def destroy
     @location.destroy
-    redirect_to user_business_locations_path(@user, @business)
+    redirect_to business_locations_path(@business)
   end
 
   private
-  def get_user
-    @user = User.find(params[:user_id])
-  end
-
   def get_business
     @business = Business.find(params[:business_id])
+    raise "None of your business... pun intended." if @business.user_id != current_user.id
   end
 
   def get_location

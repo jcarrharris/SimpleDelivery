@@ -1,18 +1,11 @@
 <h1>Businesses</h1>
 <div class="userinfo">
-  <%= link_to "Add a new business", new_user_business_path(@user) %>
+  <%= link_to "Add a new business", new_business_path %>
 </div>
-  <% @user.businesses.each do |b| %>
-    <div class="userinformation">
-      <p>
-        Business: <%= link_to b.business_name, user_business_path(@user, b) %>
-      </p>
-      <p>
-        Website: <%= b.website_url %>
-      </p>
-      <p>
-        Phone Number: <%= b.phone_number %>
-      </p>
+<% @business.each do |b| %>
+  <div class="userinformation">
+    <p><%= link_to b.business_name, business_path(b) %></p>
+    <p>Website: <%= b.website_url %></p>
+    <p>Phone Number: <%= b.phone_number %></p>
   </div>
-    
-  <% end %>
+<% end %>

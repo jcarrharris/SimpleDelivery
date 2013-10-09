@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_filter :get_user, :only => [:show, :edit, :update, :destroy]
+before_filter :get_user, only: [:show, :edit, :update, :destroy]
 
   def show
   end
@@ -40,6 +40,6 @@ before_filter :get_user, :only => [:show, :edit, :update, :destroy]
   end
 
   def get_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
 end

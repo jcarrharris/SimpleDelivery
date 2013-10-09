@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_filter :get_user, :get_business, :get_location
-  before_filter :get_order, :only => [:show, :edit, :update, :destroy]
+  before_filter :get_business, :get_location
+  before_filter :get_order, only: [:show, :edit, :update, :destroy]
 
   def index
     @order = @location.orders
@@ -10,10 +10,11 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = @location.orders.build
+    @order = new Order
   end
 
   def create
+    @location = current_user.locations.where(id: params[:order][:location_id]).first!
     @order = @location.orders.build(order_params)
 
     if @order.save
@@ -40,12 +41,9 @@ class OrdersController < ApplicationController
   end
 
   private
-  def get_user
-    @user = User.find(params[:user_id])
-  end
-
   def get_business
     @business = Business.find(params[:business_id])
+    raise "None of your business... pun intended." if @business.user_id != current_user.id
   end
 
   def get_location

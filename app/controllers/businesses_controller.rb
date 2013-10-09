@@ -1,23 +1,22 @@
 class BusinessesController < ApplicationController
-  before_filter :get_user
-  before_filter :get_business, :only => [:show, :edit, :update, :destroy]
+  before_filter :get_business, only: [:show, :edit, :update, :destroy]
 
   def index
-    @business = @user.businesses
+    @business = current_user.businesses
   end
 
   def show
   end
 
   def new
-    @business = @user.businesses.build
+    @business = current_user.businesses.build
   end
 
   def create
-    @business = @user.businesses.build(business_params)
+    @business = current_user.businesses.build(business_params)
 
     if @business.save
-      redirect_to user_businesses_path(@user), notice: 'Business added.'
+      redirect_to businesses_path, notice: 'Business added.'
     else
       render :new
     end
@@ -28,7 +27,7 @@ class BusinessesController < ApplicationController
 
   def update
     if @business.update_attributes(business_params)
-      redirect_to user_business_path(@user, @business)
+      redirect_to business_path(@business)
     else
       render :edit
     end
@@ -36,16 +35,13 @@ class BusinessesController < ApplicationController
 
   def destroy
     @business.destroy
-    redirect_to user_businesses_path(@user)
+    redirect_to businesses_path
   end
 
   private
-  def get_user
-    @user = User.find(params[:user_id])
-  end
-
   def get_business
     @business = Business.find(params[:id])
+    raise "None of your business... pun intended." if @business.user_id != current_user.id
   end
 
   def business_params

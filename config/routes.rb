@@ -1,14 +1,25 @@
 SimpleDelivery::Application.routes.draw do
 
-  resources :users, :except => [:index] do
-    resources :businesses do
-      resources :locations do
-        resources :orders
-      end
+  # resources :users, :except => [:index] do
+  #   resources :businesses
+  # end
+
+  resources :businesses do
+    resources :locations, except: [:index] do
+      resources :orders, only: [:index]
     end
   end
 
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :locations, only: [:index]
+
+  resources :orders, except: [:index]
+
+  resource :user
+
+  # resource :user, :path => "/my_profile", :except => [:new, :create], as: "my_profile"
+  # get "/signup", to: "user#new", as: "new_user"
+  # post "/signup", to: "user#create", as: "users"
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'welcome#index'
 
