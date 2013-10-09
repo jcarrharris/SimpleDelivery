@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
 
   def destroy
     @location.destroy
-    redirect_to business_locations_path(@business)
+    redirect_to locations_path, notice: "Location deleted!"
   end
 
   private

@@ -1,13 +1,14 @@
 <h1>Orders</h1>
-<div class="userinfo">
-<%= link_to "Create new order", new_user_business_location_order_path(@user, @business, @location) %>
-</div>
-
-  <% @location.orders.each do |o| %>
-    <div class="userinformation">
-      <p>Tracking Number: <%= link_to o.id, user_business_location_order_path(@user, @business, @location, o) %></p>
-      <p>Status: Package is <%= Geocoder::Calculations.distance_between(@location.address, o.delivery_address).round(2) %> miles away!</p>
-      <p>Delivery Time: <%= o.delivery_time %></p>
-    </div>
-    
+<% current_user.businesses.each do |b| %>
+  <h2> <%= link_to b.business_name, business_path(b) %> </h2>
+  <% b.locations.each do |l| %>
+    <h3> <%= link_to l.location_name, business_location_path(b, l) %> </h3>
+    <% current_user.orders.each do |o| %>
+      <div class="userinformation">
+        <p><%= link_to o.id, business_location_order_path(b, l, o) %></p>
+        <p>Status: Package is <%= Geocoder::Calculations.distance_between(l.address, o.delivery_address).round(2) %> miles away!</p>
+        <p>Delivery Time: <%= o.delivery_time %></p>
+      </div>
+      <% end %>
   <% end %>
+<% end %>

@@ -6,16 +6,15 @@ SimpleDelivery::Application.routes.draw do
 
   resources :businesses do
     resources :locations, except: [:index] do
-      resources :orders, only: [:index]
+      resources :orders, except: [:index]
     end
   end
 
   resources :locations, only: [:index]
 
-  resources :orders, except: [:index]
+  resources :orders, only: [:index]
 
   resource :user
-
   # resource :user, :path => "/my_profile", :except => [:new, :create], as: "my_profile"
   # get "/signup", to: "user#new", as: "new_user"
   # post "/signup", to: "user#create", as: "users"
