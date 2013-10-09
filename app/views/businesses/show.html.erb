@@ -6,7 +6,8 @@
 </br>
 <%= link_to "Create new location", new_business_location_path(@business) %>
 </div>
-
+<div class="picture">
+  <%= image_tag @business.image_url.to_s %>
 <div class="userinformation">
 	<div class="topic">Business:</div> <%= @business.business_name %>
 	<div class="topic">Website:</div> <%= @business.website_url %>

@@ -4,4 +4,5 @@ class Business < ActiveRecord::Base
 	belongs_to :user
 
 	validates_presence_of :business_name, :website_url, :phone_number
+  mount_uploader :image, BusinessUploader
 end
