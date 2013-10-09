@@ -1,4 +1,4 @@
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for user_path(@user) do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>

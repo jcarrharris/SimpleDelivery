@@ -1,13 +1,9 @@
 <%= simple_form_for @business, html: {multipart: true} do |f| %>
   <% if @business.errors.any? %>
-    <div class="error_messages">
       <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @business.errors.full_messages %>
+      <% for message in @business.errors.full_messages %>
           <%= message %>
         <% end %>
-      </ul>
-    </div>
   <% end %>
   <div class="field">
     <%= f.input :business_name, placeholder: "Business Name" %>
