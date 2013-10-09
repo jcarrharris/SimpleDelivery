@@ -1,11 +1,7 @@
-<%= simple_form_for sessions_path(@user) do |f|%>
+<%= form_tag sessions_path do %>
   <div class="field">
-    <%= f.input :email, placeholder: "Email" %>
-    <%= f.input :password, placeholder: "Password" %>
+    <%= text_field_tag :email, params[:email], placeholder: "Email" %>
+    <%= password_field_tag :password, value = nil, placeholder: "Password" %>
   </div>
-  <div class="actions"><%= f.button :submit %></div>
-  <div class="userinfo"> 
-		<%= label_tag "Keep me logged in" %>
-		<%= check_box_tag :remember %>
-	</div>
+  <div class="actions"><%= submit_tag "Log in" %></div>
 <% end %>

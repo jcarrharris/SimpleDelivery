@@ -1,4 +1,4 @@
-<%= simple_form_for user_path(@user) do |f| %>
+<%= simple_form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
@@ -15,7 +15,7 @@
     <%= f.input :email, placeholder: "Email" %>
     <%= f.input :password, placeholder: "Password" %>
     <%= f.input :password_confirmation, placeholder: "Confirm Password" %>
-   <%= f.input :image %>
+    <%= f.input :image %>
     </div>
   <div class="actions"><%= f.button :submit %></div>
 <% end %>
