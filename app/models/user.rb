@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   end
 
   has_many :businesses
-  has_many :authentications, dependent: destroy
+  has_many :authentications
   accepts_nested_attributes_for :authentications
   has_many :locations, through: :businesses
   has_many :orders, through: :locations

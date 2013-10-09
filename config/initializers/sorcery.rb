@@ -104,19 +104,19 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter wil not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
   #
-  config.twitter.key = ""
-  config.twitter.secret = ""
-  config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
-  config.twitter.user_info_mapping = {:username => "screen_name"}
-  
-  config.facebook.key = ""
-  config.facebook.secret = ""
-  config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
-  config.facebook.user_info_mapping = {:email => "email", :name => "name", :username => "username", :hometown => "hometown/name"}
-  config.facebook.access_permissions = ["email", "publish_stream"]
-  config.facebook.scope = "email,offline_access,user_hometown,user_interests,user_likes" #etc
-  config.facebook.display = "popup"
-  #
+  config.twitter.key = "bsJzm8aDNveIt4QbUaKIw"
+    config.twitter.secret = "YYqhOB8LNIorECUIvtPjVzBN1YufHpNmrY3KiLhARU"
+    config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+    config.twitter.user_info_mapping = {:username => "screen_name"}
+    
+    config.facebook.key = "640480229325052"
+    config.facebook.secret = "6a2fec456cbe83eded9166b5ef4b1ea8"
+    config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+    config.facebook.user_info_mapping = {:email => "email", :name => "name", :username => "username", :hometown => "hometown/name"}
+    config.facebook.access_permissions = ["email", "publish_stream"]
+    config.facebook.scope = "email,offline_access,user_hometown,user_interests,user_likes" #etc
+    config.facebook.display = "popup"
+    #
   # config.github.key = ""
   # config.github.secret = ""
   # config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"

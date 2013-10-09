@@ -1,10 +1,10 @@
 class OauthsController < ApplicationController
   def oauth
-    login_at(params[:provider])
+    login_at(auth_params[:provider])
   end
 
   def callback
-    provider = params[:provider]
+    provider = params.require(:provider).permit(:user_id, :provider, :uid)
     if @user = login_from(provider)
       redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
     else
@@ -23,6 +23,6 @@ class OauthsController < ApplicationController
 
   private
   def auth_params
-    auth_params[:provider]
+    params.permit(:code, :provider)
   end
 end
