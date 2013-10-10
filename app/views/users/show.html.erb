@@ -1,14 +1,9 @@
 <div class="section-content">
-<%= link_to "Edit", edit_user_path(@user), class:"button", class:"diff" %>
+  <%= link_to "Edit", edit_user_registration_path(@user), class:"button", class:"diff" %>
 <h1><%= @user.first_name + " " + @user.last_name%> </h1>
 
 
   <div class="picture"><%= image_tag @user.image_url.to_s %></div>
-<<<<<<< HEAD
-=======
-  <%= link_to "Edit", edit_user_registration_path(@user) %>
-  <%= link_to "Delete", @user, confirm: "Are you sure you want to delete your account?", method: :delete %>
->>>>>>> 3ef480c584bcc38b3da3f94cb49518a6565df459
   </br>
   </br>
   </br>
