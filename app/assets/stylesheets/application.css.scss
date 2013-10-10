@@ -140,7 +140,7 @@ td.value {
   font-weight: bold;
 }
 .button {
-  @include button;
+  @include button(shiny, #08ce03);
   &:hover {
     color: #fff;
     text-decoration: none;
