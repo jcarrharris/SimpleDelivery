@@ -4,6 +4,7 @@ class Location < ActiveRecord::Base
   belongs_to :business
 
 	validates_presence_of :address, :phone_number
+  validates :phone_number, length: { is: 10 }
 
 	geocoded_by :address   						# can also be an IP address
 	after_validation :geocode, :if => :address_changed?  # auto-fetch coordinates

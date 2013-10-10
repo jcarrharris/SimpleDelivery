@@ -1,12 +1,11 @@
 <h1><%= @location.location_name %> </h1>
 
-<div class="userinfo" id="locationMap" style="width:500px;height:380px;"></div>
-
 <div class="userinfo">
-<%= link_to "Edit", edit_business_location_path(@business, @location) %>
-<%= link_to "Delete", [@business, @location], :confirm => "Are you sure you want to delete this location?", method: :delete %> </br>
-</br>
-<%= link_to "Create new order", new_business_location_order_path(@business, @location) %>
+  <div id="locationMap" style="width:500px;height:380px;"></div>
+  <%= link_to "Edit", edit_business_location_path(@business, @location) %>
+  <%= link_to "Delete", [@business, @location], :confirm => "Are you sure you want to delete this location?", method: :delete %> </br>
+  </br>
+  <%= link_to "Create new order", new_business_location_order_path(@business, @location) %>
 </div>
 
 <div class="userinformation">

@@ -1,13 +1,14 @@
 <h1><%= @user.first_name + " " + @user.last_name%> </h1>
 
-
-
+<div class="userinfo">
+  <div class="picture"><%= image_tag @user.image_url.to_s %></div>
+  <%= link_to "Edit", edit_user_path(@user) %>
+  <%= link_to "Delete", @user, confirm: "Are you sure you want to delete your account?", method: :delete %>
+  </br>
+  <%= link_to "Add a new business", new_business_path %>
+</div>
 
 <div class="userinformation">
-  <div> Name: <%= @user.first_name + " " + @user.last_name %> </div>
-  <div> Email: <%= @user.email%> </div>
-  </br>
-  <div> <%= link_to "Edit", edit_user_path(@user) %>
-  <%= link_to "Delete", @user, confirm: "Are you sure you want to delete your account?", method: :delete %> </div>
-  <div> <%= link_to "Add a new business", new_business_path %> </div>
+  <div class="topic">Name:</div> <%= @user.first_name + " " + @user.last_name %>
+  <div class="topic">Email:</div> <%= @user.email %>
 </div>
