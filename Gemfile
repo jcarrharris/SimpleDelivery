@@ -13,6 +13,7 @@ gem 'gon'
 gem 'sass'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bourbon', git: "https://github.com/thoughtbot/bourbon.git"
+gem "bower-rails", git: "https://github.com/42dev/bower-rails.git"
 
 # group :assets do
   # gem 'compass-rails'
