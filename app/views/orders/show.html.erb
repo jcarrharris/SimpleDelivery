@@ -1,6 +1,6 @@
 <h1><%= @order.tracking_number %> </h1>
 
-<div id="locationMap" style="width:500px;height:380px;"></div>
+<div class="userinfo" id="locationMap" style="width:500px;height:380px;"></div>
 
 <div class="userinfo">
 <%= link_to "Edit", edit_business_location_order_path(@business, @location, @order) %>
@@ -8,6 +8,7 @@
 </div>
 
 <div class="userinformation">
+<p>Latitude: <%= @order.latitude %></p>
 <p>Tracking Number: <%= @order.tracking_number %></p>
 <p>Status: Package is <%= Geocoder::Calculations.distance_between(@location.address, @order.delivery_address).round(2) %> miles away!</p>
 <p>Delivery Time: <%= @order.delivery_time %></p>
