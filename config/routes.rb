@@ -1,9 +1,7 @@
 SimpleDelivery::Application.routes.draw do
 
-  get "oauths/oauth"
-  get "oauths/callback"
-  post "oauth/callback" => "oauths#callback"
-  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+  devise_for :users
+  get 'users/:id' => 'users#show', as: 'user'
 
   resources :businesses do
     resources :locations, except: [:index] do
@@ -15,11 +13,11 @@ SimpleDelivery::Application.routes.draw do
 
   resources :orders, only: [:index]
 
-  resources :users, except: [:index]
+  # resources :users, except: [:index]
   # resource :user, :path => "/my_profile", :except => [:new, :create], as: "my_profile"
   # get "/signup", to: "user#new", as: "new_user"
   # post "/signup", to: "user#create", as: "users"
-  resources :sessions, only: [:new, :create, :destroy]
+  # resources :sessions, only: [:new, :create, :destroy]
 
   root 'welcome#index'
 

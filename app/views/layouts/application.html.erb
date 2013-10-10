@@ -22,12 +22,9 @@
 	<%= yield %>
 
   <div class="userinfo">
-    <% if current_user %>
+    <% if user_signed_in? %>
     <% else %>
-      <%= link_to "Log in", new_session_path %>
-        <%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %> | 
-        <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
-       or <%= link_to "Sign up", new_user_path %>
+      <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Log in", new_user_session_path %>
     <% end %>
   </div>
 
