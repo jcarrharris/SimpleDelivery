@@ -1,14 +1,16 @@
+<div class="section-content">
+<%= link_to "Edit", edit_user_path(@user), class:"button", class:"diff" %>
 <h1><%= @user.first_name + " " + @user.last_name%> </h1>
 
-<div class="userinfo">
-  <div class="picture"><%= image_tag @user.image_url.to_s %></div>
-  <%= link_to "Edit", edit_user_path(@user) %>
-  <%= link_to "Delete", @user, confirm: "Are you sure you want to delete your account?", method: :delete %>
-  </br>
-  <%= link_to "Add a new business", new_business_path %>
-</div>
 
-<div class="userinformation">
-  <div class="topic">Name:</div> <%= @user.first_name + " " + @user.last_name %>
-  <div class="topic">Email:</div> <%= @user.email %>
+  <div class="picture"><%= image_tag @user.image_url.to_s %></div>
+  </br>
+  </br>
+  </br>
+  <table class="table-striped">
+      <tbody>
+        <tr><td>Name:</td><td class="value"> <%= @user.first_name + " " + @user.last_name %></td></tr>
+  <tr><td>Email:</td><td class="value"> <%= @user.email %></td></tr>
+</tbody>
+</table>
 </div>

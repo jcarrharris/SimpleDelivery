@@ -5,14 +5,9 @@
 
 h1, h2, h3 {
   font-family: $helvetica;
-  display: inline-block;;
-  width: 300px;
+  display: inline-block;
+  color: #393c3d;
 
-}
-
-h2 {
-  font-weight: regular;
-  font-family: $helvetica;
 }
 
 body {
@@ -159,4 +154,9 @@ td.value {
   }
 }
 
+.control-group
+{
+  font-family: $helvetica;
+  color: #393c3d;
+}
 
