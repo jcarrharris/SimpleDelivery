@@ -1,15 +1,29 @@
 <h1><%= @business.business_name %> </h1>
-
-<div class="userinfo">
   <div class="picture"><%= image_tag @business.image_url.to_s %></div>
-  <%= link_to "Edit", edit_business_path(@business) %>
-  <%= link_to "Delete", @business, :confirm => "Are you sure you want to delete this business?", method: :delete %>
-  </br>
-  <%= link_to "Add a new location", new_business_location_path(@business) %>
-</div>
 
-<div class="userinformation">
-	<div class="topic">Business:</div> <%= @business.business_name %>
-	<div class="topic">Website:</div> <%= @business.website_url %>
-	<div class="topic">Phone Number:</div> <%= @business.phone_number %>
-</div>
+  </div>
+  </br>
+  <div class="section-content">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Modify</button>
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li><%= link_to "Edit", edit_business_path(@business)%></li>
+        <li><%= link_to "Delete", @business, :confirm => "Are you sure you want to delete this business?", method: :delete %></li>
+      </ul>
+    </div>
+  </br></br>
+  <%= link_to "Add a new location", new_business_location_path(@business) %>
+ 
+    <table class="table-striped">
+    <div class="userinformation">
+      <tbody>
+      <tr><td>Business Name:</td><td class="value"> <%= @business.business_name %></td>
+      <tr><td>Website URL:</td><td class="value"> <%= @business.website_url %></td>
+      <tr><td>Phone Number:</td><td class="value"> <%= @business.phone_number %></td>
+    </table>
+    </tbody>
+    </div>
+    </div>
