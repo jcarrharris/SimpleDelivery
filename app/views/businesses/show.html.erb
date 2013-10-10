@@ -1,15 +1,13 @@
+<div class="section-content">
+
 <h1><%= @business.business_name %> </h1>
   <div class="picture"><%= image_tag @business.image_url.to_s %></div>
-
-  </div>
+<%= link_to "Add a new location", new_business_location_path(@business), class:"button" %>
+  
   </br>
-  <div class="section-content">
-        <%= link_to "Edit", edit_business_path(@business), class:"button"%>
-        <%= link_to "Delete", @business, class:"button", :confirm => "Are you sure you want to delete this business?", method: :delete %>
-    </div>
-  </br></br>
-  <%= link_to "Add a new location", new_business_location_path(@business), class:"button" %>
- 
+        <%= link_to "Edit", edit_business_path(@business), class:"diff"%>
+        <%= link_to "Delete", @business, class:"diff", :confirm => "Are you sure you want to delete this business?", method: :delete %>
+  </br></br> 
     <table class="table-striped">
       <tbody>
       <tr><td>Business Name:</td><td class="value"> <%= @business.business_name %></td></tr>
@@ -17,4 +15,4 @@
       <tr><td>Phone Number:</td><td class="value"> <%= @business.phone_number %></td></tr>
     </table>
     </tbody>
-    </div>
+</div>
