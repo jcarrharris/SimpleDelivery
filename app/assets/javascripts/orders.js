@@ -11,7 +11,7 @@ displayPosition = function(position) {
   };
   cookie_val = position.coords.latitude + "|" + position.coords.longitude;
   document.cookie = "lat_lng=" + escape(cookie_val);
-  map = new google.maps.Map(document.getElementById("googleMap"), options);
+  map = new google.maps.Map(document.getElementById("myMap"), options);
   marker = new google.maps.Marker({
     position: pos,
     map: map,

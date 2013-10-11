@@ -1,19 +1,16 @@
 <div class="section-content">
-<h1>Locations</h1>
-<% current_user.businesses.each do |b| %>
-  <% b.locations.each do |l| %>
-  <table class="table-striped">
-    <tbody>
-      <tr><td><%= link_to l.location_name, business_location_path(b, l) %></td></tr>
-      <tr><td>Address:</td><td class="value"> <%= l.address %></td></tr>
-      <tr><td>Phone Number:</td><td class="value"> <%= l.phone_number %></td></tr>
-      </br>
-      </br>
-    </tbody>
-  </table>
-</br>
-</br>
-
+  <h1>Locations</h1>
+  <% @location.each do |l| %>
+    <table class="table-striped">
+      <tbody>
+        <tr><td><%= link_to l.location_name, business_location_path(l.business, l) %></td></tr>
+        <tr><td>Address:</td><td class="value"> <%= l.address %></td></tr>
+        <tr><td>Phone Number:</td><td class="value"> <%= l.phone_number %></td></tr>
+        </br>
+        </br>
+      </tbody>
+    </table>
+  </br>
+  </br>
   <% end %>
-<% end %>
 </div>

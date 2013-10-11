@@ -1,11 +1,10 @@
 <div class="section-content">
-<h1>Businesses</h1>
-<% @business.each do |b| %>
-  <div class="userinformation">
-    <p><%= link_to b.business_name, business_path(b) %></p>
-    <p>Website: <%= b.website_url %></p>
-    <p>Phone Number: <%= b.phone_number %></p>
-  </div>
-
-<% end %>
+  <h1>Businesses</h1>
+  <% @business.each do |b| %>
+    <div class="userinformation">
+      <p><%= link_to b.business_name, business_path(b) %></p>
+      <p>Website: <%= b.website_url %></p>
+      <p>Phone Number: <%= b.phone_number %></p>
+    </div>
+  <% end %>
 </div>

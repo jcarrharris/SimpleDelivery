@@ -10,6 +10,7 @@
     <%= f.input :image, :required => false %>
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :role, collection: ["Merchant", "Courier"], :required => true %>
   </div>
 
   <div class="actions"><%= f.button :submit, "Sign up" %></div>

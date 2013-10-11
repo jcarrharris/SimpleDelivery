@@ -4,7 +4,11 @@
 
 
   <div class="picture"><%= image_tag @user.image_url.to_s %></div>
+  <% if current_user.role == "Courier" %>
+    <div id="myMap" style="width:90%;height:380px;"></div>
+  <% end %>
   </br>
+  <%= link_to "Add a new business", new_business_path(@business), class:"button" %>
   </br>
   </br>
   <table>

@@ -1,18 +1,13 @@
 <div class="section-content">
-<h1>Orders</h1>
-<% current_user.businesses.each do |b| %>
-  <% b.locations.each do |l| %>
-    
-    <% l.orders.each do |o| %>
+  <h1>Orders</h1>
+  <% @order.each do |o| %>
     <table class="table-striped">
       <tbody>
-        <tr><td><%= link_to o.tracking_number, business_location_order_path(b, l, o) %></td></tr>
-        <tr><td>Status: </td><td class="value">Package is <%= Geocoder::Calculations.distance_between(l.address, o.delivery_address).round(2) %> miles away!</td></tr>
+        <tr><td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td></tr>
+        <tr><td>Status: </td><td class="value">Package is <%= Geocoder::Calculations.distance_between(o.location.address, o.delivery_address).round(2) %> miles away!</td></tr>
         <tr><td>Delivery Time: </td><td class="value"><%= o.delivery_time %></td></tr>
         <tr><td>Delivery Address: </td><td class="value"><%= o.delivery_address %></td></tr>
       </tbody>
     </table>
-    <% end %>
   <% end %>
-<% end %>
 </div>

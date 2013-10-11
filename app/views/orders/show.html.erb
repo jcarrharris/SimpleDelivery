@@ -1,5 +1,5 @@
 <div class="section-content">
-<h1><%= "Order" + " "+ @order.tracking_number %> </h1>
+<h1><%= "Order" + " " + @order.tracking_number.to_s %> </h1>
 <%= link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff" %>
   <div id="locationMap" style="width:90%;height:380px;"></div>
   </br>

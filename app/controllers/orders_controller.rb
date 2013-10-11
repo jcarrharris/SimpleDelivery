@@ -1,9 +1,15 @@
 class OrdersController < ApplicationController
   before_filter :get_business, :get_location, except: [:index]
   before_filter :get_order, only: [:show, :edit, :update, :destroy]
+  before_filter :new_order, only: :create # CanCan strong params incompatibility workaround
+  load_and_authorize_resource
 
   def index
-    @order = current_user.orders
+    if current_user.role == "Courier"
+      @order = Order.all
+    else
+      @order = current_user.orders
+    end
   end
 
   def show
@@ -45,7 +51,9 @@ class OrdersController < ApplicationController
   private
   def get_business
     @business = Business.find(params[:business_id])
-    raise "None of your business... pun intended." if @business.user_id != current_user.id
+    if current_user.role != "Courier"
+      raise "None of your business... pun intended." if @business.user_id != current_user.id
+    end
   end
 
   def get_location
@@ -58,5 +66,9 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status)
+  end
+
+  def new_order
+    @order = @location.orders.build(order_params)
   end
 end

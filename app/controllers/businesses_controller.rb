@@ -1,5 +1,7 @@
 class BusinessesController < ApplicationController
   before_filter :get_business, only: [:show, :edit, :update, :destroy]
+  before_filter :new_business, only: :create # CanCan strong params incompatibility workaround
+  load_and_authorize_resource
 
   def index
     @business = current_user.businesses
@@ -47,5 +49,9 @@ class BusinessesController < ApplicationController
 
   def business_params
     params.require(:business).permit(:business_name, :website_url, :phone_number, :image)
+  end
+
+  def new_business # CanCan strong params incompatibility workaround
+    @business = current_user.businesses.build(business_params)
   end
 end

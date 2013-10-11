@@ -1,6 +1,8 @@
 class LocationsController < ApplicationController
   before_filter :get_business, except: [:index]
   before_filter :get_location, only: [:show, :edit, :update, :destroy]
+  before_filter :new_location, only: :create # CanCan strong params incompatibility workaround
+  load_and_authorize_resource
 
   def index
     @location = current_user.locations
@@ -53,5 +55,9 @@ class LocationsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:location_name, :address, :phone_number)
+  end
+
+  def new_location # CanCan strong params incompatibility workaround
+    @location = @business.locations.build(location_params)
   end
 end
