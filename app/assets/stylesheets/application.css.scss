@@ -13,7 +13,6 @@ h1, h2, h3 {
   position: absolute;
   top: 271px;
   left: 195px;
-  background-color:rgba(248,248,255,0.2);
   height: 60px;
   color: white;
   font-family: $helvetica;
@@ -69,7 +68,7 @@ body {
   list-style: none;
   word-wrap: break-word;
 }
- .error_messages {
+ .error_messages, #alert {
   font-size: 16px;
   border: 1px solid;
   margin: 10px 0px;
@@ -167,6 +166,33 @@ td.value {
   color: #393c3d;
 }
 
-landingpage {
+.landingpage {
+  overflow: hidden;
 }
 
+#footer {
+  float: right;
+}
+
+
+.logo {
+  @include button(pill);
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.signup-button {
+  @include button;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-family: $lucida-grande;
+  font-size: modular-scale(14px,   1, 1.618);
+  font-weight: regular;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}

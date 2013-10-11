@@ -36,6 +36,9 @@ gem 'mini_magick'
 gem 'simple_form'
 gem 'country_select'
 gem 'kaminari'
+gem 'haml'
+gem 'haml-rails'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
