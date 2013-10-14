@@ -12,6 +12,7 @@ SimpleDelivery::Application.routes.draw do
   resources :locations, only: [:index]
 
   resources :orders, only: [:index]
+  resources :charges
 
   # resources :users, except: [:index]
   # resource :user, :path => "/my_profile", :except => [:new, :create], as: "my_profile"
