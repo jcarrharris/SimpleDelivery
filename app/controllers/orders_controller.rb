@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
   end
 
   def sort_column
-    Order.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    Order.column_names.include?(params[:sort]) ? params[:sort] : "tracking_number"
   end
 
   def sort_direction
