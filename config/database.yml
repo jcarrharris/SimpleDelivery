@@ -8,7 +8,7 @@ development:
   database: myapp_development
   pool: 5
   timeout: 5000
-  username: myapp
+  username: root
   password: 
 
 
@@ -20,7 +20,7 @@ test:
   database: myapp_test
   pool: 5
   timeout: 5000
-  username: myapp
+  username: root
   password: 
 
 production:
@@ -28,5 +28,5 @@ production:
   database: myapp_production
   pool: 5
   timeout: 5000
-  username: myapp
+  username: root
   password: 
