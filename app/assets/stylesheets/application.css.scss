@@ -15,9 +15,11 @@ h1, h2, h3 {
 }
 #welcome {
   position: absolute;
-  top: 271px;
-  left: 195px;
-  height: 60px;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  color: white;
+  font-size: modular-scale(14px,   1, 1.618);
   color: white;
   font-family: $helvetica;
   font-size: 48px;
@@ -189,7 +191,7 @@ td.value {
 .signup-button {
   @include button;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   color: white;
   font-family: $lucida-grande;
