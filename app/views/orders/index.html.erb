@@ -1,5 +1,11 @@
 <div class="section-content">
   <h1>Orders</h1>
+  <% form_tag business_location_order_path(@business, @location, @order) do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "search" %>
+  </p>
+  <% end %>
   <% @order.each do |o| %>
     <table class="table-striped">
       <tbody>
