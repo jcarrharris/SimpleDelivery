@@ -8,9 +8,12 @@
     </div>
   <% end %>
   <div class="field">
+    <fieldset>
+      <legend>Add a Location</legend>
     <%= f.input :location_name, placeholder: "Location Name" %></br>
     <%= f.input :address, placeholder: "Address" %></br>
     <%= f.input :phone_number, placeholder: "Phone Number" %>
+ </fieldset>
   </div>
   <div class="actions"><%= f.button :submit %></div>
 <% end %>
