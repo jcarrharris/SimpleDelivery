@@ -13,6 +13,8 @@ gem 'gon'
 gem 'rails_12factor', group: :production
 gem 'intercom-rails', '~> 0.2.21'
 gem 'unicorn'
+gem 'newrelic_rpm', group: :production
+
 
 # Use SCSS for stylesheets
 gem 'sass'
