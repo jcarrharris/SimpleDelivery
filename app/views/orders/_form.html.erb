@@ -19,6 +19,7 @@
     <%= f.input :quantity, placeholder: "Quantity" %>
     <%= f.input :declared_value, placeholder: "Declared Value (CAD)" %>
     <%= f.input :pickup_time, minute_step: 30, ampm: true, start_year: DateTime.now.year%>
+    
     <%= f.input :delivery_time, minute_step: 30, ampm: true, start_year: DateTime.now.year %>
   </div>
   <div class="actions"><%= f.button :submit %></div>
