@@ -11,6 +11,14 @@ class Order < ActiveRecord::Base
 
   geocoded_by :delivery_address              # can also be an IP address
   after_validation :geocode, :if => :delivery_address_changed?  # auto-fetch coordinates
+  
+  def self.search(search)
+    if search
+      find(:all, conditions: ['tracking_number LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 
   private
   def in_the_future
