@@ -12,14 +12,14 @@
    <th><%= sortable "status"%></th>
    <th><%= sortable "delivery_time"%></th>
    <th><%= sortable "delivery_address"%></th>
-   <th><%= sortable "location_name"%></th>
+   <th><%= sortable "location_name", "Location"%></th>
    <th><%= sortable "courier"%></th>
  </tr>
     <% @order.each do |o| %>
           <tr>
             <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
-            <td>Package is: <%= Geocoder::Calculations.distance_between(o.location.address, o.delivery_address).round(2) %> miles away!</td>
-            <td><%= o.delivery_time %></td>
+            <td><%= Geocoder::Calculations.distance_between(o.location.address, o.delivery_address).round(2) %> miles away!</td>
+            <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
             <td><%= o.delivery_address %></td>
             <td><%= o.location.location_name %></td>
             <td>Name</td>
