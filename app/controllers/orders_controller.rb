@@ -1,15 +1,18 @@
 class OrdersController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_filter :get_business, :get_location, except: [:index]
   before_filter :get_order, only: [:show, :edit, :update, :destroy]
   before_filter :new_order, only: :create # CanCan strong params incompatibility workaround
   load_and_authorize_resource
 
   def index
+    @orders = Order.search(params[:search])
     if current_user.role == "Courier"
       @order = Order.all
     else
       @order = current_user.orders
     end
+    @orders = Order.order(sort_column + " " + sort_direction)
   end
 
   def show
@@ -54,6 +57,14 @@ class OrdersController < ApplicationController
     if current_user.role != "Courier"
       raise "None of your business... pun intended." if @business.user_id != current_user.id
     end
+  end
+
+  def sort_column
+    Order.column_names.include?(params[:sort]) ? params[:sort] : "tracking_number"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   def get_location
