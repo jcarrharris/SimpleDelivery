@@ -8,8 +8,10 @@ development:
   database: myapp_development
   pool: 5
   timeout: 5000
-  username: root
+  username: 
   password: 
+  host: localhost
+  encoding: unicode
 
 
 # Warning: The database defined as "test" will be erased and
@@ -20,13 +22,15 @@ test:
   database: myapp_test
   pool: 5
   timeout: 5000
-  username: root
+  username: 
   password: 
+  host: localhost
+  encoding: unicode
 
 production:
   adapter: postgresql
   database: myapp_production
   pool: 5
   timeout: 5000
-  username: root
+  username:
   password: 
