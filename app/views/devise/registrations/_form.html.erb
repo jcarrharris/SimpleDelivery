@@ -1,0 +1,40 @@
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= f.error_notification %>
+
+<form role="form">
+  <div class="form-group">
+    <label for="exampleInputFile"></label>
+        <input type="file" id="exampleInputFile">
+  </div>
+  <div class="form-group">
+    <%= f.input :first_name, required: true, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :last_name, required: true %>
+  </div>
+    <div class="form-group">
+    <%= f.input :email, required: true, :autofocus => true %>
+  </div>
+  <div class="form-group">
+    <%= f.input :role, collection: ["Merchant", "Courier"], required: true %>
+  </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+  <div class="form-group">
+    <%= f.input :password, autocomplete: "off", required: false %>
+  </div>
+  <div class="form-group">
+    <%= f.input :password_confirmation, required: false %>
+  </div>
+  <div class="form-group">
+    <%= f.input :current_password, required: true %>
+  </div>
+  <div class="form-group">
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+  </div>
+  <div class="actions"><%= f.button :submit%></div>
+  </div>
+  </div>
+<% end %>
+</form>

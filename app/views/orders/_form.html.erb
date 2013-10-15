@@ -1,32 +1,43 @@
 <%= simple_form_for [@business, @location, @order] do |f| %>
 <div>
-  <% if @order.errors.any? %>
-      <h2>Form is invalid</h2>
-        <% for message in @order.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-  <% end %>
+  <% f.error_notification %>
   </div>
   <div>
-    <fieldset>
-    <%= f.input :delivery_address, placeholder: "Delivery Address" %>
-    <%= f.input :phone_number, placeholder: "Phone Number" %></br>
-    <%= f.input :packaging, collection: ["Swish Small", "Swish Regular", "Swish Large", "Custom"] %></br>
-    <%= f.input :length, placeholder: "Length (cm)" %>
-    <%= f.input :width, placeholder: "Width (cm)" %>
-    <%= f.input :height, placeholder: "Height (cm)" %>
-    <%= f.input :weight, placeholder: "Weight" %>
-    <%= f.input :quantity, placeholder: "Quantity" %>
-    <%= f.input :declared_value, placeholder: "Declared Value (CAD)" %>
-<<<<<<< HEAD
-    <%= f.input :pickup_time, minute_step: 30, ampm: true, start_year: DateTime.now.year%></br>    
-    <%= f.input :delivery_time, minute_step: 30, ampm: true, start_year: DateTime.now.year %></br>
-    <%= f.label "Courier:" %>
-    <%= f.collection_select :user_id, User.all(order: "first_name"), :id, :first_name %>
-=======
-    <%= f.input :pickup_time, minute_step: 30, ampm: true, start_year: DateTime.now.year%>    
-    <%= f.input :delivery_time, minute_step: 30, ampm: true, start_year: DateTime.now.year %>
->>>>>>> a367da62191d5ec141284b2f3be4f4361739a0e2
+  <fieldset>
+    <div class="form-group">
+      <%= f.input :delivery_address, placeholder: "Delivery Address" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :phone_number, placeholder: "Phone Number" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :packaging, collection: ["Swish Small", "Swish Regular", "Swish Large", "Custom"] %>
+    </div>
+    <div class="form-group">
+      <%= f.input :length, placeholder: "Length (cm)" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :width, placeholder: "Width (cm)" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :height, placeholder: "Height (cm)" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :weight, placeholder: "Weight" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :quantity, placeholder: "Quantity" %>
+    <div class="form-group">
+    </div>
+      <%= f.input :declared_value, placeholder: "Declared Value (CAD)" %>
+    <div class="form-group">
+    </div>
+    <div class="form-group">
+      <%= f.input :pickup_time, minute_step: 30, ampm: true, start_year: DateTime.now.year%>
+      </div>
+      <div class="form-group">
+      <%= f.input :delivery_time, minute_step: 30, ampm: true, start_year: DateTime.now.year %>
+      </div>
     </fieldset>
   </div>
   <div class="actions"><%= f.button :submit %></div>

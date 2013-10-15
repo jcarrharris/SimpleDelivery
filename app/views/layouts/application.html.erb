@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html>
-
-<%= render 'layouts/nav' %>
-<head>
-  <title>SimpleDelivery</title>
-  <%= include_gon %>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-  <ul class="message_container">
-  	<% if flash[:notice] %>
-      <p id="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:alert] %>
-      <p id="alert"><%= flash[:alert] %></p>
-    <% end %>
-  </ul>
-
-	<%= yield %>
-
-  <div class="userinfo">
-    <% if user_signed_in? %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Log in", new_user_session_path %>
-    <% end %>
-  </div>
-
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9JBz-80iyKF7JGzeikG0zHHqWdF2CLPs&sensor=true"></script>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-</body>
-<div id="footer">Footer Goes Here </div>  
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Simple Delivery" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Simple Delivery" %>">
+    <%= include_gon %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/nav' %>
+    </header>
+  <main role="main">
+    <ul class="breadcrumb">
+    <div class="container master-container"> 
+      <div class="content">
+        <div class="row">
+          <div class="span12">
+            <%= render 'layouts/messages', flash: flash %>
+            <%= yield %>
+        <% if user_signed_in? %>
+        <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Log in", new_user_session_path %>
+        <% end %>
+          </div>
+        </div>
+      </div>
+      <footer>
+      </footer>
+    </ul>
+    </div> 
+  </main>
+  </body>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9JBz-80iyKF7JGzeikG0zHHqWdF2CLPs&sensor=true"></script>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </html>
