@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :businesses
   has_many :locations, through: :businesses
   has_many :orders
+  has_many :ratings
+  has_many :comments
   
   # validates_presence_of :email, :password, :first_name, :last_name
   validates_uniqueness_of :email
