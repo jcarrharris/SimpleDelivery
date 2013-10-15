@@ -7,8 +7,10 @@ class Ability
     #   user ||= User.new # guest user (not logged in)
       if current_user.role == "Merchant"
         can :manage, :all
+        cannot :courier, Order
       elsif current_user.role == "Courier"
         can :read, Order
+        can :courier, Order
       end
     #
     # The first argument to `can` is the action you are giving the user 

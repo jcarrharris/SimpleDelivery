@@ -21,7 +21,7 @@
 <tr><td>Pickup Time:</td><td class="value"> <%= @order.pickup_time %></td></tr>
 <tr><td>Pickup Address:</td><td class="value"> <%= @location.address %></td></tr>
 <tr><td>Phone Number:</td><td class="value"> <%= @order.phone_number %></td></tr>
-<tr><td>Courier:</td><td class="value"> <%= @order.user.first_name %></td></tr>
+<tr><td>Courier:</td><td class="value"> <%= @order.user != nil ? @order.user.first_name : "PENDING" %></td></tr>
 </tbody>
 </table>
 <p>Average rating</p>

@@ -20,6 +20,7 @@ SimpleDelivery::Application.routes.draw do
   # get "/signup", to: "user#new", as: "new_user"
   # post "/signup", to: "user#create", as: "users"
   # resources :sessions, only: [:new, :create, :destroy]
+  post 'orders/:id/courier' => 'orders#courier', as: 'order_courier'
 
   root 'welcome#index'
 

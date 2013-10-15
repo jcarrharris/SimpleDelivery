@@ -1,7 +1,6 @@
 <div class="section-content">
   <h1>Orders</h1>
   <%= form_tag orders_path, method: 'get' do %>
-  
   <%= hidden_field_tag :direction, params[:direction] %>
   <%= hidden_field_tag :sort, params[:sort] %>
     <p>
