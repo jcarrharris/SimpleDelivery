@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   helper_method :sort_column, :sort_direction
-  before_filter :get_business, :get_location, except: [:index]
+  before_filter :get_business, :get_location, except: [:index, :courier]
   before_filter :get_order, only: [:show, :edit, :update, :destroy]
   before_filter :new_order, only: :create # CanCan strong params incompatibility workaround
   load_and_authorize_resource
@@ -48,6 +48,15 @@ class OrdersController < ApplicationController
     redirect_to orders_path, notice: "Order deleted!"
   end
 
+  def courier
+    if @order.user_id == nil
+      @order.update_attribute(:user_id, current_user.id)
+      redirect_to orders_path, notice: "Passed!"
+    else
+      redirect_to orders_path, notice: "Failed!"
+    end
+  end
+
   private
   def get_business
     @business = Business.find(params[:business_id])
@@ -73,7 +82,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status, :user_id)
+    params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status)
   end
 
   def new_order

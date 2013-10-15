@@ -28,7 +28,7 @@
             <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
             <td><%= o.delivery_address %></td>
             <td><%= o.location.location_name %></td>
-            <td><%= o.user.first_name %></td>
+            <td><%= o.user != nil ? o.user.first_name : "PENDING" %></td>
           </tr>
         <% end %>
       <% end %>
@@ -45,7 +45,11 @@
           <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
           <td><%= o.delivery_address %></td>
           <td><%= o.location.location_name %></td>
-          <td><%= o.user.first_name %></td>
+          <% if o.user != nil %>
+            <td><%= o.user.first_name %></td>
+          <% else %>
+            <td><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?" %></td>
+          <% end %>
         </tr>
       <% end %>
 
