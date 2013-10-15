@@ -7,11 +7,8 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.search(params[:search])
-    if current_user.role == "Courier"
-      @order = Order.all
-    else
-      @order = current_user.orders
-    end
+    @location = current_user.locations if current_user.role == "Merchant"
+    @order = Order.all if current_user.role == "Courier"
     @orders = Order.order(sort_column + " " + sort_direction)
   end
 
@@ -26,7 +23,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = @location.orders.build(order_params)
-    @order.tracking_number = SecureRandom.hex(10)
+    @order.tracking_number = SecureRandom.hex(5)
 
     if @order.save
       redirect_to business_location_order_path(@business, @location, @order), notice: 'Order added.'
@@ -76,7 +73,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status)
+    params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status, :user_id)
   end
 
   def new_order
