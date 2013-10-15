@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     @location = current_user.locations if current_user.role == "Merchant"
     @order = Order.all if current_user.role == "Courier"
     @orders = Order.order(sort_column + " " + sort_direction)
+    @orders = Order.order("tracking_number").page(params[:page]).per(5)
   end
 
   def show

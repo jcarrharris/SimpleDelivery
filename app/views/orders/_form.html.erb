@@ -1,26 +1,25 @@
 <%= simple_form_for [@business, @location, @order] do |f| %>
-<div class="error_messages">
+<div>
   <% if @order.errors.any? %>
       <h2>Form is invalid</h2>
         <% for message in @order.errors.full_messages %>
           <li><%= message %></li>
         <% end %>
-    </div>
   <% end %>
-  <div class="field">
+  </div>
+  <div>
     <fieldset>
     <%= f.input :delivery_address, placeholder: "Delivery Address" %>
-    <%= f.input :phone_number, placeholder: "Phone Number" %>
+    <%= f.input :phone_number, placeholder: "Phone Number" %></br>
     <%= f.input :packaging, collection: ["Swish Small", "Swish Regular", "Swish Large", "Custom"] %></br>
-    <%= f.label "Package Dimensions:" %>
     <%= f.input :length, placeholder: "Length (cm)" %>
     <%= f.input :width, placeholder: "Width (cm)" %>
-    <%= f.input :height, placeholder: "Height (cm)" %></br>
+    <%= f.input :height, placeholder: "Height (cm)" %>
     <%= f.input :weight, placeholder: "Weight" %>
     <%= f.input :quantity, placeholder: "Quantity" %>
     <%= f.input :declared_value, placeholder: "Declared Value (CAD)" %>
-    <%= f.input :pickup_time, minute_step: 30, ampm: true, start_year: DateTime.now.year%>    
-    <%= f.input :delivery_time, minute_step: 30, ampm: true, start_year: DateTime.now.year %>
+    <%= f.input :pickup_time, minute_step: 30, ampm: true, start_year: DateTime.now.year%></br>    
+    <%= f.input :delivery_time, minute_step: 30, ampm: true, start_year: DateTime.now.year %></br>
     <%= f.label "Courier:" %>
     <%= f.collection_select :user_id, User.all(order: "first_name"), :id, :first_name %>
     </fieldset>
