@@ -4,13 +4,13 @@
   <div id="locationMap" style="width:90%;height:380px;"></div>
   </br>
   </br>
-  <%= link_to "Delete", [@business, @location, @order], :confirm => "Are you sure you want to delete this order?", method: :delete, class:"button"%>
+  <%#= link_to "Delete", [@business, @location, @order], :confirm => "Are you sure you want to delete this order?", method: :delete, class:"button"%>
 </br>
 </br>
 <table class="table-striped">
   <tbody>
 <tr><td>Tracking Number:</td><td class="value"> <%= @order.tracking_number %></td></tr>
-<tr><td>Status: </td><td class="value">Package is <%= Geocoder::Calculations.distance_between(@location.address, @order.delivery_address).round(2) %> miles away!</td></tr>
+<tr><td>Status: </td><td class="value">Package is <%= (Geocoder::Calculations.distance_between(@location.address, @order.delivery_address)*1.60934).round(2) %> km away!</td></tr>
 <tr><td>Delivery Time:</td><td class="value"> <%= @order.delivery_time %></td></tr>
 <tr><td>Delivery Address: </td><td class="value"><%= @order.delivery_address %></td></tr>
 <tr><td>Package Dimensions (L x W x H):</td><td class="value"> <%= @order.length.to_s + "cm x " + @order.width.to_s + "cm x " + @order.height.to_s + "cm" %></td></tr>

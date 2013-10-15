@@ -58,10 +58,14 @@ class OrdersController < ApplicationController
     end
   end
 
+  def track
+    redirect_to business_location_order_path(@order.location.business, @order.location, @order)
+  end
+
   private
   def get_business
     @business = Business.find(params[:business_id])
-    if current_user.role != "Courier"
+    if current_user.role == "Merchant"
       raise "None of your business... pun intended." if @business.user_id != current_user.id
     end
   end

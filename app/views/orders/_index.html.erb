@@ -20,7 +20,7 @@
         <% l.orders.each do |o| %>
           <tr>
             <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
-            <td><%= Geocoder::Calculations.distance_between(o.location.address, o.delivery_address).round(2) %> miles away!</td>
+            <td><%= (Geocoder::Calculations.distance_between(o.location.address, o.delivery_address)*1.60934).round(2) %> km away!</td>
             <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
             <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
             <td><%= o.delivery_address %></td>
@@ -33,8 +33,8 @@
     <% if current_user.role == "Courier" %>
       <% @order.each do |o| %>
         <tr>
-          <td>< 
-          <td><%= Geocoder::Calculations.distance_between(o.location.address, o.delivery_address).round(2) %> miles away!</td>
+          <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
+          <td><%= (Geocoder::Calculations.distance_between(o.location.address, o.delivery_address)*1.60934).round(2) %> km away!</td>
           <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
           <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
           <td><%= o.delivery_address %></td>
