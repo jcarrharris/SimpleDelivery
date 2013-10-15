@@ -28,7 +28,7 @@
             <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
             <td><%= o.delivery_address %></td>
             <td><%= o.location.location_name %></td>
-            <td><%= o.user.first_name %></td>
+            <td><%= o.user.first_name if o.user != nil %></td>
           </tr>
         <% end %>
       <% end %>
