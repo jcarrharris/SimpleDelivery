@@ -3,7 +3,7 @@
 <h1><%= @user.first_name + " " + @user.last_name%> </h1>
 
 
-  <div class="picture"><%= image_tag @user.image_url.to_s %></div>
+  <div class="profile_pic"><%= image_tag @user.image_url.to_s %></div>
   <% if current_user.role == "Courier" %>
     <div id="myMap" style="width:90%;height:380px;"></div>
   <% end %>
@@ -11,7 +11,7 @@
   <%= link_to "Add a new business", new_business_path(@business), class:"button" %>
   </br>
   </br>
-  <table>
+  <table class="table">
       <tbody>
         <tr><td>Name:</td><td class="value"> <%= @user.first_name + " " + @user.last_name %></td></tr>
   <tr><td>Email:</td><td class="value"> <%= @user.email %></td></tr>

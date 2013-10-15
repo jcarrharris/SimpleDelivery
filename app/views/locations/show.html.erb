@@ -8,10 +8,9 @@
     <div id="locationMap" style="width:90%;height:380px;"></div>
   </br>
   <%= link_to "New Order", new_business_location_order_path(@business, @location), class:"button"%>
-    
   </br>
   </br>
-<table class="table-striped">
+<table class="table">
   <tbody>
   <tr><td>Location:</td> <td class="value"><%= @location.location_name %></td></tr>
   <tr><td>Address:</td> <td class="value"><%= @location.address %></td></tr>

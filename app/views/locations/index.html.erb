@@ -1,16 +1,17 @@
 <div class="section-content">
   <h1>Locations</h1>
+<%= link_to "Edit", edit_business_location_path(@business, @location), class:"button", class:"diff"%>
+</br></br>
   <% @location.each do |l| %>
-    <table class="table-striped">
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= link_to l.location_name, business_location_path(l.business, l) %></div>
+  <div class="table-responsive">
+    <table class="table table-hover">
       <tbody>
-        <tr><td><%= link_to l.location_name, business_location_path(l.business, l) %></td></tr>
         <tr><td>Address:</td><td class="value"> <%= l.address %></td></tr>
         <tr><td>Phone Number:</td><td class="value"> <%= l.phone_number %></td></tr>
-        </br>
-        </br>
       </tbody>
     </table>
-  </br>
-  </br>
+  </div>
   <% end %>
 </div>
