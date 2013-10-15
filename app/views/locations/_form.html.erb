@@ -1,15 +1,10 @@
 <%= simple_form_for [@business, @location] do |f| %>
-  <% if @location.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-        <% for message in @location.errors.full_messages %>
-          <li> <%= message %> </li>
-        <% end %>
+    <div>
+      <% f.error_notification %>
     </div>
-  <% end %>
   <div class="field">
     <fieldset>
-      <legend>Add a Location</legend>
+      <legend>Edit a Location</legend>
     <%= f.input :location_name, placeholder: "Location Name" %></br>
     <%= f.input :address, placeholder: "Address" %></br>
     <%= f.input :phone_number, placeholder: "Phone Number" %>

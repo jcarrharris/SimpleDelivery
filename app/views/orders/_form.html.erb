@@ -1,9 +1,10 @@
 <%= simple_form_for [@business, @location, @order] do |f| %>
 <div>
   <% f.error_notification %>
-  </div>
-  <div>
+</div>
+<div>
   <fieldset>
+    <legend>Edit an Order</legend>
     <div class="form-group">
       <%= f.input :delivery_address, placeholder: "Delivery Address" %>
     </div>
