@@ -1,7 +1,11 @@
 SimpleDelivery::Application.routes.draw do
 
   devise_for :users
-  get 'users/:id' => 'users#show', as: 'user'
+  # get 'users/:id' => 'users#show', as: 'user'
+
+  resources :users, only: [:show] do
+    resources :ratings
+  end
 
   resources :businesses do
     resources :locations, except: [:index] do
@@ -10,8 +14,8 @@ SimpleDelivery::Application.routes.draw do
   end
 
   resources :locations, only: [:index]
-
   resources :orders, only: [:index]
+  # resources :ratings
   resources :charges
 
   # resources :users, except: [:index]
