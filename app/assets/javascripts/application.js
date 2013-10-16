@@ -18,8 +18,12 @@
 // Loads all Bootstrap javascripts
 //= require_tree .
 $(function() {
-  $("#orders th a").live("click", function() {
+  $("#orders th").on("click", function() {
     $.getScript(this.href);
     return false;
   });
+  $("#orders_search input").keyup(function() {
+      $.get($("#orders_search").attr("action"), $("#orders_search").serialize(), null, "script");
+      return false;
+    });
 });

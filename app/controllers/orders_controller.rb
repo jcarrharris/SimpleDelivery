@@ -6,11 +6,11 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @orders = Order.search(params[:search])
+    @orders = Order.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+
     @location = current_user.locations if current_user.role == "Merchant"
     @order = Order.all if current_user.role == "Courier"
-    @orders = Order.order(sort_column + " " + sort_direction)
-    @orders = Order.order("tracking_number").page(params[:page]).per(5)
+    @orders = Order.order("tracking_number")
   end
 
   def show
