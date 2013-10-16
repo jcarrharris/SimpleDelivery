@@ -20,8 +20,8 @@ SimpleDelivery::Application.routes.draw do
   # get "/signup", to: "user#new", as: "new_user"
   # post "/signup", to: "user#create", as: "users"
   # resources :sessions, only: [:new, :create, :destroy]
-  post 'orders/:id/courier' => 'orders#courier', as: 'order_courier'
-  get 'orders/:tracking_number' => 'orders#track', as: 'order_track'
+  post 'courier/:id' => 'orders#courier', as: 'order_courier'
+  get 'track/:tracking_number' => 'orders#track', as: 'order_track'
 
   root 'welcome#index'
 

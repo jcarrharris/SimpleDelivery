@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
   paginates_per 20
   validate :in_the_future
 
-  validates_presence_of :tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time
+  validates_presence_of :tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :email
   validates_uniqueness_of :tracking_number
   validates :phone_number, length: { is: 10 }
 

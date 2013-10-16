@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
     @order.tracking_number = SecureRandom.hex(5)
 
     if @order.save
+      UserMailer.tracking_email(@order).deliver
       redirect_to business_location_order_path(@business, @location, @order), notice: 'Order added.'
     else
       render :new
@@ -92,7 +93,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status)
+    params.require(:order).permit(:tracking_number, :delivery_address, :phone_number, :length, :width, :height, :weight, :quantity, :declared_value, :packaging, :pickup_time, :delivery_time, :status, :email)
   end
 
   def new_order
