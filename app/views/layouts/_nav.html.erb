@@ -10,7 +10,7 @@
   </div>
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><%= link_to "Home", :root %></li>
+      <li><%= link_to "Home", :root, class:"link" %></li>
       <% if current_user%>
       <li><%= link_to "Locations", locations_path, class:"link"  %></li>
       <li><%= link_to "Orders", orders_path, class:"link" %></li>

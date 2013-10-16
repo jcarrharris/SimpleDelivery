@@ -1,14 +1,12 @@
 <div class="section-content">
+<span>
 <h1><%= "Order" + " " + @order.tracking_number.to_s %> </h1>
 <%= link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff" %>
+</span>
   <div id="locationMap" style="width:90%;height:380px;"></div>
-  </br>
-  </br>
-</br>
-</br>
-<table class="table-striped">
+<table class="table table-hover" style="width:90%;">
   <tbody>
-<tr><td>Tracking Number:</td><td class="value"> <%= @order.tracking_number %></td></tr>
+<tr class="trackingnumber"><td>Tracking Number:</td><td class="value"> <%= @order.tracking_number %></td></tr>
 <tr><td>Status: </td><td class="value">Package is <%= (Geocoder::Calculations.distance_between(@location.address, @order.delivery_address)*1.60934).round(2) %> km away!</td></tr>
 <tr><td>Delivery Time:</td><td class="value"> <%= @order.delivery_time %></td></tr>
 <tr><td>Delivery Address: </td><td class="value"><%= @order.delivery_address %></td></tr>

@@ -6,34 +6,21 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Simple Delivery" %>">
     <%= include_gon %>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <header>
       <%= render 'layouts/nav' %>
     </header>
-  <main role="main">
-    <ul class="breadcrumb">
-    <div class="container master-container"> 
-      <div class="content">
-        <div class="row">
-          <div class="span12">
-            <%= render 'layouts/messages', flash: flash %>
-            <%= yield %>
-        <% if user_signed_in? %>
-        <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Log in", new_user_session_path %>
-        <% end %>
-          </div>
-        </div>
-      </div>
-      <footer>
-      </footer>
-    </ul>
-    </div> 
-  </main>
+    <div class="alert"><%= render 'layouts/messages', flash: flash %></div>
+    <section id="main">
+      <ul class="breadcrumb">
+      </ul>
+        <%= yield %>
+    </section>
+  <footer id="footer">
+  </footer>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9JBz-80iyKF7JGzeikG0zHHqWdF2CLPs&sensor=true"></script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9JBz-80iyKF7JGzeikG0zHHqWdF2CLPs&sensor=true"></script>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </html>

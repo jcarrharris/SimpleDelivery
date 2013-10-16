@@ -3,14 +3,9 @@
   <h1><%= @location.location_name %> </h1>
   <%= link_to "Edit", edit_business_location_path(@business, @location), class:"button", class:"diff"%>
   </span>
-  </br>
-  </br>
     <div id="locationMap" style="width:90%;height:380px;"></div>
-  </br>
   <%= link_to "New Order", new_business_location_order_path(@business, @location), class:"button"%>
-  </br>
-  </br>
-<table class="table">
+<table class="table table-hover" style="width:90%";>
   <tbody>
   <tr><td>Location:</td> <td class="value"><%= @location.location_name %></td></tr>
   <tr><td>Address:</td> <td class="value"><%= @location.address %></td></tr>
@@ -18,7 +13,3 @@
   </tbody>
   </table>
     </div>
-
-<div class="location_map">
- 
-</div>

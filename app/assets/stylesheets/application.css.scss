@@ -6,13 +6,17 @@
 @import "neat";
 @import "pace";
 
-
 h1, h2, h3 {
   font-family: $helvetica;
   display: inline-block;
   color: #393c3d;
 
 }
+
+.navbar.navbar-default {
+  border: none;
+}
+
 #welcome {
   position: absolute;
   position: absolute;
@@ -28,6 +32,7 @@ h1, h2, h3 {
 body {
   font-size: 16px;
   font-family: $lucida-grande;
+  background-color: #f7f7f7;
 }
 .field {
   margin-bottom: 12px;
@@ -282,4 +287,28 @@ td.value {
 
 li a {
   text:white;
+}
+#main {
+  background-color:#f7f7f7
+}
+.nav.navbar-nav > li > .link {
+color: #fff;
+font-weight: normal;
+}
+.nav.navbar-nav > .navbar-text, .nav.navbar-nav > .dropdown > .dropdown-toggle {
+color: #fff;
+}
+.caret {
+  background-color: white;
+}
+span.navbar-brand a {
+text-decoration: none;
+color: #f7f7f7;
+}
+.table.table-hover {
+
+}
+.accord {
+  margin: 0px 8px 8px 8px;
+  float: right;
 }

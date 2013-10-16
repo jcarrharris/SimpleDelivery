@@ -1,11 +1,11 @@
 <div class="section-content">
   <h1>Locations</h1>
   <%= link_to "Add a new location", new_business_location_path(@business), class:"diff" %>
-</br></br>
+  <div>
 <% @location.each do |l| %>
-<%= link_to l.location_name, business_location_path(l.business, l) %>
-<button type="button" class="btn" data-toggle="collapse" data-target=".table-responsive">
-  simple collapsible
+<%= link_to l.location_name, business_location_path(l.business, l) %></div>
+<button type="button" class="accord"data-toggle="collapse" data-target=".table-responsive">
+  ^
 </button>
     <div class="table-responsive">
       <table class="table table-hover">
