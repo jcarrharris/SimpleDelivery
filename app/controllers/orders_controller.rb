@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   helper_method :sort_column, :sort_direction
-  before_filter :get_business, :get_location, except: [:index, :courier]
+  before_filter :get_business, :get_location, except: [:index, :courier, :track]
   before_filter :get_order, only: [:show, :edit, :update, :destroy]
   before_filter :new_order, only: :create # CanCan strong params incompatibility workaround
   load_and_authorize_resource
@@ -59,13 +59,18 @@ class OrdersController < ApplicationController
   end
 
   def track
-    redirect_to business_location_order_path(@order.location.business, @order.location, @order)
+    @order = Order.where(:tracking_number => params[:tracking_number]).first
+    @business = @order.location.business
+    @location = @order.location
+    gon.lat = @order.latitude
+    gon.lng = @order.longitude
+    render :show
   end
 
   private
   def get_business
     @business = Business.find(params[:business_id])
-    if current_user.role == "Merchant"
+    if current_user.role != "Courier"
       raise "None of your business... pun intended." if @business.user_id != current_user.id
     end
   end

@@ -1,9 +1,16 @@
 <div class="section-content">
 <span>
 <h1><%= "Order" + " " + @order.tracking_number.to_s %> </h1>
-<%= link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff" %>
+  <% if user_signed_in? %>
+    <%= (link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff") if current_user.role == "Merchant" %>
+  <% end %>
 </span>
   <div id="locationMap" style="width:90%;height:380px;"></div>
+<span>
+  <% if user_signed_in? %>
+    <%= (link_to "Delete", [@business, @location, @order], :confirm => "Are you sure you want to delete this order?", method: :delete, class:"button") if current_user.role == "Merchant" %>
+  <% end %>
+</span>
 <table class="table table-hover" style="width:90%;">
   <tbody>
 <tr class="trackingnumber"><td>Tracking Number:</td><td class="value"> <%= @order.tracking_number %></td></tr>

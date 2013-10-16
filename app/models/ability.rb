@@ -5,15 +5,17 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     current_user ||= User.new # guest user (not logged in)
+
     if current_user.role == "Merchant"
         can :manage, :all
         cannot :courier, Order
     elsif current_user.role == "Courier"
-        can :read, Order
+        can :index, Order
+        can :show, Order
         can :courier, Order
     else
         can :track, Order
-      end
+    end
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

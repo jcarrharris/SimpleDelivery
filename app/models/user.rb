@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :send_welcome_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -16,4 +17,9 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, message: "Passwords do not match!"
 
   mount_uploader :image, ImageUploader
+
+  private
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver
+  end
 end
