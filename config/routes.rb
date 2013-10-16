@@ -13,7 +13,6 @@ SimpleDelivery::Application.routes.draw do
 
   resources :orders, only: [:index]
   resources :charges
-  resources :ratings, only: :update
 
   # resources :users, except: [:index]
   # resource :user, :path => "/my_profile", :except => [:new, :create], as: "my_profile"

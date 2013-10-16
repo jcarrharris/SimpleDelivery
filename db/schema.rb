@@ -26,11 +26,6 @@ ActiveRecord::Schema.define(version: 20131015201726) do
     t.string   "image"
   end
 
-  create_table "comments", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "locations", force: true do |t|
     t.string   "location_name"
     t.string   "address"
@@ -64,17 +59,6 @@ ActiveRecord::Schema.define(version: 20131015201726) do
     t.integer  "user_id"
     t.string   "email"
   end
-
-  create_table "ratings", force: true do |t|
-    t.integer  "comment_id"
-    t.integer  "user_id"
-    t.integer  "score",      default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ratings", ["comment_id"], name: "index_ratings_on_comment_id", using: :btree
-  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"

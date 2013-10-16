@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require bootstrap
-//= require jquery.raty.min.js
+//= require raty.min.js
 // Loads all Bootstrap javascripts
 //= require_tree .
 $(function() {
