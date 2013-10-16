@@ -1,31 +1,20 @@
 <div class="section-content">
 <span>
-<h1><%= "Order" + " " + @order.tracking_number.to_s %> </h1>
-  <% if user_signed_in? %>
-    <%= (link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff") if current_user.role == "Merchant" %>
+  <h2><%= " Status for " + "Order # " + @order.tracking_number.to_s %> </h2>
+  <% if user_signed_in? %><%= (link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff") if current_user.role == "Merchant" %>
   <% end %>
 </span>
   <div id="locationMap" style="width:90%;height:380px;"></div>
-<table class="table table-hover" style="width:90%;">
-  <tbody>
-<tr class="trackingnumber"><td>Tracking Number:</td><td class="value"> <%= @order.tracking_number %></td></tr>
-<tr><td>Status:</td><td class="value"> <%= @order.status %></td></tr>
-<tr><td>Distance: </td><td class="value">Package is <%= (Geocoder::Calculations.distance_between(@location.address, @order.delivery_address)*1.60934).round(2) %> km away!</td></tr>
-<tr><td>Delivery Time:</td><td class="value"> <%= @order.delivery_time %></td></tr>
-<tr><td>Delivery Address: </td><td class="value"><%= @order.delivery_address %></td></tr>
-<tr><td>Package Dimensions (L x W x H):</td><td class="value"> <%= @order.length.to_s + "cm x " + @order.width.to_s + "cm x " + @order.height.to_s + "cm" %></td></tr>
-<tr><td>Weight:</td><td class="value"> <%= @order.weight.to_s + "kg" %></td></tr>
-<tr><td>Quantity:</td><td class="value"> <%= @order.quantity %></td></tr>
-<tr><td>Declared Value (CAD):</td><td class="value"> <%= @order.declared_value %></td></tr>
-<tr><td>Packaging:</td><td class="value"> <%= @order.packaging %></td></tr>
-<tr><td>Pickup Time:</td><td class="value"> <%= @order.pickup_time %></td></tr>
-<tr><td>Pickup Address:</td><td class="value"> <%= @location.address %></td></tr>
-<tr><td>Phone Number:</td><td class="value"> <%= @order.phone_number %></td></tr>
-<tr><td>Courier:</td><td class="value"> <%= @order.user != nil ? @order.user.first_name : "PENDING" %></td></tr>
-</tbody>
-</table>
-<p>Average rating</p>
-<div id="star"></div>
-<p>Your rating</p>
-<div id="user_star"></div>
-</div>
+  <ul class="nav nav-tabs" id="myTab1">
+      <li class="active"><a href="#atab1" data-toggle="tab">Home</a></li>
+      <li><a href="#atab2" data-toggle="tab">Delivery</a></li>
+      <li><a href="#atab3" data-toggle="tab">Package</a></li>
+  </ul>
+  <div class="tab-content" id="tab-content1" >
+    <div class="tab pane fade active in" id="atab1">
+      <%=render 'tab1'%></div>
+    <div class="tab-pane fade in" id="atab2">
+      <%=render 'tab2'%></div>
+  <div class="tab-pane fade in" id="atab3">
+    <%=render 'tab3'%></div>
+</ul>

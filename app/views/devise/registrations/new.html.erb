@@ -1,32 +1,5 @@
 <div class="section-content">
 <h1 class="field">Sign up</h1>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-  <form role="form">
-    <div class="form-group">
-      <label for="exampleInputFile"></label>
-          <input type="file" id="exampleInputFile">
-        </div>
-    <div class="form-group">
-      <%= f.input :first_name, required: true, autofocus: true, class:"form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.input :last_name, required: true %>
-    </div>
-      <div class="form-group">
-      <%= f.input :email, required: true %>
-    </div>
-    <div class="form-group">
-      <%= f.input :role, collection: ["Merchant", "Courier"], required: true %>
-    </div>
-    <div class="form-group">
-      <%= f.input :password, required: true %>
-    </div>
-    <div class="form-group">
-      <%= f.input :password_confirmation, required: false %>
-    </div>
-    <div class="actions"><%= f.button :submit, "Sign up" %></div>
-    </div>
-  </div>
-<% end %>
+<%= render "form" %>
+</div>
 <%= render "devise/shared/links" %>

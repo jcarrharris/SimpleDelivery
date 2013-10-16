@@ -26,4 +26,9 @@ $(function() {
       $.get($("#orders_search").attr("action"), $("#orders_search").serialize(), null, "script");
       return false;
     });
+  $('#myTab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    $('#myTab a[href="#profile"]').tab('show')
+  });
 });

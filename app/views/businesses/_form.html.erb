@@ -7,14 +7,22 @@
         <% end %>
   <% end %>
 </div>
-  <div class="field">
-    <legend>Edit a Business</legend>
+  <form role="form">
+    <legend></legend>
     <fieldset>
-    <%= f.input :business_name, placeholder: "Business Name" %>
+    <div class="form-group">
+    <%= f.input :business_name, autofocus: true, placeholder: "Business Name" %>
+    </div>
+    <div class="form-group">
     <%= f.input :website_url, placeholder: "Website URL" %>
+    </div>
+    <div class="form-group">
     <%= f.input :phone_number, placeholder: "Phone Number" %>
-    <%= f.input :image %>
+    </div>  
+    <div class="form-group">
+    <label for="exampleInputFile"></label>
+            <input type="file" id="exampleInputFile">
     </fieldset>
-  </div>
   <div class="actions"><%= f.button :submit %></div>
+</form>
 <% end %>

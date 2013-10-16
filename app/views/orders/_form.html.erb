@@ -4,9 +4,9 @@
 </div>
 <div>
   <fieldset>
-    <legend>Edit an Order</legend>
+    
     <div class="form-group">
-      <%= f.input :delivery_address, placeholder: "Delivery Address" %>
+      <%= f.input :delivery_address, placeholder: "Delivery Address", autofocus: true %>
     </div>
     <div class="form-group">
       <%= f.input :phone_number, placeholder: "Phone Number" %>
@@ -27,13 +27,13 @@
       <%= f.input :height, placeholder: "Height (cm)" %>
     </div>
     <div class="form-group">
-      <%= f.input :weight, placeholder: "Weight" %>
+      <%= f.input :weight, placeholder: "Weight (lbs)" %>
     </div>
     <div class="form-group">
-      <%= f.input :quantity, placeholder: "Quantity" %>
+      <%= f.input :quantity, placeholder: "Quantity (#)" %>
     <div class="form-group">
     </div>
-      <%= f.input :declared_value, placeholder: "Declared Value (CAD)" %>
+      <%= f.input :declared_value, placeholder: "Value (CAD)" %>
     <div class="form-group">
     </div>
     <div class="form-group">
