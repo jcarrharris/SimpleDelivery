@@ -48,8 +48,6 @@ gem 'kaminari'
 gem 'haml'
 gem 'haml-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'will_paginate'
-
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
