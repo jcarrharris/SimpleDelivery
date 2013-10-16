@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   helper_method :sort_column, :sort_direction
-  before_filter :get_business, :get_location, except: [:index, :courier, :track]
+  before_filter :get_business, :get_location, except: [:index, :courier, :status, :track]
   before_filter :get_order, only: [:show, :edit, :update, :destroy]
   before_filter :new_order, only: :create # CanCan strong params incompatibility workaround
   load_and_authorize_resource
@@ -57,6 +57,10 @@ class OrdersController < ApplicationController
     else
       redirect_to orders_path, notice: "Failed!"
     end
+  end
+
+  def status
+    redirect_to orders_path if @order.update_attributes(order_params)
   end
 
   def track

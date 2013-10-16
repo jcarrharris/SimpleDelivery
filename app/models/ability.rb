@@ -9,10 +9,12 @@ class Ability
     if current_user.role == "Merchant"
         can :manage, :all
         cannot :courier, Order
+        cannot :status, Order
     elsif current_user.role == "Courier"
         can :index, Order
         can :show, Order
         can :courier, Order
+        can :status, Order
     else
         can :track, Order
     end

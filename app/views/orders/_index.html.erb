@@ -9,6 +9,7 @@
     <tr>
       <th><%= sortable "tracking_number"%></th>
       <th><%= sortable "status"%></th>
+      <th><%= sortable "distance"%></th>
       <th><%= sortable "pickup_time"%></th>
       <th><%= sortable "delivery_time"%></th>
       <th><%= sortable "delivery_address"%></th>
@@ -20,6 +21,7 @@
         <% l.orders.each do |o| %>
           <tr>
             <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
+            <td><%= o.status %></td>
             <td><%= (Geocoder::Calculations.distance_between(o.location.address, o.delivery_address)*1.60934).round(2) %> km away!</td>
             <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
             <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
@@ -34,16 +36,22 @@
       <% @order.each do |o| %>
         <tr>
           <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
+          <td><%= o.status %></td>
           <td><%= (Geocoder::Calculations.distance_between(o.location.address, o.delivery_address)*1.60934).round(2) %> km away!</td>
           <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
           <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
           <td><%= o.delivery_address %></td>
           <td><%= o.location.location_name %></td>
-          <% if o.user != nil %>
-          <td><%= o.user.first_name %></td>
-        <% else %>
-          <td><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?" %></td>
-        <% end %>
+          <% if o.user == current_user %>
+            <%= simple_form_for o, url: order_status_path(o) do |f| %>
+              <td><%= f.input :status, collection: ["Enroute", "Delivered"], label: false %>
+              <%= f.button :submit %></td>
+            <% end %>
+          <% elsif o.user != nil %>
+            <td><%= o.user.first_name %></td>
+          <% else %>
+            <td><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?" %></td>
+          <% end %>
         </tr>
       <% end %>
     <% end %>
