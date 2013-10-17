@@ -62,7 +62,7 @@ class OrdersController < ApplicationController
   def status
     if @order.update_attributes(order_params)
       if @order.status == "Delivered"
-        UserMailer.delivered_email(@order.location.business.user).deliver
+        UserMailer.delivered_email(@order.location.business.user, @order.user).deliver
       end
       redirect_to orders_path
     end
