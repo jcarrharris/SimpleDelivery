@@ -3,6 +3,8 @@
 @import "bourbon";
 @import "neat";
 @import "pace";
+@import "pickadate";
+@import "pickatime";
 
 $gw-column: 100px;          // Column Width
 $gw-gutter: 40px;
@@ -171,13 +173,21 @@ li a {
   @include linear-gradient(to top, #8fdce5, #3dc3d1);
   @include linear-gradient(to top, #8fdce5, #3dc3d1, $fallback: red);
   @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-  background-image: none;
 }
 .pull-right {
   padding-right: 2em;
 }
 .pull-left {
   padding-left: 2em;
+}
+
+#ui-accordion-accordion-header-0, #ui-accordion-accordion-header-1, #ui-accordion-accordion-header-0 p a, #ui-accordion-accordion-header-1 p a,  #ui-accordion-accordion-header-2 p a,  #ui-accordion-accordion-header-3 p a,  #ui-accordion-accordion-header-4 p a,  #ui-accordion-accordion-header-5 p a,  #ui-accordion-accordion-header-6 p a{
+  color: #ffffff;
+}
+a.insidelink {
+  color: blue;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 /* CUSTOMIZE THE CAROUSEL

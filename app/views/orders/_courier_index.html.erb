@@ -1,40 +1,33 @@
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
-  <!-- Table -->
-  <table class="table table-responsive">
-    <tr>
-      <th><%= sortable "tracking_number"%></th>
-      <th><%= sortable "status"%></th>
-      <th><%= sortable "pickup_time"%></th>
-      <th><%= sortable "address", "Pickup Address"%></th>
-      <th><%= sortable "delivery_time"%></th>
-      <th><%= sortable "delivery_address"%></th>
-      <th><%= sortable "courier"%></th>
-    </tr>
+<div id="accordion">
+
+  
     <% @order.each do |o| %>
       <% unless o.status == "Delivered" %>
-        <tr>
-          <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
+      <div><p><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o), class:"insidelink" %></p></div>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tbody></div>
+          <%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o), class:"insidelink" %>
           <% if (o.user == current_user) && (o.status != "Delivered") %>
             <%= simple_form_for o, url: order_status_path(o) do |f| %>
               <td><%= f.input :status, collection: ["Pending", "Enroute", "Delivered"], label: false, include_blank: false %>
               <%= f.button :submit %></td>
             <% end %>
           <% else %>
-            <td><%= o.status %></td>
+           <tr><td><%= sortable "status"%><td class="value"><%= o.status %></td></tr>
           <% end %>
-          <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
+          <tr><td><%= sortable "pickup_time"%><td class="value"><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td></tr>
           <td><%= o.location.address %></td>
-          <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
-          <td><%= o.delivery_address %></td>
+          <tr><td><%= sortable "delivery_time"%><td class="value"><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td></tr>
+          <tr><td><%= sortable "delivery_address"%><td class="value"><%= o.delivery_address %></td></tr>
           <% if o.user != nil %>
             <td><%= o.user.first_name %></td>
           <% else %>
             <td><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?" %></td>
           <% end %>
         </tr>
+        </table>
+        </div>
       <% end %>
     <% end %>
-  </table>
 </div>
