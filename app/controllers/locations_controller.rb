@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :get_business, except: [:index]
   before_filter :get_location, only: [:show, :edit, :update, :destroy]
   before_filter :new_location, only: :create # CanCan strong params incompatibility workaround

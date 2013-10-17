@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-  before_filter :get_user
+  before_filter :authenticate_user!, :get_user
 
   def show
     @rating = Rating.find(params[:id])
@@ -7,10 +7,10 @@ class RatingsController < ApplicationController
 
   def create
     @rating = @user.ratings.build(rating_params)
-    @rating.user_id = current_user.id
+    @rating.user_id = @user.id
 
     if @rating.save
-      redirect_to user_path(@user.id), notice: 'Rating added!'
+      redirect_to :root, notice: 'Rating added!'
     else
       redirect_to user_path(@user.id), notice: 'Error!'
     end

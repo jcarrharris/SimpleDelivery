@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+    unless (@user == current_user) || ((current_user.role == "Merchant") && (@user.role == "Courier"))
+      raise "None of your business... pun intended."
+    end
     @rating = @user.ratings.build
   end
 end
