@@ -1,20 +1,28 @@
-<div class="section-content">
-  <h1>Locations</h1>
-  <div>
-<% @location.each do |l| %>
-<%= link_to l.location_name, business_location_path(l.business, l) %></div>
-<button type="button" class="accord"data-toggle="collapse" data-target=".table-responsive">
-  ^
-</button>
-    <div class="table-responsive">
-      <table class="table table-hover">
-      <tbody>
-        <tr><td>Address:</td><td class="value"> <%= l.address %></td></tr>
-        <tr><td>Phone Number:</td><td class="value"> <%= l.phone_number %></td></tr>
-        <% end %>
-      </tbody>
-      </table>
-    </div>
+<head>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+ <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+ <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+  $(function() {
+    $( "#accordion" ).accordion({ collapsible: true });
+    $(this).addClass('newClass')
+  });
+  </script>
+</head>
+  <div class="section-content">
+    <h2>Locations</h2>
+    <div id="accordion">
+    <% @location.each do |l| %>
+    <%=link_to l.location_name %>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <%= link_to "See Details", business_location_path(l.business, l), class: "accordion_link" %>
+            <tbody>
+                <tr><td>Address:</td><td class="value"> <%= l.address %></td></tr>
+                <tr><td>Phone Number:</td><td class="value"> <%= l.phone_number %></td></tr>
+            </tbody>
+          </table>
+        </div>
+    <% end %>
     </div>
   </div>
-</div>

@@ -1,6 +1,4 @@
 //*= require jquery.ui.all
-
-
 @import "bootstrap";
 @import "bourbon";
 @import "neat";
@@ -12,11 +10,9 @@ h1, h2, h3 {
   color: #393c3d;
 
 }
-
 .navbar.navbar-default {
   border: none;
 }
-
 #welcome {
   position: absolute;
   position: absolute;
@@ -28,7 +24,6 @@ h1, h2, h3 {
   font-family: $helvetica;
   font-size: 48px;
 }
-
 body {
   font-size: 16px;
   font-family: $lucida-grande;
@@ -44,17 +39,14 @@ body {
 
   #{$all-text-inputs} {
     border: 1px solid #2B3A42;
-
   }
   #{$all-text-inputs-hover} { // Target the :hover pseudo-class
     background: #BDD4DE;
   }
-
   #{$all-text-inputs-focus} { // Target the :focus pseudo-class
     background: #EFEFEF;
   }
 }
-
 .actions input {
   @include button(simple);
   text-decoration: none;
@@ -67,7 +59,6 @@ body {
     font-size: 14px;
     }
 }
-
 .message_container {
   position: fixed;
   top: 100px;
@@ -90,21 +81,17 @@ body {
   background-color: #FFBABA;
   background-image: url('error.png');
 }
-
 .userinfo {
   margin-top: 50px;
   margin-left: 50px;
 }
-
 .userinformation {
   margin-top: 50px;
   margin-left: 50px;
 }
-
 .userinformation .topic {
   font-weight: 900;
 }
-
 #notice {
   font-size: 16px;
   color: #4F8A10;
@@ -124,34 +111,8 @@ body {
   border: 1px solid #e3e3e3;
   border-radius: 3px;
   display: block;
-
 }
 
-.table-striped {
-  width: 100%;
-  float: left;
-  border: 1px solid #d9d9d6;
-  margin: 10 -10px 0 -1px;
-  border-radius: 4px;
-  overflow: hidden;
-
-}
-
-.table td {
-  padding: 8px;
-  line-height: 18px;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #ddd;
-}
-
-td.value {
-  border-left: 0px;
-  width: 60%;
-  text-align: right;
-  word-wrap: break-word;
-  font-weight: bold;
-}
 .button {
   @include button(shiny, #08ce03);
   &:hover {
@@ -159,7 +120,6 @@ td.value {
     text-decoration: none;
   }
 }
-
 .diff {
   float: right;
   margin-bottom: 25px;
@@ -171,13 +131,11 @@ td.value {
     text-decoration: none;
   }
 }
-
 .control-group
 {
   font-family: $helvetica;
   color: #393c3d;
 }
-
 .landingpage {
   overflow: hidden;
 }
@@ -185,13 +143,199 @@ td.value {
 #footer {
   float: right;
 }
-
-
 .logo {
   @include button(pill);
   &:hover {
     color: #fff;
     text-decoration: none;
+  }
+}
+.collapse {
+  background-color: #438eb9;
+}
+.link {
+  color: white;
+}
+li a {
+  text:white;
+}
+#main {
+  background-color:#f7f7f7
+}
+.accord {
+  margin: 0px 8px 8px 8px;
+  float: right;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  @include linear-gradient(#1e5799, #2989d8);
+  @include linear-gradient(to top, #8fdce5, #3dc3d1);
+  @include linear-gradient(to top, #8fdce5, #3dc3d1, $fallback: red);
+  @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+  background-image: none;
+}
+.pull-right {
+  padding-right: 2em;
+}
+.pull-left {
+  padding-left: 2em;
+}
+
+.left.carousel-control {
+  margin-top: 150px;
+}
+
+.right.carousel-control {
+  margin-top: 150px;
+}
+/* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+  margin-top: -108px;
+}
+.carousel .container {
+  position: relative;
+  z-index: 9;
+}
+.carousel-control {
+  height: 80px;
+  margin-top: 0;
+  font-size: 120px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  background-color: transparent;
+  border: 0;
+  z-index: 10;
+}
+.carousel .item {
+  height: 500px;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+.carousel-caption {
+  background-color: transparent;
+  position: static;
+  max-width: 550px;
+  padding: 0 20px;
+  margin-top: 200px;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+  margin: 0;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+  margin-top: 10px;
+}
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (max-width: 979px) {
+  .container.navbar-wrapper {
+    margin-bottom: 0;
+    width: auto;
+  }
+  .navbar-inner {
+    border-radius: 0;
+    margin: -20px 0;
+  }
+
+  .carousel .item {
+    height: 500px;
+  }
+  .carousel img {
+    width: auto;
+    height: 500px;
+  }
+
+  .featurette {
+    height: auto;
+    padding: 0;
+  }
+  .featurette-image.pull-left,
+  .featurette-image.pull-right {
+    display: block;
+    float: none;
+    max-width: 40%;
+    margin: 0 auto 20px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-inner {
+    margin: -20px;
+  }
+  .carousel {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .carousel .container {
+  }
+  .carousel .item {
+    height: 300px;
+  }
+  .carousel img {
+    height: 300px;
+  }
+  .carousel-caption {
+    width: 65%;
+    padding: 0 70px;
+    margin-top: 100px;
+  }
+  .carousel-caption h1 {
+    font-size: 30px;
+  }
+  .carousel-caption .lead,
+  .carousel-caption .btn {
+    font-size: 18px;
+  }
+  .marketing .span4 + .span4 {
+    margin-top: 40px;
+  }
+
+  .featurette-heading {
+    font-size: 30px;
+  }
+  .featurette .lead {
+    font-size: 18px;
+    line-height: 1.5;
   }
 }
 .signup-button {
@@ -208,89 +352,6 @@ td.value {
     text-decoration: none;
   }
 }
-.pretty th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
-.pretty th .asc {
-  background-image: url(/images/up_arrow.gif);
-}
-
-.pretty th .desc {
-  background-image: url(/images/down_arrow.gif);
-}
-.simple_form label {
-  float: left;
-  width: 200px;
-  text-align: right;
-  margin: 2px 10px;
-}
-
-.simple_form div.input {
-  margin-bottom: 10px;
-}
-
-.simple_form div.boolean, .simple_form input[type='submit'] {
-  margin-left: 120px;
-}
-
-.simple_form div.boolean label, .simple_form label.collection_radio {
-  float: none;
-  margin: 0;
-}
-
-.simple_form label.collection_radio {
-  margin-right: 10px;
-  margin-left: 2px;
-}
-
-.simple_form .error {
-  clear: left;
-  margin-left: 120px;
-  font-size: 12px;
-  color: #D00;
-  display: block;
-}
-
-.simple_form .hint {
-  clear: left;
-  margin-left: 120px;
-  font-size: 12px;
-  color: #555;
-  display: block;
-  font-style: italic;
-}
-
-.profile_pic {
-  display: block;
-    width: 150px;
-    height: 150px;
-    margin: 1em auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-border-radius: 99em;
-    -moz-border-radius: 99em;
-    border-radius: 99em;
-    border: 5px solid #eee;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
-}
-.collapse {
-  background-color: #438eb9;
-}
-
-.link {
-  color: white;
-}
-
-li a {
-  text:white;
-}
-#main {
-  background-color:#f7f7f7
-}
 .nav.navbar-nav > li > .link {
 color: #fff;
 font-weight: normal;
@@ -305,191 +366,8 @@ span.navbar-brand a {
 text-decoration: none;
 color: #f7f7f7;
 }
-.table.table-hover {
-
+.welcome {
+  text-transform: uppercase;
+  font-weight: 400;
+  height: 20%;
 }
-.accord {
-  margin: 0px 8px 8px 8px;
-  float: right;
-}
-.pull-right {
-  padding-right: 2em;
-}
-.pull-left {
-  padding-left: 2em;
-}
-
-.left.carousel-control {
-  margin-top: 150px;
-}
-
-.right.carousel-control {
-  margin-top: 150px;
-}
-
-/* CUSTOMIZE THE CAROUSEL
-    -------------------------------------------------- */
-
-    /* Carousel base class */
-    .carousel {
-      margin-bottom: 60px;
-      margin-top: -108px;
-    }
-
-    .carousel .container {
-      position: relative;
-      z-index: 9;
-    }
-
-    .carousel-control {
-      height: 80px;
-      margin-top: 0;
-      font-size: 120px;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-      background-color: transparent;
-      border: 0;
-      z-index: 10;
-    }
-
-    .carousel .item {
-      height: 500px;
-    }
-    .carousel img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      height: 500px;
-    }
-
-    .carousel-caption {
-      background-color: transparent;
-      position: static;
-      max-width: 550px;
-      padding: 0 20px;
-      margin-top: 200px;
-    }
-    .carousel-caption h1,
-    .carousel-caption .lead {
-      margin: 0;
-      line-height: 1.25;
-      color: #fff;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-    }
-    .carousel-caption .btn {
-      margin-top: 10px;
-    }
-
-    /* Featurettes
-    ------------------------- */
-
-    .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
-    }
-    .featurette {
-      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-      overflow: hidden; /* Vertically center images part 2: clear their floats. */
-    }
-    .featurette-image {
-      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
-    }
-
-    /* Thin out the marketing headings */
-    .featurette-heading {
-      font-size: 50px;
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-
-
-
-    /* RESPONSIVE CSS
-    -------------------------------------------------- */
-
-    @media (max-width: 979px) {
-
-      .container.navbar-wrapper {
-        margin-bottom: 0;
-        width: auto;
-      }
-      .navbar-inner {
-        border-radius: 0;
-        margin: -20px 0;
-      }
-
-      .carousel .item {
-        height: 500px;
-      }
-      .carousel img {
-        width: auto;
-        height: 500px;
-      }
-
-      .featurette {
-        height: auto;
-        padding: 0;
-      }
-      .featurette-image.pull-left,
-      .featurette-image.pull-right {
-        display: block;
-        float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
-      }
-    }
-
-
-    @media (max-width: 767px) {
-
-      .navbar-inner {
-        margin: -20px;
-      }
-
-      .carousel {
-        margin-left: -20px;
-        margin-right: -20px;
-      }
-      .carousel .container {
-
-      }
-      .carousel .item {
-        height: 300px;
-      }
-      .carousel img {
-        height: 300px;
-      }
-      .carousel-caption {
-        width: 65%;
-        padding: 0 70px;
-        margin-top: 100px;
-      }
-      .carousel-caption h1 {
-        font-size: 30px;
-      }
-      .carousel-caption .lead,
-      .carousel-caption .btn {
-        font-size: 18px;
-      }
-
-      .marketing .span4 + .span4 {
-        margin-top: 40px;
-      }
-
-      .featurette-heading {
-        font-size: 30px;
-      }
-      .featurette .lead {
-        font-size: 18px;
-        line-height: 1.5;
-      }
-
-    }
