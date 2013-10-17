@@ -8,7 +8,7 @@
       <%= submit_tag "search", name: nil %>
     </p>
   <% end %>
-  <div id="orders" style="width:100%">
+  <div id="orders">
     <%= render 'merchant_index' if current_user.role == "Merchant" %>
     <%= render 'courier_index' if current_user.role == "Courier" %>
   </div>

@@ -4,6 +4,9 @@
 @import "neat";
 @import "pace";
 
+$gw-column: 100px;          // Column Width
+$gw-gutter: 40px;
+
 h1, h2, h3 {
   font-family: $helvetica;
   display: inline-block;
@@ -14,7 +17,6 @@ h1, h2, h3 {
   border: none;
 }
 #welcome {
-  position: absolute;
   position: absolute;
   top: 30%;
   left: 40%;
@@ -73,13 +75,14 @@ body {
  .error_messages, #alert {
   font-size: 16px;
   border: 1px solid;
-  margin: 10px 0px;
+  margin-bottom: 40px;
   padding:15px 10px 15px 50px;
   background-repeat: no-repeat;
   background-position: 10px center;
   color: #D8000C;
   background-color: #FFBABA;
   background-image: url('error.png');
+  z-index: 1;
 }
 .userinfo {
   margin-top: 50px;
@@ -106,7 +109,7 @@ body {
   @include span-columns(10);
   @include shift(1);
   background: white;
-  margin-top: 30px;
+  margin-top: 0px;
   padding: 30px 40px 45px 40px;
   border: 1px solid #e3e3e3;
   border-radius: 3px;
@@ -139,10 +142,6 @@ body {
 .landingpage {
   overflow: hidden;
 }
-
-#footer {
-  float: right;
-}
 .logo {
   @include button(pill);
   &:hover {
@@ -160,7 +159,7 @@ li a {
   text:white;
 }
 #main {
-  background-color:#f7f7f7
+  background-color:#f7f7f7;
 }
 .accord {
   margin: 0px 8px 8px 8px;
@@ -181,19 +180,12 @@ li a {
   padding-left: 2em;
 }
 
-.left.carousel-control {
-  margin-top: 150px;
-}
-
-.right.carousel-control {
-  margin-top: 150px;
-}
 /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 
     /* Carousel base class */
 .carousel {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   margin-top: -108px;
 }
 .carousel .container {
@@ -201,8 +193,8 @@ li a {
   z-index: 9;
 }
 .carousel-control {
-  height: 80px;
-  margin-top: 0;
+  height: 140px;
+  margin-top: 150px;
   font-size: 120px;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
   background-color: transparent;
@@ -222,15 +214,16 @@ li a {
 .carousel-caption {
   background-color: transparent;
   position: static;
-  max-width: 550px;
   padding: 0 20px;
   margin-top: 200px;
+  font-family: $lucida-grande;
 }
 .carousel-caption h1,
 .carousel-caption .lead {
   margin: 0;
   line-height: 1.25;
   color: #fff;
+  font-family: $helvetica;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 .carousel-caption .btn {
@@ -315,16 +308,25 @@ li a {
     height: 300px;
   }
   .carousel-caption {
-    width: 65%;
     padding: 0 70px;
-    margin-top: 100px;
+    margin-top: 1em;
   }
   .carousel-caption h1 {
-    font-size: 30px;
+    font-size: 2em;
+  }
+  .carousel-control {
+    height: 80px;
+    margin-top: 80px;
+    font-size: 80px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    background-color: transparent;
+    border: 0;
+    z-index: 10;
   }
   .carousel-caption .lead,
   .carousel-caption .btn {
-    font-size: 18px;
+    font-size: 1em;
+    width: 100%;
   }
   .marketing .span4 + .span4 {
     margin-top: 40px;
@@ -367,7 +369,36 @@ text-decoration: none;
 color: #f7f7f7;
 }
 .welcome {
-  text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   height: 20%;
+  margin-bottom: 10px;
+}
+.navbar-header, .nav.navbar-nav > li > .link, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  background-color: #438eb9;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #1E80B9;
+}
+.navbar-default .navbar-toggle{
+  border-color: #1E80B9;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+.lead {
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 8px;
+}
+#footer {
+  @include span-columns(12);
+  color: #999;
+  font-size: 13px;
+  border-top: 1px solid #ddd;
+  padding: 15px 0 15px;
+  margin: 45px auto;
+}
+#footer a {
+  color: #555;
+  font-weight: bold;
 }

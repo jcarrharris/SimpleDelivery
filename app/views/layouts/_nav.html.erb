@@ -25,6 +25,10 @@
       </li>
       <li class="navbar-text"> Signed in as <%= current_user.first_name + " " + current_user.last_name%> </li>
     </ul>
+    <% else %>
+    <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Log in", new_user_session_path, class:"link" %><br /></li>
+    </ul>
       <% end %>
   </div>
 </nav>

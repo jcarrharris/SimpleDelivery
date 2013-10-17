@@ -7,4 +7,7 @@
       <p>Phone Number: <%= b.phone_number %></p>
     </div>
   <% end %>
+  <% if current_user.role == "Merchant" %>
+    <%= link_to "Add a new business", new_business_path(@business), class:"button"%>
+  <% end %>
 </div>
