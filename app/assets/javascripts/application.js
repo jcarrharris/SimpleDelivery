@@ -17,6 +17,7 @@
 //= require picker
 //= require_tree .
 $(function() {
+  
   $("#orders th").on("click", function() {
     $.getScript(this.href);
     return false;
@@ -34,4 +35,8 @@ $(function() {
   $("#time").pickatime();
   $("#date2").pickadate();
   $("#time2").pickatime();
+
+  $( "#accordion" ).accordion({ collapsible: true });
+  $(this).addClass('newClass');
+
 });
