@@ -1,31 +1,21 @@
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
-  <!-- Table -->
-  <table class="table table-responsive">
-    <tr>
-      <th><%= sortable "tracking_number"%></th>
-      <th><%= sortable "status"%></th>
-      <th><%= sortable "location_name", "Location"%></th>
-      <th><%= sortable "pickup_time"%></th>
-      <th><%= sortable "delivery_time"%></th>
-      <th><%= sortable "delivery_address"%></th>
-      <th><%= sortable "courier"%></th>
-      <th><%= sortable "Average Rating"%></th>
-    </tr>
-    <% @location.each do |l| %>
-      <% l.orders.each do |o| %>
-        <tr>
-          <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
-          <td><%= o.status %></td>
-          <td><%= o.location.location_name %></td>
-          <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
-          <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
-          <td><%= o.delivery_address %></td>
-          <td><%= o.user != nil ? o.user.first_name : "Pending" %></td>
-          <td><%= o.user != nil ? o.user.average_rating : "N/A" %></td>
-        </tr>
-      <% end %>
+<div id="accordion">
+<% @location.each do |l| %>
+  <% l.orders.each do |o| %>
+  <div><p><%=sortable "tracking_number "%><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></p></div>
+  <div class="table-responsive">
+      <table class="table table-hover">
+        <tbody></div>
+          <th><%= link_to o.tracking_number,business_location_order_path(o.location.business, o.location, o)%> </th>
+          <tr><td><%= sortable "status"%><td class="value"><%= o.status %></td></tr>
+          <tr><td><%= sortable "location_name", "Location"%><td class="value"><%= o.location.location_name %></td></tr>
+          <tr><td><%= sortable "pickup_time"%><td class="value"><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td></tr>
+          <tr><td><%= sortable "delivery_time"%><td class="value"><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td></tr>
+          <tr><td><%= sortable "delivery_address"%><td class="value"><%= o.delivery_address %></td></tr>
+          <tr><td><%= sortable "courier"%><td class="value"><%= o.user != nil ? o.user.first_name : "Pending" %></td></tr>
+          <tr><td><%= sortable "Average Rating"%><td class="value"><%= o.user != nil ? o.user.average_rating : "N/A" %></td></tr>
+        </tbody></div>
+        </table>
+    </div>
     <% end %>
-  </table>
+  <% end %>
 </div>
