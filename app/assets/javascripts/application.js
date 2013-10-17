@@ -32,4 +32,6 @@ $(function() {
   });
   $("#date").pickadate();
   $("#time").pickatime();
+  $("#date2").pickadate();
+  $("#time2").pickatime();
 });
