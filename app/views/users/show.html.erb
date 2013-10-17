@@ -5,8 +5,6 @@
   <% if @user.role == "Courier" %>
     <div id="myMap" style="width:50%;height:200px;"></div>
     <div id="star"data-score="1"></div>
-  <% else %>
-    <%= link_to "Add a new business", new_business_path, class:"button"%>
   <% end %>
   </br>
   </br>

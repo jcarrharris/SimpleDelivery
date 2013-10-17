@@ -6,7 +6,6 @@ class BusinessesController < ApplicationController
 
   def index
     @business = current_user.businesses
-    redirect_to business_path(current_user.businesses.first) if @business.count == 1
   end
 
   def show

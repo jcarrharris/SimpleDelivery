@@ -5,13 +5,13 @@
     <%= f.error_notification %>
     <form role="form">
       <div class="form-group">
-        <%= f.input :first_name, required: true, placeholder: "First name", class: "form-control" %>
+        <%= f.input :first_name, required: true, placeholder: "First name", autofocus: true, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.input :last_name, required: true, placeholder: "Last name" %>
       </div>
       <div class="form-group">
-        <%= f.input :email, required: true, :autofocus => true, placeholder: "Email" %>
+        <%= f.input :email, required: true, placeholder: "Email" %>
       </div>
       <div class="form-group">
         <%= f.input :role, collection: ["Merchant", "Courier"], required: true, include_blank: false %>
