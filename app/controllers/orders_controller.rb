@@ -23,6 +23,8 @@ class OrdersController < ApplicationController
     @order = @location.orders.build(order_params)
     @order.tracking_number = SecureRandom.hex(5)
     @order.status = "Pending"
+    @order.pickup_time = (params[:pickup_date] + " " + params[:pickup_hour]).to_datetime
+    @order.delivery_time = (params[:delivery_date] + " " + params[:delivery_hour]).to_datetime
 
     if @order.save
       UserMailer.tracking_email(@order).deliver

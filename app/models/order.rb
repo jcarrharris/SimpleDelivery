@@ -22,12 +22,12 @@ class Order < ActiveRecord::Base
 
   private
   def in_the_future
-    if pickup_time < DateTime.now
-      errors.add(:base, "We haven't invented time travel yet!")
-    end
+    # if pickup_time < DateTime.now
+    #   errors.add(:base, "We haven't invented time travel yet!")
+    # end
 
-    if delivery_time <= pickup_time
-      errors.add(:base, "We haven't invented time travel yet!")
-    end
+    # if delivery_time <= pickup_time
+    #   errors.add(:base, "We haven't invented time travel yet!")
+    # end
   end
 end
