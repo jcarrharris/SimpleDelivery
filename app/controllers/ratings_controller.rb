@@ -1,10 +1,6 @@
 class RatingsController < ApplicationController
   before_filter :get_user
 
-  def index
-    @rating = @user.ratings
-  end
-
   def show
     @rating = Rating.find(params[:id])
   end
@@ -17,7 +13,6 @@ class RatingsController < ApplicationController
       redirect_to user_path(@user.id), notice: 'Rating added!'
     else
       redirect_to user_path(@user.id), notice: 'Error!'
-    end
     end
   end
 

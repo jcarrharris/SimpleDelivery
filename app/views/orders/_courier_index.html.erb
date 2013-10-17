@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+  <!-- Table -->
+  <table class="table table-responsive">
+    <tr>
+      <th><%= sortable "tracking_number"%></th>
+      <th><%= sortable "status"%></th>
+      <th><%= sortable "pickup_time"%></th>
+      <th><%= sortable "address", "Pickup Address"%></th>
+      <th><%= sortable "delivery_time"%></th>
+      <th><%= sortable "delivery_address"%></th>
+      <th><%= sortable "courier"%></th>
+    </tr>
+    <% @order.each do |o| %>
+      <tr>
+        <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
+        <td><%= o.status %></td>
+        <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
+        <td><%= o.location.address %></td>
+        <td><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td>
+        <td><%= o.delivery_address %></td>
+        <% if o.status == "Delivered" %>
+          <td><%= o.user.first_name %></td>
+        <% elsif o.user == current_user %>
+          <%= simple_form_for o, url: order_status_path(o) do |f| %>
+            <td><%= f.input :status, collection: ["Enroute", "Delivered"], label: false, include_blank: false %>
+            <%= f.button :submit %></td>
+          <% end %>
+        <% elsif o.user != nil %>
+          <td><%= o.user.first_name %></td>
+        <% else %>
+          <td><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

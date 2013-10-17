@@ -12,4 +12,10 @@ class UserMailer < ActionMailer::Base
     @url  = "http://simple-delivery.herokuapp.com/track/#{@order.tracking_number}"
     mail(to: @order.email, subject: 'Track your swish.io order.')
   end
+
+  def delivered_email(user)
+    @user = user
+    @url  = "http://simple-delivery.herokuapp.com/"
+    mail(to: @user.email, subject: 'Your order has been delivered.')
+  end
 end

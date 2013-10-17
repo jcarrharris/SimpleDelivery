@@ -15,7 +15,7 @@
       <%= f.input :email, placeholder: "Email" %>
     </div>
     <div class="form-group">
-      <%= f.input :packaging, collection: ["Swish Small", "Swish Regular", "Swish Large", "Custom"] %>
+      <%= f.input :packaging, collection: ["Swish Small", "Swish Regular", "Swish Large", "Custom"], include_blank: false %>
     </div>
     <div class="form-group">
       <%= f.input :length, placeholder: "Length (cm)" %>

@@ -1,12 +1,5 @@
 <%= simple_form_for @business, html: {multipart: true} do |f| %>
-<div class="error-messages">
-  <% if @business.errors.any? %>
-      <h2>Form is invalid</h2>
-        <% for message in @business.errors.full_messages %>
-          <li> <%= message %> </li>
-        <% end %>
-  <% end %>
-</div>
+  <div><% f.error_notification %></div>
   <form role="form">
     <legend></legend>
     <fieldset>

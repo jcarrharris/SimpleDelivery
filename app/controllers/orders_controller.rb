@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
   def create
     @order = @location.orders.build(order_params)
     @order.tracking_number = SecureRandom.hex(5)
+    @order.status = "Pending"
 
     if @order.save
       UserMailer.tracking_email(@order).deliver
@@ -58,7 +59,12 @@ class OrdersController < ApplicationController
   end
 
   def status
-    redirect_to orders_path if @order.update_attributes(order_params)
+    if @order.update_attributes(order_params)
+      if @order.status == "Delivered"
+        UserMailer.delivered_email(@order.location.business.user).deliver
+      end
+      redirect_to orders_path
+    end
   end
 
   def track

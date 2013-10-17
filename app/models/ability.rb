@@ -15,6 +15,7 @@ class Ability
         can :show, Order
         can :courier, Order
         can :status, Order
+        can :track, Order
     else
         can :track, Order
     end

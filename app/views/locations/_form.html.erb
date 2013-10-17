@@ -5,10 +5,16 @@
   <div class="field">
     <fieldset>
       <legend></legend>
-    <%= f.input :location_name, :autofocus => true, placeholder: "Location Name" %></br>
-    <%= f.input :address, placeholder: "Address" %></br>
-    <%= f.input :phone_number, placeholder: "Phone Number" %>
- </fieldset>
+      <div class="form-group">
+        <%= f.input :location_name, :autofocus => true, placeholder: "Location Name" %></br>
+      </div>
+      <div class="form-group">
+        <%= f.input :address, placeholder: "Address" %></br>
+      </div>
+      <div class="form-group">
+        <%= f.input :phone_number, placeholder: "Phone Number" %>
+      </div>
+    </fieldset>
   </div>
   <div class="actions"><%= f.button :submit %></div>
 <% end %>
