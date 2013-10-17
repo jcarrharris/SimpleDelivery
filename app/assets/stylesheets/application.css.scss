@@ -120,18 +120,18 @@ body {
 }
 
 .button {
-  @include button(shiny, #08ce03);
+  @include button(#EC6F3E);
+  float: right;
+  margin-bottom: 25px;
+  margin-right: 100px;
+  margin-top: 20px;
   &:hover {
     color: #fff;
     text-decoration: none;
   }
 }
 .diff {
-  float: right;
-  margin-bottom: 25px;
-  margin-right: 100px;
-  @include button;
-  margin-top: 20px;
+  @include button(#438EB9);
   &:hover {
     color: #fff;
     text-decoration: none;
@@ -385,13 +385,16 @@ color: #f7f7f7;
   margin-bottom: 10px;
 }
 .navbar-header, .nav.navbar-nav > li > .link, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  background-color: #438eb9;
+  background-color: #3F4153;
+    &:hover {
+      color: #EC6F3E;
+    }
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border-color: #1E80B9;
+  border-color: #6C5886;
 }
 .navbar-default .navbar-toggle{
-  border-color: #1E80B9;
+  border-color: #6C5886;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #cccccc;
@@ -427,3 +430,6 @@ color: #f7f7f7;
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   }
+label.boolean.optional.control-label {
+  visibility: hidden;
+}
