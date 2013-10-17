@@ -1,26 +1,18 @@
-<head>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<script>
-  $(function() {
-    $( "#accordion" ).accordion({ collapsible: true });
-    $(this).addClass('newClass')
-  });
-  </script>
-</head>
-  <div class="section-content">
-    <h2>Locations</h2>
-    <div id="accordion">
+<%= render 'layouts/accordion' %>
+<div class="section-content">
+  <h2>Locations</h2>
+  <div id="accordion">
     <% @location.each do |l| %>
-    <%=link_to l.location_name %>
-        <div class="table-responsive">
-          <table class="table table-hover">
-            <%= link_to "See Details", business_location_path(l.business, l), class: "accordion_link" %>
-            <tbody>
-                <tr><td>Address:</td><td class="value"> <%= l.address %></td></tr>
-                <tr><td>Phone Number:</td><td class="value"> <%= l.phone_number %></td></tr>
-            </tbody>
-          </table>
-        </div>
+      <%=link_to l.location_name %>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <%= link_to "See Details", business_location_path(l.business, l), class: "accordion_link" %>
+          <tbody>
+            <tr><td>Address:</td><td class="value"> <%= l.address %></td></tr>
+            <tr><td>Phone Number:</td><td class="value"> <%= l.phone_number %></td></tr>
+          </tbody>
+        </table>
+      </div>
     <% end %>
-    </div>
   </div>
+</div>

@@ -1,13 +1,20 @@
+<%= render 'layouts/accordion' %>
 <div class="section-content">
-  <h1>Businesses</h1>
-  <% @business.each do |b| %>
-    <div class="userinformation">
-      <p><%= link_to b.business_name, business_path(b) %></p>
-      <p>Website: <%= b.website_url %></p>
-      <p>Phone Number: <%= b.phone_number %></p>
-    </div>
-  <% end %>
-  </br>
+  <h2>Businesses</h2>
+  <div id="accordion">
+    <% @business.each do |b| %>
+      <%= link_to b.business_name %>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <%= link_to "See Details", business_path(b), class: "accordion_link" %>
+          <tbody>
+            <tr><td>Website:</td><td class="value"> <%= b.website_url %></td></tr>
+            <tr><td>Phone Number:</td><td class="value"> <%= b.phone_number %></td></tr>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+  </div>
   </br>
   <p><%= link_to "Add a new business", new_business_path(@business), class:"button"%></p>
 </div>

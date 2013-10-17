@@ -1,24 +1,14 @@
-<head>
- <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<script>
-  $(function() {
-    $( "#accordion" ).accordion({ collapsible: true });
-    $(this).addClass('newClass')
-  });
-  </script>
-</head>
+<%= render 'layouts/accordion' %>
 <div class="section-content">
-  <h1>Orders</h1>
+  <h2>Orders</h2>
   <%= form_tag orders_path, method: 'get', id: "orders_search" do %>
-  <%= hidden_field_tag :direction, params[:direction] %>
-  <%= hidden_field_tag :sort, params[:sort] %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "search", name: nil %>
     </p>
   <% end %>
-  <div id="orders">
-    <%= render 'merchant_index' if current_user.role == "Merchant" %>
-    <%= render 'courier_index' if current_user.role == "Courier" %>
-  </div>
+  <%= render 'merchant_index' if current_user.role == "Merchant" %>
+  <%= render 'courier_index' if current_user.role == "Courier" %>
 </div>
