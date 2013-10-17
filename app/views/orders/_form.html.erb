@@ -3,22 +3,22 @@
   <div>
     <fieldset>
       <div class="form-group">
-        <%= f.input :delivery_address, placeholder: "32 Woodbine St, Toronto, Canada", autofocus: true %>
+        <%= f.input :delivery_address, placeholder: "Address", autofocus: true %>
       </div>
       <div class="form-group">
-       <%= f.input :phone_number, placeholder: "(416) 200-4219" %>
+       <%= f.input :phone_number, placeholder: "Phone Number" %>
       </div>
       <div class="form-group">
-        <%= f.input :email, placeholder: "name@email.com" %>
+        <%= f.input :email, placeholder: "Email" %>
       </div>
       <div class="form-group">
         <%= f.input :packaging, collection: ["Swish Small", "Swish Regular", "Swish Large"], include_blank: false %>
       </div>
       <div class="form-group">
-        <%= f.input :weight, placeholder: "10" %>
+        <%= f.input :weight, placeholder: "Weight (kg)" %>
       </div>
       <div class="form-group">
-        <%= f.input :declared_value, placeholder: "25" %>
+        <%= f.input :declared_value, placeholder: "Declared Value (CAD)" %>
       </div>
       <div class="form-group">
         <strong>Pickup Time:</strong></br>
