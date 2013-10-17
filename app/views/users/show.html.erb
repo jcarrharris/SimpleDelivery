@@ -1,6 +1,7 @@
 <div class="section-content">
-  <%= link_to "Edit", edit_user_registration_path(@user), class:"button", class:"diff" %>
-  <h1><%= @user.first_name + " " + @user.last_name%> </h1>
+  <h2><%= @user.first_name + " " + @user.last_name%> </h2>
+  <div class="profile-button"><%= link_to "Edit", edit_user_registration_path(@user), class:"button", class:"diff" %></div>
+  <legend></legend>
   <div class="circular" style="background-image: url(<%= @user.image %>)"></div>
   <% if @user.role == "Courier" %>
     <div id="myMap" style="width:50%;height:200px;"></div>

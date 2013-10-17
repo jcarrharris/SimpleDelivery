@@ -1,11 +1,12 @@
 <div class="section-content">
   <h2>Orders</h2>
+  <legend></legend>
   <%= form_tag orders_path, method: 'get', id: "orders_search" do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
     <p>
       <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "search", name: nil %>
+      <%= submit_tag "search", name: nil, class:"diff-search" %>
     </p>
   <% end %>
   <%= render 'merchant_index' if current_user.role == "Merchant" %>

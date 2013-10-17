@@ -2,7 +2,7 @@
   <span>
     <h1><%= @location.location_name %> </h1>
     <div>
-      <%= link_to "New Order", new_business_location_order_path(@business, @location), class:"button" %>
+      <%= link_to "New Order", new_business_location_order_path(@business, @location), class:"button-fix" %>
     <%= link_to "Edit Order", edit_business_location_path(@business, @location), class:"diff"%></div>
   </span>
   <div id="locationMap" style="width:90%;height:380px;"data-latitude="<%= @location.latitude %>" data-longitude="<%= @location.longitude%>"></div>

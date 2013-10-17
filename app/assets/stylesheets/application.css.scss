@@ -34,6 +34,11 @@ body {
   font-family: $lucida-grande;
   background-color: #f7f7f7;
 }
+
+p {
+  font-family: $lucida-grande;
+  font-color: #333332;
+}
 .field {
   margin-bottom: 12px;
   margin-left: 50px;
@@ -122,6 +127,15 @@ body {
 .button {
   @include button(#EC6F3E);
   float: right;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.button-fix {
+  @include button(#EC6F3E);
+  float: right;
   margin-bottom: 25px;
   margin-right: 100px;
   margin-top: 20px;
@@ -132,6 +146,16 @@ body {
 }
 .diff {
   @include button(#438EB9);
+  margin-bottom: 25px;
+  margin-right: 100px;
+  margin-top: 20px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.diff-search {
+  @include button(pill, #438EB9);
   margin-bottom: 25px;
   margin-right: 100px;
   margin-top: 20px;
@@ -185,7 +209,7 @@ li a {
   padding-left: 2em;
 }
 
-#ui-accordion-accordion-header-0, #ui-accordion-accordion-header-1, #ui-accordion-accordion-header-0 p a, #ui-accordion-accordion-header-1 p a,  #ui-accordion-accordion-header-2 p a,  #ui-accordion-accordion-header-3 p a,  #ui-accordion-accordion-header-4 p a,  #ui-accordion-accordion-header-5 p a,  #ui-accordion-accordion-header-6 p a{
+#ui-accordion-accordion-header-0, #ui-accordion-accordion-header-1, #ui-accordion-accordion-header-0 p a, #ui-accordion-accordion-header-1 p a,  #ui-accordion-accordion-header-2 p a,  #ui-accordion-accordion-header-3 p a,  #ui-accordion-accordion-header-4 p a,  #ui-accordion-accordion-header-5 p a,  #ui-accordion-accordion-header-6 p a, #ui-accordion-accordion-header-7 p a{
   color: #ffffff;
 }
 a.insidelink {
@@ -435,4 +459,16 @@ color: #f7f7f7;
   }
 label.boolean.optional.control-label {
   visibility: hidden;
+}
+.profile-button {
+  float: right;
+}
+.diff-order-show {
+}
+.navbar-default .navbar-nav > .dropdown > a .caret {
+  border-top-color: white;
+  border-bottom-color: white;
+  &:hover {
+    color: #438EB9;
+  }
 }
