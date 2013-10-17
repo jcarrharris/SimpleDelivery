@@ -5,22 +5,22 @@
 <div>
   <fieldset>
     <div class="form-group">
-      <%= f.input :delivery_address, placeholder: "Delivery Address", autofocus: true %>
+      <%= f.input :delivery_address, placeholder: "32 Woodbine St, Toronto, Canada", autofocus: true %>
     </div>
     <div class="form-group">
-      <%= f.input :phone_number, placeholder: "Phone Number" %>
+     <%= f.input :phone_number, placeholder: "(416) 200-4219" %>
     </div>
     <div class="form-group">
-      <%= f.input :email, placeholder: "Email" %>
+      <%= f.input :email, placeholder: "name@email.com" %>
     </div>
     <div class="form-group">
       <%= f.input :packaging, collection: ["Swish Small", "Swish Regular", "Swish Large"], include_blank: false %>
     </div>
     <div class="form-group">
-      <%= f.input :weight, placeholder: "Weight (lbs)" %>
+      <%= f.input :weight, placeholder: "10" %>
     </div>
     <div class="form-group">
-      <%= f.input :declared_value, placeholder: "Value (CAD)" %>
+      <%= f.input :declared_value, placeholder: "25" %>
     </div>
     </fieldset>
     <form onsubmit="javascript: return false;">
