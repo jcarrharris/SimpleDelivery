@@ -3,19 +3,19 @@
   <form role="form">
     <legend></legend>
     <fieldset>
-    <div class="form-group">
-    <%= f.input :business_name, autofocus: true, placeholder: "Business Name" %>
-    </div>
-    <div class="form-group">
-    <%= f.input :website_url, placeholder: "Website URL" %>
-    </div>
-    <div class="form-group">
-    <%= f.input :phone_number, placeholder: "Phone Number" %>
-    </div>  
-    <div class="form-group">
-    <label for="exampleInputFile"></label>
-            <input type="file" id="exampleInputFile">
+      <div class="form-group">
+        <%= f.input :business_name, autofocus: true, placeholder: "Business Name" %>
+      </div>
+      <div class="form-group">
+        <%= f.input :website_url, placeholder: "Website URL" %>
+      </div>
+      <div class="form-group">
+        <%= f.input :phone_number, placeholder: "Phone Number" %>
+      </div>  
+      <div class="form-group">
+        <%= f.input :image %>
+      </div>
     </fieldset>
-  <div class="actions"><%= f.button :submit %></div>
-</form>
+    <div class="actions"><%= f.button :submit %></div>
+  </form>
 <% end %>

@@ -23,8 +23,7 @@
         <%= f.input :password_confirmation, required: true, placeholder: "Confirm Password" %>
       </div>
       <div class="form-group">
-        <label for="exampleInputFile">Profile Image</label>
-            <input type="file" id="exampleInputFile">
+        <%= f.input :image %>
       </div>
       <div class="actions"><%= f.button :submit, "Sign up" %></div>
     </form>

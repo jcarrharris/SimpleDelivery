@@ -10,7 +10,7 @@
         <table class="table table-hover">
           <%= link_to "See Details", business_path(b), class: "accordion_link" %>
           <tbody>
-            <tr><td>Website</td><td class="value"> <%= b.website_url %></td></tr>
+            <tr><td>Website</td><td class="value"><a href="http://<%= b.website_url %>" target="_blank"><%= b.website_url %></a></td></tr>
             <tr><td>Phone Number</td><td class="value"> <%= b.phone_number %></td></tr>
           </tbody>
         </table>

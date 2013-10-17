@@ -1,8 +1,7 @@
 <div class="section-content">
   <%= link_to "Edit", edit_user_registration_path(@user), class:"button", class:"diff" %>
   <h1><%= @user.first_name + " " + @user.last_name%> </h1>
-  <div class="circular"style="background-image:
-       <%=@user.image%>"><%= image_tag @user.image_url.to_s %></div>
+  <div class="circular" style="background-image: url(<%= @user.image %>)"></div>
   <% if @user.role == "Courier" %>
     <div id="myMap" style="width:50%;height:200px;"></div>
     <div id="star"data-score="1"></div>
@@ -15,6 +14,7 @@
       <% end %>
     </tbody>
   </table>
+  
   <% if (@user.id != current_user.id) && (@user.role == "Courier") %>
     <%= render "/ratings/form" %>
   <% end %>

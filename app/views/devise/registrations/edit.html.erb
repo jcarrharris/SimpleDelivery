@@ -14,8 +14,7 @@
         <%= f.input :email, required: true, :autofocus => true, placeholder: "Email" %>
       </div>
       <div class="form-group">
-        <label for="exampleInputFile">Profile Image</label>
-            <input type="file" id="exampleInputFile">
+        <%= f.input :image %>
       </div>
       <div class="form-group">
         <%= f.input :current_password, required: true, autocomplete: "off", placeholder: "password" %>
