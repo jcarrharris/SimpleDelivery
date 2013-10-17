@@ -1,6 +1,4 @@
 <div id="accordion">
-
-  
     <% @order.each do |o| %>
       <% unless o.status == "Delivered" %>
       <div><p><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o), class:"insidelink" %></p></div>
