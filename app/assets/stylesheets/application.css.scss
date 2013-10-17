@@ -132,6 +132,9 @@ body {
 }
 .diff {
   @include button(#438EB9);
+  margin-bottom: 25px;
+  margin-right: 100px;
+  margin-top: 20px;
   &:hover {
     color: #fff;
     text-decoration: none;

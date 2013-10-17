@@ -1,13 +1,13 @@
 <div class="section-content">
   <span>
     <h1><%= @location.location_name %> </h1>
-    <%= link_to "New Order", new_business_location_order_path(@business, @location), class:"button" %>
-    <%= link_to "Edit", edit_business_location_path(@business, @location), class:"diff"%>
+    <div>
+      <%= link_to "New Order", new_business_location_order_path(@business, @location), class:"button" %>
+    <%= link_to "Edit Order", edit_business_location_path(@business, @location), class:"diff"%></div>
   </span>
   <div id="locationMap" style="width:90%;height:380px;"data-latitude="<%= @location.latitude %>" data-longitude="<%= @location.longitude%>"></div>
   <table class="table table-hover" style="width:90%";>
     <tbody>
-      <tr><td>Location:</td> <td class="value"><%= @location.location_name %></td></tr>
       <tr><td>Address:</td> <td class="value"><%= @location.address %></td></tr>
       <tr><td>Phone Number:</td><td class="value"> <%= @location.phone_number %></td></tr>
     </tbody>
