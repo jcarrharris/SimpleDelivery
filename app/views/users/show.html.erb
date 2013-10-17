@@ -2,11 +2,11 @@
   <%= link_to "Edit", edit_user_registration_path(@user), class:"button", class:"diff" %>
   <h1><%= @user.first_name + " " + @user.last_name%> </h1>
   <div class="profile_pic"><%= image_tag @user.image_url.to_s %></div>
-  <% if current_user.role == "Courier" %>
+  <% if @user.role == "Courier" %>
     <div id="myMap" style="width:50%;height:200px;"></div>
     <div id="star"data-score="1"></div>
   <% else %>
-    <%= link_to "Add a new business", new_business_path(@business), class:"button"%>
+    <%= link_to "Add a new business", new_business_path, class:"button"%>
   <% end %>
   </br>
   </br>
@@ -14,7 +14,7 @@
     <tbody>
       <tr><td>Name:</td><td class="value"> <%= @user.first_name + " " + @user.last_name %></td></tr>
       <tr><td>Email:</td><td class="value"> <%= @user.email %></td></tr>
-      <% if current_user.role == "Courier" %>
+      <% if @user.role == "Courier" %>
         <tr><td>Average Rating:</td><td class="value"> <%= @user.average_rating %> (<%=@user.ratings.count %> ratings)</td></tr>
       <% end %>
     </tbody>

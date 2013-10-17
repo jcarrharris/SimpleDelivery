@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_user!, except: :track
   helper_method :sort_column, :sort_direction
   before_filter :get_business, :get_location, except: [:index, :courier, :status, :track]
   before_filter :get_order, only: [:show, :edit, :update, :destroy]
@@ -61,7 +62,7 @@ class OrdersController < ApplicationController
   def status
     if @order.update_attributes(order_params)
       if @order.status == "Delivered"
-        UserMailer.delivered_email(@order.location.business.user).deliver
+        UserMailer.delivered_email(@order.location.business.user, @order.user).deliver
       end
       redirect_to orders_path
     end

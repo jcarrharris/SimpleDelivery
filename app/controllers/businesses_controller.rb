@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :get_business, only: [:show, :edit, :update, :destroy]
   before_filter :new_business, only: :create # CanCan strong params incompatibility workaround
   load_and_authorize_resource
