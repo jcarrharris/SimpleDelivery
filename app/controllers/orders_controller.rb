@@ -70,8 +70,6 @@ class OrdersController < ApplicationController
     @order = Order.where(:tracking_number => params[:tracking_number]).first
     @business = @order.location.business
     @location = @order.location
-    gon.lat = @order.latitude
-    gon.lng = @order.longitude
     render :show
   end
 
