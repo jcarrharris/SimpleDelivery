@@ -413,3 +413,17 @@ color: #f7f7f7;
   color: #555;
   font-weight: bold;
 }
+.circular {
+  width: 10em;
+  height: 10em;
+  border-radius: 5em;
+  margin-bottom: 3em;
+  margin-left: 20em;
+  margin-top: 3em;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  background: no-repeat;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  }

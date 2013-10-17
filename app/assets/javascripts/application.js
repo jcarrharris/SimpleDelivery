@@ -17,7 +17,6 @@
 //= require picker
 //= require_tree .
 $(function() {
-  
   $("#orders th").on("click", function() {
     $.getScript(this.href);
     return false;
