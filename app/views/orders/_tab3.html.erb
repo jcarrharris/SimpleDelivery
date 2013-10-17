@@ -1,8 +1,6 @@
 <table class="table table-hover" style="width:90%;">
   <tbody>
-    <tr><td>Package Dimensions (L x W x H)</td><td class="value"> <%= @order.length.to_s + "cm x " + @order.width.to_s + "cm x " + @order.height.to_s + "cm" %></td></tr>
     <tr><td>Weight</td><td class="value"> <%= @order.weight.to_s + "kg" %></td></tr>
-    <tr><td>Quantity</td><td class="value"> <%= @order.quantity %></td></tr>
     <tr><td>Declared Value (CAD)</td><td class="value"> <%= @order.declared_value %></td></tr>
     <tr><td>Packaging</td><td class="value"> <%= @order.packaging %></td></tr>
   </tbody>

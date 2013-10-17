@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :orders
   has_many :ratings
   
-  # validates_presence_of :email, :password, :first_name, :last_name
+  validates_presence_of :email, :first_name, :last_name
   validates_uniqueness_of :email
   # validates :password, length: { minimum: 8 }
   validates_confirmation_of :password, message: "Passwords do not match!"
