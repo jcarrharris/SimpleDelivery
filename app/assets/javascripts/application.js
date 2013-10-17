@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require bootstrap
-//= require pickadate
-//= require pickatime
 // Loads all Bootstrap javascripts
 //= require_tree .
 $(function() {
@@ -31,14 +29,5 @@ $(function() {
     e.preventDefault();
     $(this).tab('show');
     $('#myTab a[href="#profile"]').tab('show');
-  });
-  $("#date").pickadate({
-      format: 'ddd, d mmmm yyyy',
-      min: new Date()
-  });
-  $("#time").pickatime({
-      format: 'h:i A',
-      interval: 60,
-      min: new Time()
   });
 });
