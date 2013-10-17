@@ -10,8 +10,6 @@ class LocationsController < ApplicationController
   end
 
   def show
-    gon.lat = @location.latitude
-    gon.lng = @location.longitude
   end
 
   def new

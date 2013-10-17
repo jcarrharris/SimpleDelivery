@@ -4,7 +4,7 @@
   <% if user_signed_in? %><%= (link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff") if current_user.role == "Merchant" %>
   <% end %>
 </span>
-  <div id="locationMap" style="width:90%;height:380px;"></div>
+  <div id="locationMap" style="width:90%;height:380px;" data-latitude="<%= @order.latitude %>" data-longitude="<%= @order.longitude%>"></div>
   <ul class="nav nav-tabs" id="myTab1">
       <li class="active"><a href="#atab1" data-toggle="tab">Home</a></li>
       <li><a href="#atab2" data-toggle="tab">Delivery</a></li>

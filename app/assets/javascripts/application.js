@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require bootstrap
-// Loads all Bootstrap javascripts
+//= require picker
 //= require_tree .
 $(function() {
   $("#orders th").on("click", function() {
@@ -30,4 +30,5 @@ $(function() {
     $(this).tab('show');
     $('#myTab a[href="#profile"]').tab('show');
   });
+  $("#date").pickadate();
 });

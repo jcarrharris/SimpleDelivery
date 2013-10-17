@@ -13,8 +13,6 @@ class OrdersController < ApplicationController
   end
 
   def show
-    gon.lat = @order.latitude
-    gon.lng = @order.longitude
   end
 
   def new

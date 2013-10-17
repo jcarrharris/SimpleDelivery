@@ -15,7 +15,6 @@
  */
 
 
-
 ;(function( $, document, undefined ) {
 
     'use strict';

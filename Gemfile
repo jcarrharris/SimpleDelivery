@@ -8,7 +8,7 @@ gem 'rails', '4.0.0'
 gem 'pg'
 gem 'geocoder'
 gem 'neat'
-gem 'gon'
+
 
 gem 'rails_12factor', group: :production
 gem 'intercom-rails', '~> 0.2.21'

@@ -4,9 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Simple Delivery" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Simple Delivery" %>">
-    <%= include_gon %>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -21,8 +19,7 @@
     <p class="pull-left">© 2013 Swish, Inc.</a></p>
     <p class="pull-right"><a href="#">Back to top</a></p>
   </footer>
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9JBz-80iyKF7JGzeikG0zHHqWdF2CLPs&sensor=true"></script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>
