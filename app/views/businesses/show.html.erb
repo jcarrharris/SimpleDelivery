@@ -1,5 +1,9 @@
 <div class="section-content">
-<h1><%= @business.business_name %> </h1>
+  <span>
+    <h1><%= @business.business_name %></h1>
+    <%= link_to "Edit", edit_business_path(@business), class:"diff"%>
+    <%= link_to "New Location", new_business_location_path(@business), class:"button" %>
+  </span>
   <div class="picture"><%= image_tag @business.image_url.to_s %></div>
   <div class="row">
     <div class="col-sm-6 col-md-3">
@@ -8,16 +12,10 @@
       </a>
     </div>
   </div>
-  </br>
-        <%= link_to "Edit", edit_business_path(@business), class:"diff"%>
-  </br>
-    <%= link_to "Add a new location", new_business_location_path(@business), class:"button" %>
-  </br> 
-    <table class="table table-hover">
-      <tbody>
-        <tr><td>Business Name:</td><td class="value"> <%= @business.business_name %></td></tr>
-        <tr><td>Website URL:</td><td class="value"> <%= @business.website_url %></td></tr>
-        <tr><td>Phone Number:</td><td class="value"> <%= @business.phone_number %></td></tr>
-      </tbody>
-    </table>
+  <table class="table table-hover">
+    <tbody>
+      <tr><td>Website</td><td class="value"> <%= @business.website_url %></td></tr>
+      <tr><td>Phone Number</td><td class="value"> <%= @business.phone_number %></td></tr>
+    </tbody>
+  </table>
 </div>

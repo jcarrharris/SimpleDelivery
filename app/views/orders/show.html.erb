@@ -1,20 +1,25 @@
 <div class="section-content">
-<span>
-  <h2><%= " Status for " + "Order # " + @order.tracking_number.to_s %> </h2>
-  <% if user_signed_in? %><%= (link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff") if current_user.role == "Merchant" %>
-  <% end %>
-</span>
+  <span>
+    <h2><%= " Status for " + "Order # " + @order.tracking_number.to_s %> </h2>
+    <% if user_signed_in? %>
+      <%= (link_to "Edit", edit_business_location_order_path(@business, @location, @order), class:"button", class:"diff") if current_user.role == "Merchant" %>
+    <% end %>
+  </span>
   <div id="locationMap" style="width:90%;height:380px;" data-latitude="<%= @order.latitude %>" data-longitude="<%= @order.longitude%>"></div>
   <ul class="nav nav-tabs" id="myTab1">
-      <li class="active"><a href="#atab1" data-toggle="tab">Home</a></li>
-      <li><a href="#atab2" data-toggle="tab">Delivery</a></li>
-      <li><a href="#atab3" data-toggle="tab">Package</a></li>
+    <li class="active"><a href="#atab1" data-toggle="tab">Home</a></li>
+    <li><a href="#atab2" data-toggle="tab">Delivery</a></li>
+    <li><a href="#atab3" data-toggle="tab">Package</a></li>
   </ul>
   <div class="tab-content" id="tab-content1" >
     <div class="tab pane fade active in" id="atab1">
-      <%=render 'tab1'%></div>
+      <%= render 'tab1' %>
+    </div>
     <div class="tab-pane fade in" id="atab2">
-      <%=render 'tab2'%></div>
-  <div class="tab-pane fade in" id="atab3">
-    <%=render 'tab3'%></div>
-</ul>
+      <%= render 'tab2' %>
+    </div>
+    <div class="tab-pane fade in" id="atab3">
+      <%= render 'tab3' %>
+    </div>
+  </div>
+</div>

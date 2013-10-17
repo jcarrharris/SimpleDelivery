@@ -6,11 +6,8 @@
     <div id="myMap" style="width:50%;height:200px;"></div>
     <div id="star"data-score="1"></div>
   <% end %>
-  </br>
-  </br>
   <table class="table">
     <tbody>
-      <tr><td>Name:</td><td class="value"> <%= @user.first_name + " " + @user.last_name %></td></tr>
       <tr><td>Email:</td><td class="value"> <%= @user.email %></td></tr>
       <% if @user.role == "Courier" %>
         <tr><td>Average Rating:</td><td class="value"> <%= @user.average_rating %> (<%=@user.ratings.count %> ratings)</td></tr>
