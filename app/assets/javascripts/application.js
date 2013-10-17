@@ -31,4 +31,5 @@ $(function() {
     $('#myTab a[href="#profile"]').tab('show');
   });
   $("#date").pickadate();
+  $("#time").pickatime();
 });
