@@ -5,7 +5,7 @@
   <div class="table-responsive">
       <table class="table table-hover">
         <tbody></div>
-          <%= link_to o.tracking_number,business_location_order_path(o.location.business, o.location, o), class:"insidelink"%>
+          <%= link_to "See Details",business_location_order_path(o.location.business, o.location, o), class:"insidelink"%>
           <tr><td><%= sortable "status"%><td class="value"><%= o.status %></td></tr>
           <tr><td><%= sortable "location_name", "Location"%><td class="value"><%= o.location.location_name %></td></tr>
           <tr><td><%= sortable "pickup_time"%><td class="value"><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td></tr>
