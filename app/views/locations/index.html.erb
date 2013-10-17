@@ -8,7 +8,7 @@
           <%= link_to "See Details", business_location_path(l.business, l), class: "accordion_link" %>
           <tbody>
             <tr><td>Address</td><td class="value"> <%= l.address %></td></tr>
-            <tr><td>Phone Number</td><td class="value"> <%= l.phone_number %></td></tr>
+            <tr><td>Phone Number</td><td class="value"><%= number_to_phone(l.phone_number, area_code: true) %></td></tr>
           </tbody>
         </table>
       </div>
