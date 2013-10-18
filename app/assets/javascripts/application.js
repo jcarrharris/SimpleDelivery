@@ -19,7 +19,6 @@
 
 $(window).load(function() {
   $(".section-content").fadeIn("slow");
-  
   $("#orders th").on("click", function() {
     $.getScript(this.href);
     return false;
