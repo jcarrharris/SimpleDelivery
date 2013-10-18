@@ -16,7 +16,9 @@
 //= require bootstrap
 //= require picker
 //= require_tree .
-$(function() {
+$(window).load(function() {
+  $(".section-content").fadeIn("slow");
+  
   $("#orders th").on("click", function() {
     $.getScript(this.href);
     return false;
@@ -47,6 +49,8 @@ $(function() {
   $('.modal-body #star').raty({
     path: '/assets/',
     score: 'score',
+    size: 40,
+    width: false,
     click: function(score, evt) {
       var url = $(".modal-body").data("raty-url");
       $.ajax({
@@ -60,10 +64,8 @@ $(function() {
       });
     }
   });
-
   $("#progressbar").progressbar({
     max: 5,
     value: $('#progressbar').data('rating')
   })
-
 });

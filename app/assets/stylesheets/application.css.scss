@@ -31,6 +31,17 @@ a {
   font-family: $helvetica;
   font-size: 48px;
 }
+.welcome {
+  font-weight: 700;
+  height: 20%;
+  margin-bottom: 10px;
+}
+.navbar-header, .nav.navbar-nav > li > .link, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  background-color: #3F4153;
+    &:hover {
+      color: #EC6F3E;
+    }
+}
 body {
   font-size: 16px;
   font-family: $helvetica;
@@ -83,7 +94,7 @@ p {
   list-style: none;
   word-wrap: break-word;
 }
- .error_messages, #alert {
+ .error_messages, #alert, .alert.alert-block.fade.in {
   font-size: 16px;
   border: 1px solid;
   margin-bottom: 40px;
@@ -132,6 +143,7 @@ legend {
   border-radius: 6px;
   display: block;
   min-width: 445px;
+  display: none;
 }
 
 .button {
@@ -633,4 +645,14 @@ color: #fff;
  }
  .dropdown-menu {
   background-color: #3F4153;
+ }
+ #star.modal-body {
+  width: 300px;
+  margin-left: 25%;
+ }
+ .modal-title {
+  margin-left: 25%;
+  font-family: $helvetica;
+  font-weight: 400;
+  letter-spacing: 0.0625em;
  }
