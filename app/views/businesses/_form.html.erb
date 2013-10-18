@@ -1,7 +1,6 @@
 <%= simple_form_for @business, html: {multipart: true} do |f| %>
   <div><% f.error_notification %></div>
   <form role="form">
-    <legend></legend>
     <fieldset>
       <div class="form-group">
         <%= f.input :business_name, autofocus: true, placeholder: "Business Name" %>
