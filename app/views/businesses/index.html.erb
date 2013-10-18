@@ -1,7 +1,7 @@
 <div class="section-content">
   <span>
     <h2>Businesses</h2>
-    <div><%= link_to "Add a new business", new_business_path(@business), class:"button-business-index"%></div>
+    <div><%= link_to "Add a new business", new_business_path, class:"button-business-index"%></div>
   </span>
   <div id="accordion">
     <% @business.each do |b| %>
