@@ -103,6 +103,13 @@ p {
 .userinformation .topic {
   font-weight: 900;
 }
+legend {
+  color: #3F4153;
+}
+.btn.btn-primary.btn-lg {
+  float: right;
+  margin-top: -70px;
+}
 #notice {
   font-size: 16px;
   color: #4F8A10;
@@ -132,7 +139,14 @@ p {
     text-decoration: none;
   }
 }
-
+.button-modal {
+  @include button(#EC6F3E);
+  margin-right: 200px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
 .button-fix {
   @include button(#EC6F3E);
   float: right;
@@ -189,7 +203,7 @@ li a {
   text:white;
 }
 #main {
-  background-color:#f7f7f7;
+  background-image: url(mooning.png);
 }
 .accord {
   margin: 0px 8px 8px 8px;

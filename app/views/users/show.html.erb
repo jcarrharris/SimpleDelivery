@@ -17,9 +17,7 @@
       <% end %>
     </tbody>
   </table>
-</div>
-
-<% if (@user.id != current_user.id) && (@user.role == "Courier") %>      
+<% if (@user.id != current_user.id) && (@user.role == "Courier") %>  
   <!-- Button trigger modal -->
   <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Rate this courier</a>
 
@@ -37,11 +35,11 @@
             <div class="modal-body" id="star" name="stary"></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <%= f.button :submit %>
+            <%= f.button :submit, class:"button-modal" %>
           <% end %>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 <% end %>
+</div>
