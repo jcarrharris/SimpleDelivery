@@ -32,9 +32,14 @@ a {
   font-size: 48px;
 }
 .welcome {
-  font-weight: 700;
-  height: 20%;
+  font-weight: bold;
+  font-size: 5em;
+  font-family: $helvetica;
+  letter-spacing: 0.0625em;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  padding: 0px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 .navbar-header, .nav.navbar-nav > li > .link, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   background-color: #3F4153;
@@ -45,8 +50,10 @@ a {
 body {
   font-size: 16px;
   font-family: $helvetica;
-  background-image: url(mooning.png);
+  background-image: url(carbonfiber.png);
+  background-repeat: repeat;
   font-color: #222;
+  height: 100%;
 }
 
 p {
@@ -72,16 +79,22 @@ p {
   }
 }
 .actions input {
-  @include button(simple);
+  @include button(simple, #5cb85c);
   text-decoration: none;
   font-size: 14px;
   margin-left: 75px;
   margin-top: 20px;
+  &:hover {
+    color: #244924;
+  }
     a {
     @include button(simple);
     text-decoration: none;
     font-size: 14px;
     }
+}
+#rememberme {
+  margin-top: -1.5em;
 }
 .message_container {
   position: fixed;
@@ -138,6 +151,7 @@ legend {
   @include shift(1);
   background: #fff;
   margin-top: 0px;
+  margin-bottom: 92px;
   padding: 30px 40px 45px 40px;
   border: 1px solid #e3e3e3;
   border-radius: 6px;
@@ -218,7 +232,8 @@ li a {
   text:white;
 }
 #main {
-  background-image: url(mooning.png);
+  background-image: url(carbonfiber.png);
+  background-repeat: repeat;
 }
 .accord {
   margin: 0px 8px 8px 8px;
@@ -227,7 +242,7 @@ li a {
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
   @include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 60%), 
-                             linear-gradient(lighten(#3F4153, 5%), darken(#3F4153, 5%)));
+                             linear-gradient(lighten(#3F4153, 5%), darken(#494B60, 5%)));
 }
 .pull-right {
   padding-right: 2em;
@@ -277,7 +292,7 @@ a.insidelink {
   z-index: 10;
 }
 .carousel .item {
-  height: 500px;
+  height: 800px;
 }
 .carousel img {
   position: absolute;
@@ -347,7 +362,7 @@ a.insidelink {
   }
 
   .carousel .item {
-    height: 500px;
+    height: 700px;
   }
   .carousel img {
     width: auto;
@@ -377,9 +392,10 @@ a.insidelink {
   .carousel .container {
   }
   .carousel .item {
-    height: 300px;
+    height: 600px;
   }
   .carousel img {
+    width:auto;
     height: 300px;
   }
   .carousel-caption {
@@ -415,6 +431,10 @@ a.insidelink {
     line-height: 1.5;
   }
 }
+
+.btn btn-success btn-lg {
+  padding: 1em;
+}
 .signup-button {
   @include button;
   position: absolute;
@@ -431,8 +451,13 @@ a.insidelink {
 }
 .lead {
   line-height: 1.2;
+  font-size: 2em;
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   margin-bottom: 8px;
+  letter-spacing: 0.0825em;
+  font-family: $helvetica;
+  font-weight: 100;
+  padding: 10px;
 }
 #footer {
   @include span-columns(12);
@@ -440,7 +465,7 @@ a.insidelink {
   font-size: 13px;
   border-top: 1px solid #ddd;
   padding: 15px 0 15px;
-  margin: 45px auto;
+  background-color: #fff;
 }
 #footer a {
   color: #555;

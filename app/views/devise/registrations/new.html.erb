@@ -1,5 +1,5 @@
 <div class="section-content">
-  <legend class="field">Sign up</legend>
+  <legend>Sign up</legend>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <form role="form">
@@ -24,7 +24,7 @@
       <div class="form-group">
         <%= f.input :image %>
       </div>
-      <div class="actions"><%= f.button :submit, "Sign up" %></div>
+      <div class="actions"><%= f.button :submit, "Sign up"%></div>
     </form>
   <% end %>
 
