@@ -213,9 +213,12 @@ li a {
   color: #ffffff;
 }
 a.insidelink {
-  color: blue;
+  color: #EC6F3E;
   text-decoration: underline;
   font-weight: bold;
+  &:hover {
+    font-size: 1.5em;
+  }
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -448,7 +451,7 @@ color: #f7f7f7;
   height: 10em;
   border-radius: 5em;
   margin-bottom: 3em;
-  margin-left: 20em;
+  margin-left: 38%;
   margin-top: 3em;
   -webkit-border-radius: 5em;
   -moz-border-radius: 5em;
@@ -470,5 +473,22 @@ label.boolean.optional.control-label {
   border-bottom-color: white;
   &:hover {
     color: #438EB9;
+  }
+}
+.button-business-index {
+  @include button(#EC6F3E);
+  float: right;
+  margin-top: -50px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.accept-option {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #EC6F3E;
+  &:hover {
+    text-decoration: none;  
   }
 }

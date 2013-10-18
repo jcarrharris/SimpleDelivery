@@ -24,7 +24,7 @@
           <% if o.user != nil %>
             <td class="value"><%= o.user.first_name %></td>
           <% else %>
-            <td class="value"><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?" %></td>
+            <td class="value"><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?", class:"accept-option" %></td>
           <% end %>
         </tr>
       </table>
