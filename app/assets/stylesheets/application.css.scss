@@ -440,7 +440,7 @@ color: #f7f7f7;
 }
 #footer {
   @include span-columns(12);
-  color: #999;
+  color: #555;
   font-size: 13px;
   border-top: 1px solid #ddd;
   padding: 15px 0 15px;
@@ -448,7 +448,7 @@ color: #f7f7f7;
 }
 #footer a {
   color: #555;
-  font-weight: bold;
+  text-decoration: underline;
 }
 .circular {
   width: 10em;
