@@ -16,7 +16,10 @@
     <tbody>
       <tr><td>Email</td><td class="value"><%= @user.email %></td></tr>
       <% if @user.role == "Courier" %>
-        <tr><td>Average Rating</td><td class="value"><span class="avg"><%= @user.average_rating %></span> (<span class="count"><%= @user.ratings.count %></span> ratings)</td></tr>
+        <tr><td>Average Rating</td><td class="value">
+          <div id="avgStar" data-score="<%= @user.average_rating %>"></div>
+          <span class="avg"><%= @user.average_rating %></span> (<span class="count"><%= @user.ratings.count %></span> ratings)
+        </td></tr>
       <% else %>
         <tr><td>Annual Subscription ($100)</td><td class="value"><%= render 'charges/new' %></td></tr>
       <% end %>

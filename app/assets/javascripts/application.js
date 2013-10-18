@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require picker
 //= require_tree .
+
 $(window).load(function() {
   $(".section-content").fadeIn("slow");
   
@@ -46,6 +47,17 @@ $(window).load(function() {
   map: ".map_canvas"
   });
 
+  function myAvg() {
+    $('#avgStar').raty({
+      path: '/assets/',
+      readOnly: true,
+      half: true,
+      score: function() {
+        return $(this).attr('data-score');
+      }
+    });
+  }
+
   $('.modal-body #star').raty({
     path: '/assets/',
     score: 'score',
@@ -59,13 +71,18 @@ $(window).load(function() {
         data: { score: score }
       }).done(function(data) {
         $('#myModal').modal('hide');
-        $(".avg").html(data.average_rating)
-        $(".count").html(data.count)
+        $(".avg").html(data.average_rating);
+        $(".count").html(data.count);
+        $("#avgStar").attr('data-score', data.average_rating);
+        myAvg();
       });
     }
   });
+
   $("#progressbar").progressbar({
     max: 5,
     value: $('#progressbar').data('rating')
-  })
+  });
+
+  myAvg();
 });

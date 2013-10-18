@@ -3,6 +3,13 @@
     <tr><td>Status</td><td class="value"> <%= @order.status %></td></tr>
     <tr><td>Distance</td><td class="value">Package is <%= (Geocoder::Calculations.distance_between(@location.address, @order.delivery_address)*1.60934).round(2) %> km away!</td></tr>
     <tr><td>Courier</td><td class="value"> <%= @order.user != nil ? @order.user.first_name : "Pending" %></td></tr>
-    <tr><td>Courier Rating<td class="value"><%= @order.user != nil ? (@order.user.average_rating.to_s + " (" + @order.user.ratings.count.to_s + " ratings)") : "N/A" %></td></tr>
+    <tr><td>Courier Rating<td class="value">
+      <% if @order.user != nil %>
+        <div id="avgStar" data-score="<%= @order.user.average_rating %>"></div>
+        <%= @order.user.average_rating.to_s + " (" + @order.user.ratings.count.to_s + " ratings)" %>
+      <% else %>
+        N/A
+      <% end %>
+    </td></tr>
   </tbody>
 </table>
