@@ -13,10 +13,7 @@
       <% if @user.role == "Courier" %>
         <tr><td>Average Rating:</td><td class="value"> <%= @user.average_rating %> (<%=@user.ratings.count %> ratings)</td></tr>
       <% end %>
-    </tbody>
-  </table>
-  <% if (@user.id != current_user.id) && (@user.role == "Courier") %>
-    <%= render "/ratings/form" %>
-  <% end %>
-
+      <tr>
+      <% if (@user.id != current_user.id) && (@user.role == "Courier") %>
+        <%= render "/ratings/form" %> <% end %>
 </div>

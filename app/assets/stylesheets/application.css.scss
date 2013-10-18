@@ -503,3 +503,23 @@ label.boolean.optional.control-label {
 input.btn {
   margin-left: 1%;
 }
+.courier-button {
+  @include button(pill, #438EB9);
+  margin-right: 50px;
+  float: right;
+  margin-top: -27px;
+  font-size: 60%;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.accept-button {
+  @include button(pill, #438EB9);
+  margin-right: 300px;
+  float: right;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}

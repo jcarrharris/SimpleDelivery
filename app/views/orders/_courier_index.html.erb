@@ -9,9 +9,9 @@
         <tr><td><%= sortable "status" %>
           <% if (o.user == current_user) && (o.status != "Delivered") %>
             <%= simple_form_for o, url: order_status_path(o) do |f| %>
-              <td class="value"><%= f.input :status, collection: ["Pending", "Enroute", "Delivered"], label: false, include_blank: false %>
-              <%= f.button :submit %></td>
-            <% end %>
+              <div><td class="value"><%= f.input :status, collection: ["Pending", "Enroute", "Delivered"], label: false, include_blank: false, class:"status-dropdown" %>
+              <%= f.button :submit,"Update", class:"courier-button" %></td>
+            <% end %></div>
           <% else %>
            <td class="value"><%= o.status %></td>
           <% end %>
@@ -24,7 +24,9 @@
           <% if o.user != nil %>
             <td class="value"><%= o.user.first_name %></td>
           <% else %>
-            <td class="value"><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?", class:"accept-option" %></td>
+          <div>
+            <td class="value"><%= link_to "Accept", order_courier_path(o), method: :post, confirm: "Are you sure?", class:"accept-button" %></td>
+          </div>
           <% end %>
         </tr>
       </table>
