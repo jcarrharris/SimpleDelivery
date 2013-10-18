@@ -11,9 +11,8 @@
       <div class="form-group">
         <%= f.input :address, placeholder: "Address" %>
       </div>
-      <div class="phone_us">
-        <%= text_field_tag :phone_number %>
-      </div>
+      <label>Phone number:</label><br />
+      <input type="text"  id="phone-number" name="phone-number"placeholder="(XXX) XXX-XXXX" /><br /><br />
     </fieldset>
   </div>
   <div class="actions"><%= f.button :submit %></div>
