@@ -48,7 +48,7 @@ $(window).load(function() {
 
   function myAvg() {
     $('#avgStar').raty({
-      path: '/assets/',
+      path: '/images/',
       readOnly: true,
       width: false,
       half: true,
@@ -59,7 +59,7 @@ $(window).load(function() {
   }
 
   $('.modal-body #star').raty({
-    path: '/assets/',
+    path: '/images/',
     score: 'score',
     size: 40,
     width: false,
