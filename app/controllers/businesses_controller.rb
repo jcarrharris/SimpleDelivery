@@ -17,7 +17,7 @@ class BusinessesController < ApplicationController
 
   def create
     @business = current_user.businesses.build(business_params)
-    @business.phone_number = (params[:phone1] + params[:phone2] + params[:phone3]).to_i
+    @business.phone_number = (params[:phone_number]).gsub(/\D/, '').to_i
 
     if @business.save
       redirect_to business_path(@business), notice: 'Business added.'
