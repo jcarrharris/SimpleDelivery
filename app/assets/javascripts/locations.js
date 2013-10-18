@@ -1,4 +1,4 @@
-$(document).ready( function() {
+$(document).ready(function() {
   var myOptions = {
     zoom: 16,
     center: new google.maps.LatLng($('#locationMap').data('latitude'),$('#locationMap').data('longitude')),
