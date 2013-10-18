@@ -209,7 +209,7 @@ li a {
   padding-left: 2em;
 }
 
-#ui-accordion-accordion-header-0, #ui-accordion-accordion-header-1, #ui-accordion-accordion-header-0 p a, #ui-accordion-accordion-header-1 p a,  #ui-accordion-accordion-header-2 p a,  #ui-accordion-accordion-header-3 p a,  #ui-accordion-accordion-header-4 p a,  #ui-accordion-accordion-header-5 p a,  #ui-accordion-accordion-header-6 p a, #ui-accordion-accordion-header-7 p a{
+#ui-accordion-accordion-header-0, #ui-accordion-accordion-header-1, #ui-accordion-accordion-header-0 p a, #ui-accordion-accordion-header-1 p a,  #ui-accordion-accordion-header-2 p a,  #ui-accordion-accordion-header-3 p a,  #ui-accordion-accordion-header-4 p a,  #ui-accordion-accordion-header-5 p a,  #ui-accordion-accordion-header-6 p a, #ui-accordion-accordion-header-7 p a, #ui-accordion-accordion-header-8 p a, #ui-accordion-accordion-header-8 p a, #ui-accordion-accordion-header-9 p a, #ui-accordion-accordion-header-10 p a{
   color: #ffffff;
 }
 a.insidelink {
@@ -489,7 +489,7 @@ label.boolean.optional.control-label {
   font-weight: bold;
   color: #EC6F3E;
   &:hover {
-    text-decoration: none;  
+    text-decoration: none;
   }
 }
 .couriermap {
@@ -498,10 +498,4 @@ label.boolean.optional.control-label {
 }
 input.btn {
   margin-left: 1%;
-}
-.accordion_link {
-  color: blue;
-  &:hover {
-    text-decoration: none;
-  }
 }
