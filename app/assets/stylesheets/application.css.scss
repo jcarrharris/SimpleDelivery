@@ -548,3 +548,26 @@ a.accept-button {
 #progressbar div {
   background: orange;
 }
+#myTab1 a {
+  margin-top: 1em;
+  background-color: #3F4153;
+  color: #999;
+  &:hover {
+    color: #EC6F3E;
+    text-decoration: none;
+  }
+}
+#myTab1 .inactive a, #myTab2 .inactive a, #myTab3 .inactive a {
+  color: #999;
+  &:hover {
+    color: #EC6F3E;
+    text-decoration: none;
+  }
+}
+#myTab1 .active a {
+  color:white;
+  &:hover {
+    color: #EC6F3E;
+    text-decoration: none;
+  }
+}
