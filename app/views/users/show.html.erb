@@ -2,7 +2,7 @@
   <h2><%= @user.first_name + " " + @user.last_name%> </h2>
   <% if (@user.id != current_user.id) && (@user.role == "Courier") %>
   <a data-toggle="modal" href="#myModal" class="button-fix">Rate this courier</a>
-  <% end %> 
+  <% end %>
   <% if @user == current_user %>
     <div class="profile-button"><%= link_to "Edit", edit_user_registration_path(@user), class:"button", class:"diff" %></div>
   <% end %>
@@ -25,9 +25,8 @@
       <% end %>
     </tbody>
   </table>
-<% if (@user.id != current_user.id) && (@user.role == "Courier") %>  
+<% if (@user.id != current_user.id) && (@user.role == "Courier") %>
   <!-- Button trigger modal -->
-  
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

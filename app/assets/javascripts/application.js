@@ -51,6 +51,7 @@ $(window).load(function() {
     $('#avgStar').raty({
       path: '/assets/',
       readOnly: true,
+      width: false,
       half: true,
       score: function() {
         return $(this).attr('data-score');

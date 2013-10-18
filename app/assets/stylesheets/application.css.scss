@@ -264,7 +264,7 @@ a.insidelink {
   margin-left: 0.5em;
   margin-bottom: 1em;
   &:hover {
-    font-size: 1.5em;
+    color: #3F4153;
   }
 }
 .accordion-title {
@@ -685,4 +685,7 @@ color: #fff;
   font-family: $helvetica;
   font-weight: 400;
   letter-spacing: 0.0625em;
+ }
+td.value #avgStar{
+  padding-bottom: 0.5em;
  }
