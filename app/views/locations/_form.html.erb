@@ -4,7 +4,6 @@
     </div>
   <div class="field">
     <fieldset>
-      <legend></legend>
       <div class="form-group">
         <%= f.input :location_name, :autofocus => true, placeholder: "Location Name" %>
       </div>
@@ -14,6 +13,6 @@
       <label>Phone number:</label><br />
       <input type="text"  id="phone-number" name="phone-number"placeholder="(XXX) XXX-XXXX" /><br /><br />
     </fieldset>
+    <div class="actions"><%= f.button :submit %></div>
   </div>
-  <div class="actions"><%= f.button :submit %></div>
 <% end %>

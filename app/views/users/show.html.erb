@@ -4,7 +4,7 @@
   <legend></legend>
   <div class="circular" style="background-image: url(<%= @user.image %>)"></div>
   <% if @user.role == "Courier" %>
-    <div id="myMap" style="width:50%;height:200px;"></div>
+    <div id="myMap" class="couriermap" style="width:50%;height:200px;"></div>
     <div id="star"data-score="1"></div>
   <% end %>
   <table class="table">
@@ -15,7 +15,6 @@
       <% end %>
     </tbody>
   </table>
-  
   <% if (@user.id != current_user.id) && (@user.role == "Courier") %>
     <%= render "/ratings/form" %>
   <% end %>
