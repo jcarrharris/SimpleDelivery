@@ -2,7 +2,7 @@
   <span>
     <h1><%= @business.business_name %></h1>
     <div>
-    <%= link_to "Edit Business", edit_business_path(@business), class:"diff"%>
+    <%= link_to "Edit", edit_business_path(@business), class:"diff"%>
     <%= link_to "New Location", new_business_location_path(@business), class:"button-fix" %>
   </div>
   </span>
