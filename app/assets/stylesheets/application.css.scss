@@ -11,7 +11,7 @@ $gw-column: 100px;          // Column Width
 $gw-gutter: 40px;
 
 h1, h2, h3 {
-  font-family: $helvetica;
+  font-family: $lucida-grande;
   display: inline-block;
   color: #3F4153;
 }
@@ -33,14 +33,13 @@ a {
 }
 body {
   font-size: 16px;
-  font-family: $lucida-grande;
+  font-family: $helvetica;
   background-image: url(mooning.png);
-  font-family: $lucida-grande;
   font-color: #222;
 }
 
 p {
-  font-family: $lucida-grande;
+  font-family: $helvetica;
   font-color: #222;
 }
 .field {
@@ -133,6 +132,7 @@ legend {
   border: 1px solid #e3e3e3;
   border-radius: 6px;
   display: block;
+  min-width: 445px;
 }
 
 .button {
@@ -219,8 +219,8 @@ li a {
   @include background-image(url("/images/a.png"), linear-gradient(white 0, yellow 50%, transparent 50%));
 
   // Multiple linear-gradients - Demo
-  @include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 80%), 
-                             linear-gradient(#438eb9, darken(#2765a2, 10%)));
+  @include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 60%), 
+                             linear-gradient(#438eb9, darken(#68a4c7, 10%)));
 
 
 }
@@ -530,8 +530,9 @@ a.accept-button {
   }
 }
 #myTab1 .inactive a, #myTab2 .inactive a, #myTab3 .inactive a {
-  color: #999;
+  color: #c1c1c1;
   background-color: #3F4153;
+  letter-spacing: 0.0625em;
   &:hover {
     color: #EC6F3E;
     text-decoration: none;
@@ -540,6 +541,7 @@ a.accept-button {
 #myTab1 .active a {
   color:white;
   background-color: #656675;
+  letter-spacing: 0.0625em;
   &:hover {
     color: #EC6F3E;
     text-decoration: none;
@@ -547,6 +549,7 @@ a.accept-button {
 }
 .navbar-default .navbar-nav > .active > a {
   color:  #eee;
+  font-family: $helvetica;
   &:hover {
     color: #EC6F3E;
     text-decoration: none;
