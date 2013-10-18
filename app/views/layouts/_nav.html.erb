@@ -12,10 +12,10 @@
     <ul class="nav navbar-nav" id="myNav1">
       <% if user_signed_in? %>
         <% if current_user.role == "Merchant" %>
-          <li class="active"><%= link_to "Businesses", :root, class:"link" %></li>
-          <li class="inactive"><%= link_to "Locations", locations_path, class:"link"  %></li>
-          <li class="inactive"><%= link_to "Orders", orders_path, class:"link" %></li>
+          <li class="inactive"><%= link_to "Businesses", businesses_path, class:"link" %></li>
+          <li class="inactive"><%= link_to "Locations", locations_path, class:"link" %></li>
         <% end %>
+        <li class="inactive"><%= link_to "Orders", orders_path, class:"link" %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
