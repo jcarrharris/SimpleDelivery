@@ -38,4 +38,6 @@ $(function() {
   $( "#accordion" ).accordion({ collapsible: true });
   $(this).addClass('newClass');
 
+  $('.phone_us').mask('(000) 000-0000');
+
 });
