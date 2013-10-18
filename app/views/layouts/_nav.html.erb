@@ -9,11 +9,12 @@
     <span class="navbar-brand"><%= link_to "Simple Delivery", :root %></span>
   </div>
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav" id="myNav1">
       <% if user_signed_in? %>
         <% if current_user.role == "Merchant" %>
-          <li><%= link_to "Locations", locations_path, class:"link"  %></li>
-          <li><%= link_to "Orders", orders_path, class:"link" %></li>
+          <li class="active"><%= link_to "Businesses", :root, class:"link" %></li>
+          <li class="inactive"><%= link_to "Locations", locations_path, class:"link"  %></li>
+          <li class="inactive"><%= link_to "Orders", orders_path, class:"link" %></li>
         <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -27,11 +28,11 @@
     </ul>
       <% elsif current_page? new_user_session_path %>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Sign up", new_user_registration_path, class:"link" %><br /></li>
+          <li id="lowerlink"><%= link_to "Sign up", new_user_registration_path, class:"link" %><br /></li>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Login", new_user_session_path, class:"link" %><br /></li>
+          <li id="lowerlink"><%= link_to "Login", new_user_session_path, class:"link" %><br /></li>
         </ul>
       <% end %>
   </div>

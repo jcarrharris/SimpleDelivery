@@ -1,0 +1,9 @@
+<%= simple_form_for [@user, @rating] do |f| %>
+  <div><% f.error_notification %></div>
+  <td><div class="form-group">
+    <%= f.input :rate, collection: [1, 2, 3, 4, 5], required: true, include_blank: false %></td></tr>
+  </div>
+  </tbody>
+  </table>
+<div class="actions"><%= f.button :submit %></div>
+<% end %>
