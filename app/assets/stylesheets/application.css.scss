@@ -514,12 +514,23 @@ input.btn {
     text-decoration: none;
   }
 }
-.accept-button {
+a.accept-button {
   @include button(pill, #438EB9);
-  margin-right: 300px;
-  float: right;
+  float: left;
+  color: white;
   &:hover {
     color: #fff;
     text-decoration: none;
   }
+}
+.pic img {
+  margin-bottom: 20px;
+}
+#progressbar {
+  width: 100px;
+  height: 25px;
+  background: lightgrey;
+}
+#progressbar div {
+  background: orange;
 }

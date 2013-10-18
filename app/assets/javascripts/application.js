@@ -44,4 +44,14 @@ $(function() {
   map: ".map_canvas"
   });
 
+  $('.modal-body #star').raty({
+    path: '/assets/',
+    score: 'score',
+  });
+
+  $("#progressbar").progressbar({
+    max: 5,
+    value: $('#progressbar').data('rating')
+  })
+
 });

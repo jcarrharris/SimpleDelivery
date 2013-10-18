@@ -4,7 +4,7 @@ SimpleDelivery::Application.routes.draw do
   # get 'users/:id' => 'users#show', as: 'user'
 
   resources :users, only: [:show] do
-    resources :ratings
+    resources :ratings, only: [:create]
   end
 
   resources :businesses do
