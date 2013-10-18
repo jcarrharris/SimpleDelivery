@@ -110,7 +110,6 @@ p {
  .error_messages, #alert, .alert.alert-block.fade.in {
   font-size: 16px;
   border: 1px solid;
-  margin-bottom: 40px;
   padding:15px 10px 15px 50px;
   background-repeat: no-repeat;
   background-position: 10px center;
@@ -177,7 +176,7 @@ legend {
   }
 }
 .button-fix {
-  @include button(#EC6F3E);
+  @include button(#5cb85c);
   float: right;
   margin-bottom: 25px;
   margin-right: 100px;
@@ -194,7 +193,11 @@ legend {
   margin-top: 20px;
   &:hover {
     color: #fff;
+    background-color: #1a384a;
     text-decoration: none;
+  }
+  a {
+    text-color: #EC6F3E;
   }
 }
 .diff-search {
@@ -466,6 +469,8 @@ a.insidelink {
   border-top: 1px solid #ddd;
   padding: 15px 0 15px;
   background-color: #fff;
+  position: fixed;
+  bottom: 0px;
 }
 #footer a {
   color: #555;
@@ -501,7 +506,7 @@ label.boolean.optional.control-label {
   }
 }
 .button-business-index {
-  @include button(#EC6F3E);
+  @include button(#5cb85c);
   float: right;
   margin-top: -50px;
   &:hover {
