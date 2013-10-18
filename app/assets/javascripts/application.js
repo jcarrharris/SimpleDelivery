@@ -40,4 +40,8 @@ $(function() {
 
   $('.phone_us').mask('(000) 000-0000');
 
+  $(".address").geocomplete({
+  map: ".map_canvas"
+  });
+
 });

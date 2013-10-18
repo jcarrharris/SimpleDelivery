@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
     @order.pickup_time = (params[:pickup_date] + " " + params[:pickup_hour]).to_datetime
     @order.delivery_time = (params[:delivery_date] + " " + params[:delivery_hour]).to_datetime
     @order.phone_number = (params[:phone_number]).gsub(/\D/, '').to_i
+    @order.delivery_address = params[:address]
 
     if @order.save
       UserMailer.tracking_email(@order).deliver
