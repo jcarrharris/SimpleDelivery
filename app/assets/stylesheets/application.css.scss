@@ -51,7 +51,7 @@ a {
 body {
   font-size: 16px;
   font-family: $helvetica;
-  background-image: url(carbonfiber.png);
+  background-image: asset-url('carbonfiber.png');
   background-repeat: repeat;
   font-color: #222;
   height: 100%;
@@ -239,7 +239,7 @@ li a {
   text:white;
 }
 #main {
-  background-image: url(carbonfiber.png);
+  background-image: asset-url('carbonfiber.png');
   background-repeat: repeat;
 }
 .accord {
