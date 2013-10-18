@@ -13,7 +13,7 @@ $gw-gutter: 40px;
 h1, h2, h3 {
   font-family: $helvetica;
   display: inline-block;
-  color: #393c3d;
+  color: #3F4153;
 
 }
 .navbar.navbar-default {
@@ -32,7 +32,7 @@ h1, h2, h3 {
 body {
   font-size: 16px;
   font-family: $lucida-grande;
-  background-color: #f7f7f7;
+  background-image: url(mooning.png);
 }
 
 p {
@@ -116,11 +116,11 @@ p {
 .section-content {
   @include span-columns(10);
   @include shift(1);
-  background: white;
+  background: #fff;
   margin-top: 0px;
   padding: 30px 40px 45px 40px;
   border: 1px solid #e3e3e3;
-  border-radius: 3px;
+  border-radius: 6px;
   display: block;
 }
 
@@ -197,10 +197,14 @@ li a {
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  @include linear-gradient(#1e5799, #2989d8);
-  @include linear-gradient(to top, #8fdce5, #3dc3d1);
-  @include linear-gradient(to top, #8fdce5, #3dc3d1, $fallback: red);
-  @include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+  // Image asset with a linear-gradient
+  @include background-image(url("/images/a.png"), linear-gradient(white 0, yellow 50%, transparent 50%));
+
+  // Multiple linear-gradients - Demo
+  @include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 80%), 
+                             linear-gradient(#438eb9, darken(#2765a2, 10%)));
+
+
 }
 .pull-right {
   padding-right: 2em;
