@@ -6,13 +6,16 @@
     <fieldset>
       <legend></legend>
       <div class="form-group">
-        <%= f.input :location_name, :autofocus => true, placeholder: "Location Name" %></br>
+        <%= f.input :location_name, :autofocus => true, placeholder: "Location Name" %>
       </div>
       <div class="form-group">
-        <%= f.input :address, placeholder: "Address" %></br>
+        <%= f.input :address, placeholder: "Address" %>
       </div>
       <div class="form-group">
-        <%= f.input :phone_number, placeholder: "Phone Number" %>
+        <%= f.label "Phone Number" %></br>
+        <%= text_field_tag "phone1", nil, maxlength: 3, placeholder: "xxx" %>
+        <%= text_field_tag "phone2", nil, maxlength: 3, placeholder: "xxx" %>
+        <%= text_field_tag "phone3", nil, maxlength: 4, placeholder: "xxxx" %>
       </div>
     </fieldset>
   </div>

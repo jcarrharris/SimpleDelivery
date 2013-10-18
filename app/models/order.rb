@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
 
   validate :in_the_future
 
-  validates_presence_of :tracking_number, :delivery_address, :phone_number, :weight, :declared_value, :packaging, :pickup_time, :delivery_time, :email
+  validates_presence_of :tracking_number, :delivery_address, :phone_number, :weight, :packaging, :pickup_time, :delivery_time, :email
   validates_uniqueness_of :tracking_number
   validates :phone_number, length: { is: 10 }
 

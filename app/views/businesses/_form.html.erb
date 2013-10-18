@@ -10,7 +10,10 @@
         <%= f.input :website_url, placeholder: "Website URL" %>
       </div>
       <div class="form-group">
-        <%= f.input :phone_number, placeholder: "Phone Number" %>
+        <%= f.label "Phone Number" %></br>
+        <%= text_field_tag "phone1", nil, maxlength: 3, placeholder: "xxx" %>
+        <%= text_field_tag "phone2", nil, maxlength: 3, placeholder: "xxx" %>
+        <%= text_field_tag "phone3", nil, maxlength: 4, placeholder: "xxxx" %>
       </div>  
       <div class="form-group">
         <%= f.input :image %>

@@ -18,6 +18,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = @business.locations.build(location_params)
+    @location.phone_number = (params[:phone1] + params[:phone2] + params[:phone3]).to_i
 
     if @location.save
       redirect_to business_location_path(@business, @location), notice: 'Location added.'

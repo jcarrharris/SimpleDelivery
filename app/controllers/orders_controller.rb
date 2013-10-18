@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
     @order.status = "Pending"
     @order.pickup_time = (params[:pickup_date] + " " + params[:pickup_hour]).to_datetime
     @order.delivery_time = (params[:delivery_date] + " " + params[:delivery_hour]).to_datetime
+    @order.phone_number = (params[:phone1] + params[:phone2] + params[:phone3]).to_i
 
     if @order.save
       UserMailer.tracking_email(@order).deliver

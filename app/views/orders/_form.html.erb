@@ -6,7 +6,10 @@
         <%= f.input :delivery_address, placeholder: "Address", autofocus: true %>
       </div>
       <div class="form-group">
-       <%= f.input :phone_number, placeholder: "Phone Number" %>
+        <%= f.label "Phone Number" %></br>
+        <%= text_field_tag "phone1", nil, maxlength: 3, placeholder: "xxx" %>
+        <%= text_field_tag "phone2", nil, maxlength: 3, placeholder: "xxx" %>
+        <%= text_field_tag "phone3", nil, maxlength: 4, placeholder: "xxxx" %>
       </div>
       <div class="form-group">
         <%= f.input :email, placeholder: "Email" %>
@@ -18,15 +21,12 @@
         <%= f.input :weight, placeholder: "Weight (kg)" %>
       </div>
       <div class="form-group">
-        <%= f.input :declared_value, placeholder: "Declared Value (CAD)" %>
-      </div>
-      <div class="form-group">
-        <strong>Pickup Time:</strong></br>
+        <strong>Pickup time</strong></br>
         <input type="text" name="pickup_date" id="date" placeholder="Date" />
         <input type="text" name="pickup_hour" id="time" placeholder="Time" />
       </div>
       <div class="form-group">
-        <strong>Delivery Time:</strong></br> <input type="text" name="delivery_date" id="date2" placeholder="Date" />
+        <strong>Delivery time</strong></br> <input type="text" name="delivery_date" id="date2" placeholder="Date" />
         <input type="text" name="delivery_hour" id="time2" placeholder="Time" />
       </div>
     </fieldset>
