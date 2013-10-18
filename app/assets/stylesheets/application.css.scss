@@ -111,7 +111,6 @@ legend {
 }
 .btn.btn-primary.btn-lg {
   float: right;
-  margin-top: -70px;
 }
 #notice {
   font-size: 16px;
@@ -215,14 +214,8 @@ li a {
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  // Image asset with a linear-gradient
-  @include background-image(url("/images/a.png"), linear-gradient(white 0, yellow 50%, transparent 50%));
-
-  // Multiple linear-gradients - Demo
   @include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 60%), 
-                             linear-gradient(#438eb9, darken(#68a4c7, 10%)));
-
-
+                             linear-gradient(lighten(#3F4153, 5%), darken(#3F4153, 5%)));
 }
 .pull-right {
   padding-right: 2em;
@@ -237,12 +230,17 @@ li a {
 a.insidelink {
   color: #438eb9;
   text-decoration: underline;
-  font-weight: bold;
+  letter-spacing: 0.0625em;
   margin-left: 0.5em;
   margin-bottom: 1em;
   &:hover {
     font-size: 1.5em;
   }
+}
+.accordion-title {
+  letter-spacing: 0.0625em;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* CUSTOMIZE THE CAROUSEL

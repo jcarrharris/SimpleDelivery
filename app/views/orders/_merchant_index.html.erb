@@ -1,18 +1,18 @@
 <div id="accordion">
 <% @location.each do |l| %>
   <% l.orders.each do |o| %>
-  <div><p><%=sortable "tracking_number "%><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></p></div>
+  <div class="accordion-title"><p><%=sortable "Tracking #"%><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o), class:"accordion-title" %></p></div>
   <div class="table-responsive">
       <table class="table table-hover">
         <tbody></div>
           <%= link_to "See Details",business_location_order_path(o.location.business, o.location, o), class:"insidelink"%>
-          <tr><td><%= sortable "status"%><td class="value"><%= o.status %></td></tr>
-          <tr><td><%= sortable "location_name", "Location"%><td class="value"><%= o.location.location_name %></td></tr>
-          <tr><td><%= sortable "pickup_time"%><td class="value"><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td></tr>
-          <tr><td><%= sortable "delivery_time"%><td class="value"><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td></tr>
-          <tr><td><%= sortable "delivery_address"%><td class="value"><%= o.delivery_address %></td></tr>
-          <tr><td><%= sortable "courier"%><td class="value"><%= o.user != nil ? o.user.first_name : "Pending" %></td></tr>
-          <tr><td><%= sortable "Average Rating"%><td class="value"><%= o.user != nil ? o.user.average_rating : "N/A" %></td></tr>
+          <tr><td>Status<td class="value"><%= o.status %></td></tr>
+          <tr><td>Location<td class="value"><%= o.location.location_name %></td></tr>
+          <tr><td>Pickup Time<td class="value"><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td></tr>
+          <tr><td>Delivery Time<td class="value"><%= o.delivery_time.strftime("%b %e, %l:%M %p") %></td></tr>
+          <tr><td>Delivery Address<td class="value"><%= o.delivery_address %></td></tr>
+          <tr><td>Courier<td class="value"><%= o.user != nil ? o.user.first_name : "Pending" %></td></tr>
+          <tr><td>Average Rating<td class="value"><%= o.user != nil ? o.user.average_rating : "N/A" %></td></tr>
         </tbody></div>
         </table>
     </div>

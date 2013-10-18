@@ -23,7 +23,7 @@
       <% @location.each do |l| %>
         <% l.orders.each do |o| %>
           <tr>
-            <td><%= link_to o.tracking_number, business_location_order_path(o.location.business, o.location, o) %></td>
+            <td><%= o.tracking_number %></td>
             <td><%= o.status %></td>
             <td><%= (Geocoder::Calculations.distance_between(o.location.address, o.delivery_address)*1.60934).round(2) %> km away!</td>
             <td><%= o.pickup_time.strftime("%b %e, %l:%M %p") %></td>
