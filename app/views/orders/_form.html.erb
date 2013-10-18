@@ -6,10 +6,8 @@
         <%= f.input :delivery_address, placeholder: "Address", autofocus: true %>
       </div>
       <div class="form-group">
-        <%= f.label "Phone Number" %></br>
-        <%= text_field_tag "phone1", nil, maxlength: 3, placeholder: "xxx" %>
-        <%= text_field_tag "phone2", nil, maxlength: 3, placeholder: "xxx" %>
-        <%= text_field_tag "phone3", nil, maxlength: 4, placeholder: "xxxx" %>
+        <label>Phone number</label></br>
+        <input type="text" class="phone_us" name="phone_number" placeholder="(XXX) XXX-XXXX">
       </div>
       <div class="form-group">
         <%= f.input :email, placeholder: "Email" %>
