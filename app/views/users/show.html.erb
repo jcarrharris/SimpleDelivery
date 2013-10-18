@@ -11,7 +11,7 @@
     <tbody>
       <tr><td>Email</td><td class="value"><%= @user.email %></td></tr>
       <% if @user.role == "Courier" %>
-        <tr><td>Average Rating</td><td class="value"><div id="progressbar" data-rating="<%= @user.average_rating %>"><div></div></div><%= @user.average_rating %> (<%= @user.ratings.count %> ratings)</td></tr>
+        <tr><td>Average Rating</td><td class="value"><span class="avg"><%= @user.average_rating %></span> (<span class="count"><%= @user.ratings.count %></span> ratings)</td></tr>
       <% else %>
         <tr><td>Annual Subscription ($100)</td><td class="value"><%= render 'charges/new' %></td></tr>
       <% end %>
@@ -29,14 +29,11 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title">Rating</h4>
         </div>
-        <div class="modal-body">
-          <%= simple_form_for [@user, @rating] do |f| %>
-            <%= f.input :rate, collection: [1, 2, 3, 4, 5], required: true, include_blank: false, label: false %>
-            <div class="modal-body" id="star" name="stary"></div>
+        <div class="modal-body" data-raty-url="<%= user_ratings_path(@user) %>">
+          <div class="modal-body" id="star" name="stary"></div>
         </div>
         <div class="modal-footer">
-            <%= f.button :submit, class:"button-modal" %>
-          <% end %>
+            
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

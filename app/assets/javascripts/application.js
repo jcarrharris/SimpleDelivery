@@ -47,6 +47,18 @@ $(function() {
   $('.modal-body #star').raty({
     path: '/assets/',
     score: 'score',
+    click: function(score, evt) {
+      var url = $(".modal-body").data("raty-url");
+      $.ajax({
+        url: url + ".json",
+        type: 'POST',
+        data: { score: score }
+      }).done(function(data) {
+        $('#myModal').modal('hide');
+        $(".avg").html(data.average_rating)
+        $(".count").html(data.count)
+      });
+    }
   });
 
   $("#progressbar").progressbar({
