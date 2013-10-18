@@ -19,6 +19,7 @@ class LocationsController < ApplicationController
   def create
     @location = @business.locations.build(location_params)
     @location.phone_number = (params[:phone_number]).gsub(/\D/, '').to_i
+    @location.address = params[:address]
 
     if @location.save
       redirect_to business_location_path(@business, @location), notice: 'Location added.'

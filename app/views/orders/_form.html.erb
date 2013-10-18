@@ -3,8 +3,10 @@
   <div>
     <fieldset>
       <div class="form-group">
-        <%= f.input :delivery_address, placeholder: "Address", autofocus: true %>
+        <label>Address</label></br>
+        <input type="text" class="address" name="address" size="35">
       </div>
+      <div class="map_canvas" style="width:90%;height:380px;"></div>
       <div class="form-group">
         <label>Phone number</label></br>
         <input type="text" class="phone_us" name="phone_number" placeholder="(XXX) XXX-XXXX">
